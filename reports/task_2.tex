@@ -155,13 +155,19 @@ Sprawozdanie - Przerzutniki i rejestry}
             \begin{center}
                 \includegraphics[width=18cm]{reports/img/Z2C_1.png}\\
             \end{center}
-            Rejestry nadajnika i odbiornika zbudowałem z wykorzystaniem przerzutników D. Generator słów podaje na wejście układu nadajnika czterobitową liczbę (jako sygnał równoległy). Następnie podaje sygnał przesunięcia. Nadajnik przekazuje liczbę jako sygnał szeregowy. Układ odbiornika odczytuje sygnał szeregowy do sygnału równoległego. Jego wyjścia połączone są z analizatorem logicznym. 
+            Rejestry nadajnika i odbiornika zbudowałem z wykorzystaniem przerzutników D. Generator słów podaje na wejście układu nadajnika czterobitową liczbę (jako sygnał równoległy). Nadajnik przekazuje liczbę jako sygnał szeregowy. Układ odbiornika odczytuje sygnał szeregowy do sygnału równoległego. Jego wyjścia połączone są z analizatorem logicznym. Za przesunięcie liczby przez rejestry odpowiednią ilość razy odpowiada układ zbudowany z użyciem licznika modulo i bramek logicznych w lewym dolnym rogu płytki. 
             
         \subsection{Sposób działania układu}
+            Wejście układu, postaci czterobitowej liczby w formacie równoległym zostaje przekazane do rejestru PISO. Sygnał shift ustawiony jest w stan niski. Stany odpowiadające za kolejne bity liczby wejściowej przekazane zostają na wejścia D odpowiadających im przerzutników D. Następnie sygnał shift ustawiony zostaje w stan wysoki. Przez cztery kolejne okresy zegara stany odpowiadające za kolejne bity liczby wejściowej zostają "przesunięte", tj. przekazane przez linię sygnału szeregowego do odbiornika. Stan przekazany w początkowej fazie do przerzutnika przesuwany jest do kolejnego przerzutnika, by w końcu trafić na linię transmisyjną. 
+            
+            Z linii transmisyjnej sygnał szeregowy trafia do rejestru SIPO, który przetwarza go do formatu równoległego. Sygnał szeregowy trafia na wejście przerzutnika D. Wyjście przerzutnika do połączone jest z kolejnym przerzutnikiem. Za wyjściami przerzutników podłączamy kolejne wyjścia sygnału równoległego.  
+            
             \begin{center}
                 \includegraphics[width=18cm]{reports/img/Z2C_2.png}\\
             \end{center}
+            Układ przetestowany został z użyciem analizatora logicznego, wykazując oczekiwaną częstotliwość sygnału shift i poprawność przesłanych danych. Widzimy, że udało nam się przesłać liczbę czterobitową, za pomocą pojedynczej linii transmisyjnej. 
             
         \subsection{Wnioski}
+            Przy użyciu podstawowych przerzutników zbudować możemy rejestry realizujące konwersję danych z komunikacji szeregowej na równoległą. Pozwala to na budowę wydajniejszych systemów komunikacyjnych.
 
 \end{document}
