@@ -53,10 +53,7 @@ Sprawozdanie - Przerzutniki i rejestry}
     \maketitle
     \section{Projekt przerzutnika RS}
         \subsection{Projekt układu}
-            \begin{center}
-                \includegraphics[width=18cm]{reports/img/Z2A_1.png}\\
-            \end{center}
-            Przerzutnik RS zbudowano w oparciu wyłącznie o bramki NOR. Układ realizuje funkcje opisaną poniższą tabelą prawdy. Do przetestowania układu wykorzystano probówki. 
+            Przypomnijmy tabelę prawdy przerzutnika RS.
             \begin{center}
                 \begin{table}[ht]
                     \centering
@@ -77,6 +74,12 @@ Sprawozdanie - Przerzutniki i rejestry}
                     \label{tab:my_label}
                 \end{table}
             \end{center}
+            
+
+            \begin{center}
+                \includegraphics[width=18cm]{reports/img/Z2A_1.png}\\
+            \end{center}
+            Przerzutnik RS zbudowano w oparciu wyłącznie o bramki NOR. Układ realizuje funkcje opisaną poniższą tabelą prawdy. Do przetestowania układu wykorzystano probówki. 
         
         \subsection{Koncepcja budowy układu}
             W układzie wykorzystujemy sprzężenie zwrotne pomiędzy wyjściami układu (Q i zaprzeczone Q) oraz wejściami. Dodatkowe przełączniki NOR wykorzystujemy jako bramki NOT w celu dopasowania działania układu do standardowego przerzutnika RS. Gdy na wejście S podamy stan wysoki, a na wejście R niski, bramka U3 poda stan niski, zatem bramka U4 poda stan wysoki, przez co bramka U5 poda stan niski, czyli bramka U7 poda stan wysoki w efekcie czego dostajemy stan niski za bramką U8. Gdy następnie przestawimy oba wejścia układu w stan niski, bramka U3 dostanie na wejściu stan niski i stan wysoki (jako zaprzeczony stan wyjścia $\neg Q$), podając w efekcie stan niski, zaprzeczany przez bramkę U4. Z kolei Bramka U7 dostanie na wejściach dwukrotnie stan niski, dzięki czemu otrzymamy stan niski za bramką U8. Jak widzimy stan wyjść układu nie zmienił się - przerzutnik spełnił swoje zadanie. Przestawienie wejścia S w stan niski i wejścia R w stan wysoki spowoduje, że bramka U7 poda stan niski, zatem otrzymamy stan wysoki na wyjściu zanegowanego Q. Wtedy bramka U3 otrzyma dwa razy stan niski na wejściu, zatem otrzymany stan niski na wyjściu Q.\\ 
