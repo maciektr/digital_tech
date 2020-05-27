@@ -54,11 +54,7 @@ Sprawozdanie - Liczniki}
     \maketitle
     \section{Dwójka licząca w oparciu o przerzutniki JK}
         \subsection{Projekt układu}
-            W ramach laboratorium przygotowałem implementację dwójki liczącej w oparciu o przerzutnik JK na dwa różne sposoby. 
-            \begin{center}
-                \includegraphics[height=10cm]{reports/img/Z3A_1.png}\\
-            \end{center}
-            Zadaniem dwójki liczącej jest odtworzenie otrzymanego cyfrowego sygnału zegarowego z dwukrotnie niższą częstotliwością. Przypomnijmy tabelę wzbudzeń przerzutnika JK.
+                    Zadaniem dwójki liczącej jest odtworzenie otrzymanego cyfrowego sygnału zegarowego z dwukrotnie niższą częstotliwością. Przypomnijmy tabelę wzbudzeń przerzutnika JK.
             \begin{center}
                 \begin{table}[ht]
                     \centering
@@ -86,7 +82,12 @@ Sprawozdanie - Liczniki}
             \end{center}
             \FloatBarrier
             Dolny wykres odpowiada za przebieg zegara. Z każdym stanem wysokim podawanym przez zegar przerzutnik zamienia stan wyjściowy na przeciwny. W efekcie otrzymujemy sygnał o dwukrotnie niższej częstotliwości, czyli udało nam się zrealizować dwójkę liczącą.\\
-            Drugą implementację dwójki liczącej otrzymałem poprzez połączenie wejścia K z wyjściem Q, oraz wejścia J z wyjściem zanegowanego Q. Podobnie jak w poprzednim przypadku, otrzymujemy układ zamieniający stan wyjściowy na przeciwny z każdym stanem wysokim zegara. Dzieje się tak dlatego, że gdy na wejścia układu podamy dwa sygnały przeciwne, to jest stan niski na wejście J i wysoki na wejście K, lub odwrotnie, przerzutnik ustawi stan otrzymany na wejściu J jako wyjściowy. To z kolei spowoduje zamianę stanów na wejściach na przeciwne - wraz z następnym stanem wysokim zegara na wyjściu podany zostanie sygnał do niego przeciwny. 
+            Drugą implementację dwójki liczącej otrzymałem poprzez połączenie wejścia K z wyjściem Q, oraz wejścia J z wyjściem zanegowanego Q. Podobnie jak w poprzednim przypadku, otrzymujemy układ zamieniający stan wyjściowy na przeciwny z każdym stanem wysokim zegara. Dzieje się tak dlatego, że gdy na wejścia układu podamy dwa sygnały przeciwne, to jest stan niski na wejście J i wysoki na wejście K, lub odwrotnie, przerzutnik ustawi stan otrzymany na wejściu J jako wyjściowy. To z kolei spowoduje zamianę stanów na wejściach na przeciwne - wraz z następnym stanem wysokim zegara na wyjściu podany zostanie sygnał do niego przeciwny. \\
+
+            W ramach laboratorium przygotowałem implementację dwójki liczącej w oparciu o przerzutnik JK na dwa różne sposoby. 
+            \begin{center}
+                \includegraphics[height=10cm]{reports/img/Z3A_1.png}\\
+            \end{center}
         
         \subsection{Sposób działania}
             Działanie obu układów dzielnika przetestowałem za pomocą analizatora logicznego. Sygnały zaznaczone kolorem czerwonym pochodzą od pierwszej dwójki liczącej, z kolei sygnały zaznaczone kolorem pomarańczowym od drugiej dwójki. Kolorem zielonym zaznaczono sygnał generowany przez zegar. 
@@ -96,13 +97,10 @@ Sprawozdanie - Liczniki}
             Oba układy generują ten sam sygnał wyjściowym, o dwukrotnie niższej częstotliwości w stosunku do sygnału wejściowego pochodzącego od zegara. 
             
         \subsection{Wnioski}
-            Układ dwójki liczącej można łatwo zrealizować za pomocą przerzutnika, bez potrzeby stosowania dodatkowych układów.
+            Układ dwójki liczącej można łatwo zrealizować za pomocą przerzutnika, bez potrzeby stosowania dodatkowych układów. Odpowiednie wykorzystanie dwójek liczących pozwala na zmianę częstotliwości sygnału prostokątnego. 
             
     \section{Czterobitowy licznik asynchroniczny liczący wstecz}
         \subsection{Projekt układu}
-            \begin{center}
-                \includegraphics[width=18 cm]{reports/img/Z3B_1.png}\\
-            \end{center}
             Za pomocą dwójek liczących zaprojektowanych w poprzednim zadaniu możemy zbudować licznik. Jeśli dwójki liczące połączymy szeregowo, łącząc wyjście jednej z dwójek z wejściem zegarowym następnej, każda kolejna z dwójek zamieniać będzie swój stan wyjściowy na przeciwny 2 razy rzadziej niż poprzednia.
                         \begin{center}
                 \begin{table}[ht]
@@ -127,6 +125,9 @@ Sprawozdanie - Liczniki}
             \end{center}
             \FloatBarrier
             Zauważmy, że odpowiada to oczekiwanym stanom wyjściowym licznika. Tak skonstruowany licznik nazywamy licznikiem asynchronicznym, ponieważ kolejne przerzutniki nie są wyzwalane zegarem generującym sygnał tej samej częstotliwości. 
+            \begin{center}
+                \includegraphics[width=18 cm]{reports/img/Z3B_1.png}\\
+            \end{center}
 
         
         \subsection{Sposób działania}
@@ -138,13 +139,10 @@ Sprawozdanie - Liczniki}
             Na powyższym wykresie z analizatora sygnał z zegara został zaznaczony kolorem zielonym. Kolorem granatowym oznaczyłem kolejne wyjścia licznika. Widzimy, że licznik poprawnie realizuje zliczanie wstecz.
         
         \subsection{Wnioski}
-            Układy zliczające możemy w prosty sposób uzyskać za pomocą dwójek liczących, opóźniających zamianę stanu kolejnych bitów na wyjściu. 
+            Układy zliczające możemy w prosty sposób uzyskać za pomocą dwójek liczących, opóźniających zamianę stanu kolejnych bitów na wyjściu. Pozwala to niskim kosztem skonstruować układy zliczające.  
             
     \section{Synchroniczny licznik modulo 8}
         \subsection{Projekt układu}
-            \begin{center}
-                \includegraphics[width=18cm]{reports/img/Z3C_1.png}\\
-            \end{center}
             Do budowy układu wykorzystamy przerzutniki D, przypomnijmy zatem ich tabele przejść. 
             \begin{center}
                 \begin{table}[ht]
@@ -190,10 +188,16 @@ Sprawozdanie - Liczniki}
                 \end{table}
             \end{center}
             \FloatBarrier
-            W liczniku synchronicznym wszystkie przerzutniki korzystają z tego samego sygnału zegarowego. Widzimy, że przerzutnik odpowiedzialny za najmniej ważny bit zmienia stan za każdym przejściem licznika. Połączymy więc jego wejście D z wyjściem zanegowanego Q. Zauważmy, że stan drugiego najmniej ważnego bitu równoważny jest z wartością funkcji xor dwóch najmniej ważnych bitów w poprzednim ustawieniu. Wykorzystamy tą własność podłączając wyjście bramki xor do wejścia D drugiego przerzutnika. Wejścia bramki podłączymy do wyjścia poprzedniego przerzutnika, oraz stanu na wyjściu drugiego z przerzutników. Trzeci bit zmienia swój stan na wysoki, gdy licznik wskazuje liczbę 3, tj. 011 w zapisie binarnym. Następnie powraca do stanu niskiego przy liczbie 7, tj 111. Wykorzystamy tą własność - niech stan na wejściu trzeciego z przerzutników odpowiadał będzie będzie wartości funkcji xor z wyjścia trzeciego przerzutnika, oraz wartości funkcji and na wyjściach dwóch poprzednich przerzutników. 
+            W liczniku synchronicznym wszystkie przerzutniki korzystają z tego samego sygnału zegarowego. Widzimy, że przerzutnik odpowiedzialny za najmniej ważny bit zmienia stan za każdym przejściem licznika. Połączymy więc jego wejście D z wyjściem zanegowanego Q.\\
+            Zauważmy, że stan drugiego najmniej ważnego bitu równoważny jest z wartością funkcji xor dwóch najmniej ważnych bitów w poprzednim ustawieniu. Wykorzystamy tą własność podłączając wyjście bramki xor do wejścia D drugiego przerzutnika. Wejścia bramki podłączymy do wyjścia poprzedniego przerzutnika, oraz stanu na wyjściu drugiego z przerzutników.\\
+            Trzeci bit zmienia swój stan na wysoki, gdy licznik wskazuje liczbę 3, tj. 011 w zapisie binarnym. Następnie powraca do stanu niskiego przy liczbie 7, tj 111. Wykorzystamy tą własność - niech stan na wejściu trzeciego z przerzutników odpowiadał będzie będzie wartości funkcji xor z wyjścia trzeciego przerzutnika, oraz wartości funkcji and na wyjściach dwóch poprzednich przerzutników. 
             \begin{center}
                 \includegraphics[width=6cm]{reports/img/Z3C_3.png}\\
             \end{center}
+            \begin{center}
+                \includegraphics[width=18cm]{reports/img/Z3C_1.png}\\
+            \end{center}
+
             \FloatBarrier
         
         \subsection{Sposób działania}
@@ -204,7 +208,7 @@ Sprawozdanie - Liczniki}
             Jak łatwo zauważyć na powyższym wykresie, układ poprawnie realizuje swoją funkcję zliczając kolejno od 0 do 7, po czym powraca do zera. 
         
         \subsection{Wnioski}
-            Analizując oczekiwane na kolejnych wyjściach wartości możemy w łatwy sposób dobrać bramki logiczne realizujące interesujące nas funkcje. 
+            Analizując oczekiwane na kolejnych wyjściach wartości możemy w łatwy sposób przekonwertować licznik do postaci zliczającej wartości w interesujący nas sposób. Stosując tą metodę jesteśmy w stanie zaprojektować układ licznika nie tylko modulo 8, lecz także zliczające w innym interesującym nas cyklu.  
             
     \section{Licznik modulo 6}
         \subsection{Projekt układu}
@@ -220,6 +224,6 @@ Sprawozdanie - Liczniki}
             Układ przetestowałem z użyciem wyświetlacza siedmiosegmentowego z wbudowanym dekoderem, oraz analizatora logicznego. Układ poprawnie implementuje licznik modulo 6, po podaniu liczby 5 jego stan powraca do zera. 
             
         \subsection{Wnioski}
-            Liczniki modulo dowolną liczbę możemy w prosty sposób zrealizować za pomocą odpowiednio dobranych bramek logicznych, oraz wejścia reset w przerzutnikach licznika. 
+            Liczniki modulo dowolną liczbę możemy w prosty sposób zrealizować za pomocą odpowiednio dobranych bramek logicznych, oraz wejścia reset w przerzutnikach licznika. To podejście jest uniwersalne dla liczników o tej konstrukcji. 
     
 \end{document}
