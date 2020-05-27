@@ -42,7 +42,7 @@ literate=%
  {Ż}{{\.{Z}}}1
  {ł}{{\l{}}}1
  {Ł}{{\l{}}}1
-}
+}/
 
 \title{Technika Cyfrowa\\
 Sprawozdanie - bramki logiczne}
@@ -52,14 +52,6 @@ Sprawozdanie - bramki logiczne}
 \begin{document}
     \maketitle
     \section{Układ sumujący dwie liczby trzybitowe}
-        \subsection{Projekt układu}
-            \begin{center}
-                \includegraphics[height=9cm]{reports/img/Z1A_1.png}\\
-            \end{center}
-            W układzie jako źródło sygnału wykorzystano generator słów. Wyjścia odpowiadające za bity pierwszej z liczb oznaczono kolorem zielonym, a za bity drugiej z nich kolorem różowym. \\
-            Do obliczenia sumy arytmetycznej wykorzystano jeden sumator pół-pełny (dla sumy najmniej ważnych bitów), oraz dwa sumatory pełne. Wyjścia odpowiadające za przepełnienie oznaczono kolorem lazurowym. \\
-            Wynik operacji zilustrowano poprzez wykorzystanie wyświetlacza HEX. 
-        
         \subsection{Sumator pełny i pół-pełny}
             Dla sumy najmniej ważnych bitów na wejściu sumatora otrzymujemy dwa sygnały - po jednym bicie od każdej z liczb. Jednakże, wynik dodawania dwóch liczb jednobitowych jest liczbą dwubitową. Dlatego, na wyjściu podajemy dwa sygnały - stan najmniej ważnego bitu liczby wynikowej i informacje o tym, czy wystąpiło przepełnienie.\\
             Taki układ nazywamy sumatorem pół-pełnym, jednobitowym. Do jego wykonania wystarczą dwie bramki logiczne - xor i and, do których podłączymy sygnały wejściowe. Wyjście bramki xor będzie stanem bitu w wyniku, a wyjście bramki and informacją o przepełnieniu. \\
@@ -83,12 +75,24 @@ Sprawozdanie - bramki logiczne}
         \subsection{Konstrukcja układu sumującego}
             Zauważmy, że tak skonstruowane sumatory pełne możemy dowolnie długo łączyć, otrzymując na ich wyjściach poprawną sumę arytmetyczną liczb przekazanych na wejścia. W celu ograniczenia ilości użytych bramek logicznych do wykonania sumy najmniej znaczących bitów używamy sumatora pół-pełnego.\\ 
             Aby wykonać sumę dwóch liczb trzybitowych potrzebować będziemy zatem jedynie dwóch sumatorów pełnych i jednego pół-pełnego.
+
+        \subsection{Projekt układu}
+            \begin{center}
+                \includegraphics[height=9cm]{reports/img/Z1A_1.png}\\
+            \end{center}
+            W układzie jako źródło sygnału wykorzystano generator słów. Wyjścia odpowiadające za bity pierwszej z liczb oznaczono kolorem zielonym, a za bity drugiej z nich kolorem różowym. \\
+            Do obliczenia sumy arytmetycznej wykorzystano jeden sumator pół-pełny (dla sumy najmniej ważnych bitów), oraz dwa sumatory pełne. Wyjścia odpowiadające za przepełnienie oznaczono kolorem lazurowym. \\
+            Wynik operacji zilustrowano poprzez wykorzystanie wyświetlacza HEX. 
+        
             
         \subsection{Wnioski}
-            Zauważmy, że w przedstawiony powyżej sposób możemy skonstruować sumator dla dwóch liczb o dowolnej (choć z góry ustalonej) liczby bitów. Z oczywistych względów (powszechność operacji dodawania) taki układ ma zastosowania praktyczne. 
+            Zauważmy, że w przedstawiony powyżej sposób możemy niskim kosztem skonstruować sumator dla dwóch liczb o dowolnej (choć z góry ustalonej) liczby bitów. Z oczywistych względów (powszechność operacji dodawania) taki układ ma wiele zastosowań praktycznych. 
             
             
     \section{Układ sprawdzający równość dwóch liczb}
+        \subsection{Konstrukcja układu}
+            Zauważmy, że dwie liczby są równe wtedy i tylko wtedy, gdy wszystkie reprezentujące je bity, na odpowiednich pozycjach, są sobie równe. Zatem w celu wykazania ich równości, wystarczy wykorzystać bramki xor w ilości odpowiadającej liczbie bitów. Jeżeli wszystkie z bramek podadzą na wyjściu stan niski, to liczby są równe.
+
         \subsection{Projekt układu}
             \begin{center}
                 \includegraphics[height=9cm]{reports/img/Z1B_1.png}\\
@@ -97,13 +101,9 @@ Sprawozdanie - bramki logiczne}
             Do porównania wartości liczb wykorzystano bramki xor, których wyniki zbiera bramka nor. \\
             Równość liczb sygnalizuje zielona dioda. 
             \FloatBarrier
-        \subsection{Konstrukcja układu}
-            Zauważmy, że dwie liczby są równe wtedy i tylko wtedy, gdy wszystkie reprezentujące je bity, na odpowiednich pozycjach, są sobie równe. Zatem w celu wykazania ich równości, wystarczy wykorzystać bramki xor w ilości odpowiadającej liczbie bitów. Jeżeli wszystkie z bramek podadzą na wyjściu stan niski, to liczby są równe.
             
         \subsection{Wnioski}
-            Zauważmy, że w przedstawiony powyżej sposób możemy skonstruować układ sprawdzający równość  dwóch liczb o dowolnej (choć z góry ustalonej) liczby bitów. Z oczywistych względów (powszechność operacji porównania) taki układ ma zastosowania praktyczne. Dodatkowo, jest wyjątkowo prosty do skonstruowania, dzięki wysokiej dostępności bramek realizujących operację alternatywy wykluczającej. 
-    
-            
+            Zauważmy, że w przedstawiony powyżej sposób możemy skonstruować układ sprawdzający równość  dwóch liczb o dowolnej (choć z góry ustalonej) liczbie bitów. Z oczywistych względów (powszechność operacji porównania) taki układ ma zastosowania praktyczne. Dodatkowo, jest wyjątkowo prosty do skonstruowania, dzięki wysokiej dostępności bramek realizujących operację alternatywy wykluczającej. 
 
     \section{Transkoder czterobitowych cyfr szesnastkowych na wyświetlacz siedmiosegmentowy}
         \subsection{Minimalizacja funkcji boolowskich}
@@ -184,9 +184,10 @@ Sprawozdanie - bramki logiczne}
             \end{center}
             \FloatBarrier
             Zauważmy, że wartości zera logicznego w powyższej tabeli jest zdecydowanie mniej, niż stanów wysokich. Dlatego to po nich będziemy grupować, zatem otrzymamy wynik poprzez dopełnienie.\\
-            Każdą z grup zer możemy opisać poprzez określenie w postaci alternatywy logicznej wszystkich pozostałych wartości w tablicy, za wyjątkiem tej grupy. Jeśli na tak skonstruowanych opisach grup użyjemy koniunkcji logicznej otrzymamy formułę opisującą poprawnie rozkład stanów wysokich i niskich względem sygnału wejściowego dla danego wejścia wyświetlacza. Analogiczną analizę przeprowadzimy dla każdego z pozostałych wejść wyświetlacza.\\
+            Każdą z grup zer możemy opisać poprzez określenie w postaci alternatywy logicznej wszystkich pozostałych wartości w tablicy, za wyjątkiem tej grupy. Jeśli na tak skonstruowanych opisach grup użyjemy koniunkcji logicznej otrzymamy formułę opisującą poprawnie rozkład stanów wysokich i niskich względem sygnału wejściowego dla danego wejścia wyświetlacza. \\
             Skąd otrzymujemy (przez dopełnienie):
             $$A = (\overline{x_1}+x_2+x_4+x_8)(x_1+x_2+\overline{x_4}+x_8)(\overline{x_1}+x_2+\overline{x_4}+\overline{x_8})(\overline{x_1}+\overline{x_2}+x_4+\overline{x_8})$$
+            Analogiczną analizę przeprowadzimy dla każdego z pozostałych wejść wyświetlacza.
             
             \begin{center}
                 \begin{table}[ht]
@@ -344,6 +345,76 @@ Sprawozdanie - bramki logiczne}
             \FloatBarrier
             Skąd otrzymujemy (przez dopełnienie):
             $$G = (x_2+x_4+x_8)(\overline{x_1}+\overline{x_2}+\overline{x_4}+x_8)(x_1+x_2+\overline{x_4}+\overline{x_8})$$
+            \FloatBarrier
+            
+            Za pomocą powyższych obliczeń wyprowadziliśmy minimalną funkcję logiczną opisującą niezależnie każde z wyjść układu dekodera w zależności od bitów liczby wejściowej. Spróbujmy poszukać zależności pomiędzy wyjściami, które pozwoliłyby nam dalej zminimalizować układ (zgodnie z intuicją, że jeśli przykładowo dwa segmenty wyświetlacza świeciłyby się zawsze w tych samych momentach, nie potrzebowalibyśmy dwóch niezależnych dekoderów dla obu z tych segmentów).             
+            \begin{center}
+                \begin{table}[ht]
+                    \centering
+                    \begin{tabularx}{\textwidth}{|Y *{9}{Y|}}
+                        \cline{3-10} 
+                        \multicolumn{2}{c|}{} &
+                        \multicolumn{8}{c|}{EFG}\\
+                        
+                        \multicolumn{2}{c|}{} & \multicolumn{1}{c}{000} & \multicolumn{1}{c}{001} & \multicolumn{1}{c}{010} & \multicolumn{1}{c|}{011} & \multicolumn{1}{c}{100} & \multicolumn{1}{c}{101} & \multicolumn{1}{c}{110} & \multicolumn{1}{c|}{111}\\
+                        \hline
+                         
+                        \multirow{4}{*}{BCD} & 000 & - & - & - & - & - & - & - & 1 \\
+                                             & 001 & - & - & - & - & - & - & - & 1\\
+                                             & 010 & - & - & - & - & - & - & - & -\\
+                                             & 011 & - & - & - & 1 & - & - & 1 & 1/0\\
+                                             & 100 & - & - & - & - & - & - & - & -\\
+                                             & 101 & - & - & - & - & - & 1 & - & -\\
+                                             & 110 & 0/1 & - & - & 1 & - & - & - & 1\\
+                                             & 111 & - & 1 & - & - & - & 0 & 1 & 1\\
+                         \hline 
+                    \end{tabularx}
+                    \caption{Opis stanów wyjścia A w zależności od pozostałych wyjść dekodera}
+                    \label{tab:my_label}
+                \end{table}
+            \end{center}
+            Niestety, podczas próby konstrukcji tablicy stanów opisującej stan wyjścia A w zależności od stanu pozostałych wyjść odkryliśmy, że nie istnieje deterministyczna funkcja opisująca taką zależność - znaleźliśmy dwie sytuacje, w których wyjście A przyjmuje różne wartości dla tych samych stanów pozostałych bramek. Oznacza to, że otrzymana w poprzednim punkcie zależność dla wyjścia A od bitów liczby wejściowej jest optymalna. \\
+            Dla pozostałych wyjść układu, z wyjątkiem wyjścia F, również wskazać możemy takie sytuacje konfliktowe. Dla porządku wypiszmy je poniżej. 
+            \begin{itemize}
+                \item Dla złącza B gdy pozostałe wyjścia przyjmują wartość 1 (to jest dla liczb 1000 i 0110).
+                \item Dla złącza C gdy złącze B przyjmuje wartość 0, a pozostałe złącza 1 (to jest dla liczb 1110, 0110).
+                \item Dla złącza D gdy wszystkie pozostałe złącza przyjmują wartość 1 (to jest dla liczb 1010 i 1000).
+                \item Dla złącza E gdy złącze B przyjmuje wartość 0, a pozostałe złącza 1 (to jest dla liczb 0101 i 0110).
+                \item Dla złącza G gdy wszystkie pozostałe wyjścia przyjmują wartość 1 (to jest dla liczb 0000, 1000).
+            \end{itemize}
+            \newpage
+            Nie udało nam się znaleźć konfliktu dla wyjścia F. Rozpiszmy zatem jego tabelę prawdy. 
+            \begin{center}
+                \begin{table}[ht]
+                    \centering
+                    \begin{tabularx}{\textwidth}{|Y *{9}{Y|}}
+                        \cline{3-10} 
+                        \multicolumn{2}{c|}{} &
+                        \multicolumn{8}{c|}{DEG}\\
+                        
+                        \multicolumn{2}{c|}{} & \multicolumn{1}{c}{000} & \multicolumn{1}{c}{001} & \multicolumn{1}{c}{010} & \multicolumn{1}{c|}{011} & \multicolumn{1}{c}{100} & \multicolumn{1}{c}{101} & \multicolumn{1}{c}{110} & \multicolumn{1}{c|}{111}\\
+                        \hline
+                         
+                        \multirow{4}{*}{ABC} & 000 & - & - & - & - & - & - & - & - \\
+                                             & 001 & - & - & - & - & - & - & - & 1\\
+                                             & 010 & - & - & - & - & - & - & - & - \\
+                                             & 011 & 0 & - & - & - & - & - & - & 0 \\
+                                             & 100 & - & - & - & 1 & - & - & 1 & 1 \\
+                                             & 101 & - & - & - & - & - & 1 & - & 1 \\
+                                             & 110 & - & - & - & - & - & - & - & 0 \\
+                                             & 111 & 0 & 1 & - & 1 & - & 0 & 1 & 1 \\
+                         \hline 
+                    \end{tabularx}
+                    \caption{Opis stanów wyjścia F w zależności od pozostałych wyjść dekodera}
+                    \label{tab:my_label}
+                \end{table}
+            \end{center}
+            Korzystając z powyższej tabeli wyprowadzić możemy zależność: 
+            $$F = A(G+E) + A\overline{B}D + DE(\overline{B}+ABC)$$
+            Uzyskaliśmy alternatywną zależność dla wyjścia F. Nie jest ona jednak realizowana za pomocą mniejszej ilości bramek logicznych, niż wskazana przez nas wcześniej zależność względem wejść układu.\\
+            
+            Tym samym pokazaliśmy, że otrzymujemy układ zbudowany z optymalnej ilości bramek logicznych. 
+        
         \subsection{Projekt układu}
             \begin{center}
                 \includegraphics[height=18cm]{reports/img/Z1C_1.png}\\
@@ -353,7 +424,7 @@ Sprawozdanie - bramki logiczne}
             Do wejścia układu dołączono wyświetlacz DCD\_Hex ze wbudowanym transkoderem dla zilustrowania poprawności działania układu.
         \newpage
         \subsection{Wnioski}
-            Minimalizacja funkcji logicznych metodą Karnaugha pozwala na konstrukcję układów realizujących funkcje logiczne w sposób intuicyjny. Daje ona nam łatwość konstrukcji złożonych wyrażeń w sposób graficzny przy zapewnionej poprawności działania. W efekcie proces projektowy jest prostszy w porównaniu do próby minimalizacji klasycznego zapisu algebry booleowskiej.\\
+            Minimalizacja funkcji logicznych metodą Karnaugha pozwala  w sposób intuicyjny konstruować układy realizujące funkcje logiczne. Daje ona nam łatwość konstrukcji złożonych wyrażeń w sposób graficzny przy zapewnionej poprawności działania. W efekcie proces projektowania jest prostszy w porównaniu do próby minimalizacji klasycznego zapisu algebry booleowskiej.\\
             Znacząco usprawnia to projektowanie układów których działanie określone jest względem wielu zmiennych logicznych za pomocą wielu funkcji logicznych. Przykładem takiego układu jest transkoder na wyświetlacz siedmiosegmentowy.\\
 
 \end{document}
