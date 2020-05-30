@@ -121,7 +121,11 @@ Sprawozdanie - FPGA}
         Poniżej zamieszczam kod algorytmu zapisanego w języku SystemVerilog.
         \lstinputlisting[language=Verilog]{../simulations/FPGA/snake_verilog/snake.sv}
 
-        
+        Poniżej zamieszczam raport z kompilacji programu. 
+        \begin{center}
+            \includegraphics[height=6cm]{reports/img/fpga_comp_verilog.png}\\
+        \end{center}
+
     \section{Implementacja w języku VHDL}
         Jako wejście układu przyjęty został sygnał zegarowy (oznaczony clk). Jako wyjście układu zadeklarowano dwa wektory wartości logicznych o siedmiu elementach , które następnie zostaną zmapowane do odpowiednich pinów wyświetlacza. Program definiuje też dwie stałe parametryczne znane na etapie kompilacji. Pierwszą z nich jest ITER\_N będącą stałą wewnętrzną układu wskazującą ilość przyjętych stanów animacji. Drugą jest TICKS\_PER\_PHASE określająca co ile taktów zegara nastąpić ma zmiana stanu animacji na kolejny. Może ona przyjmować wartości postaci liczb naturalnych większych lub równych jeden. W programie wykorzystano dwie zmienne lokalne przechowujące liczby naturalne.\\
         
@@ -135,6 +139,11 @@ Sprawozdanie - FPGA}
         
         Poniżej zamieszczam kod algorytmu zapisanego w języku VHDL. 
         \lstinputlisting[language=VHDL]{../simulations/FPGA/snake_vhdl/snake.vhd}
+        
+        Poniżej zamieszczam raport z kompilacji programu. 
+        \begin{center}
+            \includegraphics[height=6cm]{reports/img/fpga_comp_vhdl.png}\\
+        \end{center}
     
     \section{Symulacja działania programu}
         Długość symulacji ustaliłem na cztery sekundy. Symulacje oparłem o plik określający kształt fali. Z dokumentacji płytki rozwojowej Altera UP2 odczytać możemy częstotliwość sygnału generowanego przez zegar jako $25.175Mhz$. Oznacza, to że zegar generuje sygnał o okresie $39.7ns$ (jako że okres jest odwrotnością częstotliwości). Jeśli chcielibyśmy otrzymać animację z dziesięcioma zmianami stanu na sekundę, odpowiadałoby to ustawieniu stałej TICKS\_PER\_PHASE na wartość 2717500. W praktyce symulacja o takiej dokładności wymaga sporej mocy obliczeniowej, dlatego na jej potrzeby ustawiłem stałą na 10. Do pliku symulacji dodałem sygnał wejściowy układu zegara o okresie 10 ms. Takie uproszczenie symulacji nie ma wpływu na możliwość pokazania poprawności działania algorytmu. 
@@ -142,7 +151,16 @@ Sprawozdanie - FPGA}
             \includegraphics[height=10cm]{reports/img/fpga_clock.png}\\
         \end{center}
         \FloatBarrier
-        Tak przygotowaną symulację przeprowadziłem dla obu przygotowanych wczesniej programów. Otrzymałem pokrywające się sygnały wyjściowe. Ich przebieg ilustruje poniższy wykres.
+        Przygotowany plik wejściowy symulacji ma postać.
+        \begin{center}
+            \includegraphics[width=18cm]{reports/img/fpga_sim_in.png}\\
+        \end{center}
+        \begin{center}
+            \includegraphics[width=18cm]{reports/img/fpga_sim_in_crop.png}\\
+        \end{center}
+        \FloatBarrier
+        Widzimy, że na każdy 100ms okres symulacji przypada 10 taktów procesora.\\
+        Tak przygotowaną symulację przeprowadziłem dla obu przygotowanych wcześniej programów. Otrzymałem pokrywające się sygnały wyjściowe. Ich przebieg ilustruje poniższy wykres.
         \begin{center}
             \includegraphics[width=18cm]{reports/img/fpga_sim_out.png}\\
         \end{center}
