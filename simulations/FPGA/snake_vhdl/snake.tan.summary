@@ -5,9 +5,9 @@ Timing Analyzer Summary
 Type           : Worst-case tco
 Slack          : N/A
 Required Time  : None
-Actual Time    : 18.100 ns
-From           : display1[1]~reg0
-To             : display1[1]
+Actual Time    : 19.200 ns
+From           : display1[0]~reg0
+To             : display1[0]
 From Clock     : clk
 To Clock       : --
 Failed Paths   : 0
@@ -15,7 +15,7 @@ Failed Paths   : 0
 Type           : Clock Setup: 'clk'
 Slack          : N/A
 Required Time  : None
-Actual Time    : 22.22 MHz ( period = 45.000 ns )
+Actual Time    : 19.01 MHz ( period = 52.600 ns )
 From           : \tick:iteration[27]
 To             : display2[3]~reg0
 From Clock     : clk

@@ -23,10 +23,10 @@ applicable agreement for further details.
 VECTOR("D:/AGH_Laby/digital_tech/simulations/FPGA/snake_verilog/snake_sim.vwf")
 {
 	ZOOM{
-		ZBEGIN = 442932728647;
-		ZEND = 1777777777777;
-		NUMERATOR = 1323;
-		DENOMINATOR = 1334845049130;
+		ZBEGIN = 0;
+		ZEND = 4000000000000;
+		NUMERATOR = 1406;
+		DENOMINATOR = 4000000000000;
 		TOP_INDEX = 0;
 	}
 	CLOCK{
@@ -131,9 +131,9 @@ VECTOR("D:/AGH_Laby/digital_tech/simulations/FPGA/snake_verilog/db/snake.sim.cvw
 {
 	ZOOM{
 		ZBEGIN = 0;
-		ZEND = 2000000000000;
-		NUMERATOR = 1362;
-		DENOMINATOR = 2000000000000;
+		ZEND = 4000000000000;
+		NUMERATOR = 1345;
+		DENOMINATOR = 4000000000000;
 		TOP_INDEX = 0;
 	}
 	CLOCK{

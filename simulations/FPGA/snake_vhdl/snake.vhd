@@ -23,11 +23,11 @@ architecture arch1 of snake is
 			when 4 => display1 <= "1000000";
 			when 5 => display1 <= "1100000";
 			when 6 => display1 <= "1100001";			
-			when 7 => display1 <= "1000010";	
+			when 7 => display1 <= "0100001";	
 			when 8 => display1 <= "0000001";
 			when 9 => display1 <= "0000000";
-			when 10 => display1 <= "1000000";
-			when 11 => display1 <= "1010000";
+			when 10 => display1 <="1000000";
+			when 11 => display1 <="1010000";
 			when others => display1 <= "1111111";
 		end case;
 		case phase is

@@ -132,7 +132,7 @@ VECTOR("D:/AGH_Laby/digital_tech/simulations/FPGA/snake_vhdl/db/snake.sim.cvwf")
 	ZOOM{
 		ZBEGIN = 0;
 		ZEND = 4000000000000;
-		NUMERATOR = 1350;
+		NUMERATOR = 1362;
 		DENOMINATOR = 4000000000000;
 		TOP_INDEX = 0;
 	}

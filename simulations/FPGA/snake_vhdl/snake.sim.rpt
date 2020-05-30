@@ -1,5 +1,5 @@
 Simulator report for snake
-Sat May 30 20:27:51 2020
+Sat May 30 20:43:29 2020
 Quartus II Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
 
 
@@ -45,9 +45,9 @@ applicable agreement for further details.
 +-----------------------------+-----------------+
 ; Simulation Start Time       ; 0 ps            ;
 ; Simulation End Time         ; 4.0 s           ;
-; Simulation Netlist Size     ; 206 nodes       ;
-; Simulation Coverage         ;      26.14 %    ;
-; Total Number of Transitions ; 5292            ;
+; Simulation Netlist Size     ; 207 nodes       ;
+; Simulation Coverage         ;      25.66 %    ;
+; Total Number of Transitions ; 5354            ;
 ; Simulation Breakpoints      ; 0               ;
 ; Family                      ; FLEX10K         ;
 ; Device                      ; EPF10K70RC240-4 ;
@@ -95,13 +95,13 @@ Please use Quartus II to view the waveform report data.
 +-----------------------------------------------------+--------------+
 ; Type                                                ; Value        ;
 +-----------------------------------------------------+--------------+
-; Total coverage as a percentage                      ;      26.14 % ;
-; Total nodes checked                                 ; 206          ;
-; Total output ports checked                          ; 264          ;
-; Total output ports with complete 1/0-value coverage ; 69           ;
+; Total coverage as a percentage                      ;      25.66 % ;
+; Total nodes checked                                 ; 207          ;
+; Total output ports checked                          ; 265          ;
+; Total output ports with complete 1/0-value coverage ; 68           ;
 ; Total output ports with no 1/0-value coverage       ; 189          ;
-; Total output ports with no 1-value coverage         ; 192          ;
-; Total output ports with no 0-value coverage         ; 192          ;
+; Total output ports with no 1-value coverage         ; 193          ;
+; Total output ports with no 0-value coverage         ; 193          ;
 +-----------------------------------------------------+--------------+
 
 
@@ -112,7 +112,6 @@ The following table displays output ports that toggle between 1 and 0 during sim
 ; Node Name                                                                  ; Output Port Name                                                                ; Output Port Type ;
 +----------------------------------------------------------------------------+---------------------------------------------------------------------------------+------------------+
 ; |snake|display1[0]~reg0                                                    ; |snake|display1[0]~reg0                                                         ; data_out0        ;
-; |snake|display1[1]~reg0                                                    ; |snake|display1[1]~reg0                                                         ; data_out0        ;
 ; |snake|display1[3]~reg0                                                    ; |snake|display1[3]~reg0                                                         ; data_out0        ;
 ; |snake|display1[4]~reg0                                                    ; |snake|display1[4]~reg0                                                         ; data_out0        ;
 ; |snake|display1[5]~reg0                                                    ; |snake|display1[5]~reg0                                                         ; data_out0        ;
@@ -128,25 +127,26 @@ The following table displays output ports that toggle between 1 and 0 during sim
 ; |snake|Equal5~0                                                            ; |snake|Equal5~0                                                                 ; data_out0        ;
 ; |snake|\tick:iteration[0]                                                  ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[0]~COUT ; cout             ;
 ; |snake|Equal7~0                                                            ; |snake|Equal7~0                                                                 ; data_out0        ;
-; |snake|Equal1~5                                                            ; |snake|Equal1~5                                                                 ; data_out0        ;
-; |snake|WideNor0~0                                                          ; |snake|WideNor0~0                                                               ; data_out0        ;
-; |snake|Equal6~0                                                            ; |snake|Equal6~0                                                                 ; data_out0        ;
-; |snake|Equal1~6                                                            ; |snake|Equal1~6                                                                 ; data_out0        ;
 ; |snake|Equal2~0                                                            ; |snake|Equal2~0                                                                 ; data_out0        ;
-; |snake|WideOr0~0                                                           ; |snake|WideOr0~0                                                                ; data_out0        ;
-; |snake|Equal1~7                                                            ; |snake|Equal1~7                                                                 ; data_out0        ;
-; |snake|Equal8~0                                                            ; |snake|Equal8~0                                                                 ; data_out0        ;
+; |snake|Equal12~0                                                           ; |snake|Equal12~0                                                                ; data_out0        ;
+; |snake|Equal6~0                                                            ; |snake|Equal6~0                                                                 ; data_out0        ;
+; |snake|Equal1~5                                                            ; |snake|Equal1~5                                                                 ; data_out0        ;
+; |snake|WideOr8~0                                                           ; |snake|WideOr8~0                                                                ; data_out0        ;
+; |snake|WideNor0~0                                                          ; |snake|WideNor0~0                                                               ; data_out0        ;
+; |snake|Equal9~0                                                            ; |snake|Equal9~0                                                                 ; data_out0        ;
+; |snake|Equal3~0                                                            ; |snake|Equal3~0                                                                 ; data_out0        ;
 ; |snake|WideOr5~0                                                           ; |snake|WideOr5~0                                                                ; data_out0        ;
+; |snake|WideOr5~1                                                           ; |snake|WideOr5~1                                                                ; data_out0        ;
+; |snake|Equal1~6                                                            ; |snake|Equal1~6                                                                 ; data_out0        ;
+; |snake|WideOr5~2                                                           ; |snake|WideOr5~2                                                                ; data_out0        ;
 ; |snake|Equal4~0                                                            ; |snake|Equal4~0                                                                 ; data_out0        ;
 ; |snake|WideOr7~0                                                           ; |snake|WideOr7~0                                                                ; data_out0        ;
 ; |snake|WideNor0                                                            ; |snake|WideNor0                                                                 ; data_out0        ;
-; |snake|WideOr4~0                                                           ; |snake|WideOr4~0                                                                ; data_out0        ;
+; |snake|WideOr9~0                                                           ; |snake|WideOr9~0                                                                ; data_out0        ;
 ; |snake|Equal0~6                                                            ; |snake|Equal0~6                                                                 ; data_out0        ;
-; |snake|Equal3~0                                                            ; |snake|Equal3~0                                                                 ; data_out0        ;
-; |snake|WideOr6~0                                                           ; |snake|WideOr6~0                                                                ; data_out0        ;
 ; |snake|WideOr2~0                                                           ; |snake|WideOr2~0                                                                ; data_out0        ;
+; |snake|WideOr1                                                             ; |snake|WideOr1                                                                  ; data_out0        ;
 ; |snake|Equal10~0                                                           ; |snake|Equal10~0                                                                ; data_out0        ;
-; |snake|Equal11~0                                                           ; |snake|Equal11~0                                                                ; data_out0        ;
 ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[1] ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[1]      ; data_out0        ;
 ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[1] ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[1]~COUT ; cout             ;
 ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[2] ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[2]      ; data_out0        ;
@@ -170,7 +170,6 @@ The following table displays output ports that toggle between 1 and 0 during sim
 ; |snake|Equal14~21                                                          ; |snake|Equal14~21                                                               ; data_out0        ;
 ; |snake|clk                                                                 ; |snake|clk~corein                                                               ; dataout          ;
 ; |snake|display1[0]                                                         ; |snake|display1[0]                                                              ; padio            ;
-; |snake|display1[1]                                                         ; |snake|display1[1]                                                              ; padio            ;
 ; |snake|display1[3]                                                         ; |snake|display1[3]                                                              ; padio            ;
 ; |snake|display1[4]                                                         ; |snake|display1[4]                                                              ; padio            ;
 ; |snake|display1[5]                                                         ; |snake|display1[5]                                                              ; padio            ;
@@ -242,26 +241,26 @@ The following table displays output ports that do not toggle to 1 during simulat
 ; |snake|\tick:iteration[17]                                                  ; |snake|\tick:iteration[17]                                                       ; data_out0        ;
 ; |snake|\tick:iteration[18]                                                  ; |snake|\tick:iteration[18]                                                       ; data_out0        ;
 ; |snake|\tick:iteration[19]                                                  ; |snake|\tick:iteration[19]                                                       ; data_out0        ;
-; |snake|Equal1~14                                                            ; |snake|Equal1~30                                                                 ; cascout          ;
+; |snake|Equal1~13                                                            ; |snake|Equal1~28                                                                 ; cascout          ;
 ; |snake|\tick:iteration[12]                                                  ; |snake|\tick:iteration[12]                                                       ; data_out0        ;
 ; |snake|\tick:iteration[13]                                                  ; |snake|\tick:iteration[13]                                                       ; data_out0        ;
 ; |snake|\tick:iteration[14]                                                  ; |snake|\tick:iteration[14]                                                       ; data_out0        ;
 ; |snake|\tick:iteration[15]                                                  ; |snake|\tick:iteration[15]                                                       ; data_out0        ;
-; |snake|Equal1~19                                                            ; |snake|Equal1~19                                                                 ; data_out0        ;
+; |snake|Equal1~18                                                            ; |snake|Equal1~18                                                                 ; data_out0        ;
 ; |snake|\tick:iteration[24]                                                  ; |snake|\tick:iteration[24]                                                       ; data_out0        ;
 ; |snake|\tick:iteration[25]                                                  ; |snake|\tick:iteration[25]                                                       ; data_out0        ;
 ; |snake|\tick:iteration[26]                                                  ; |snake|\tick:iteration[26]                                                       ; data_out0        ;
 ; |snake|\tick:iteration[27]                                                  ; |snake|\tick:iteration[27]                                                       ; data_out0        ;
-; |snake|Equal1~16                                                            ; |snake|Equal1~16                                                                 ; data_out0        ;
+; |snake|Equal1~15                                                            ; |snake|Equal1~15                                                                 ; data_out0        ;
 ; |snake|\tick:iteration[28]                                                  ; |snake|\tick:iteration[28]                                                       ; data_out0        ;
 ; |snake|\tick:iteration[29]                                                  ; |snake|\tick:iteration[29]                                                       ; data_out0        ;
 ; |snake|\tick:iteration[30]                                                  ; |snake|\tick:iteration[30]                                                       ; data_out0        ;
-; |snake|Equal1~17                                                            ; |snake|Equal1~34                                                                 ; cascout          ;
+; |snake|Equal1~16                                                            ; |snake|Equal1~32                                                                 ; cascout          ;
 ; |snake|\tick:iteration[20]                                                  ; |snake|\tick:iteration[20]                                                       ; data_out0        ;
 ; |snake|\tick:iteration[21]                                                  ; |snake|\tick:iteration[21]                                                       ; data_out0        ;
 ; |snake|\tick:iteration[22]                                                  ; |snake|\tick:iteration[22]                                                       ; data_out0        ;
 ; |snake|\tick:iteration[23]                                                  ; |snake|\tick:iteration[23]                                                       ; data_out0        ;
-; |snake|Equal1~20                                                            ; |snake|Equal1~20                                                                 ; data_out0        ;
+; |snake|Equal1~19                                                            ; |snake|Equal1~19                                                                 ; data_out0        ;
 ; |snake|Equal13~3                                                            ; |snake|Equal13~3                                                                 ; data_out0        ;
 ; |snake|\tick:ticks_count[4]                                                 ; |snake|\tick:ticks_count[4]                                                      ; data_out0        ;
 ; |snake|\tick:ticks_count[5]                                                 ; |snake|\tick:ticks_count[5]                                                      ; data_out0        ;
@@ -378,6 +377,7 @@ The following table displays output ports that do not toggle to 1 during simulat
 ; |snake|Equal14~22                                                           ; |snake|Equal14~22                                                                ; data_out0        ;
 ; |snake|Equal14~19                                                           ; |snake|Equal14~37                                                                ; cascout          ;
 ; |snake|Equal14~23                                                           ; |snake|Equal14~23                                                                ; data_out0        ;
+; |snake|display1[1]                                                          ; |snake|display1[1]                                                               ; padio            ;
 ; |snake|display1[2]                                                          ; |snake|display1[2]                                                               ; padio            ;
 ; |snake|display2[4]                                                          ; |snake|display2[4]                                                               ; padio            ;
 ; |snake|display2[5]                                                          ; |snake|display2[5]                                                               ; padio            ;
@@ -390,6 +390,7 @@ The following table displays output ports that do not toggle to 0 during simulat
 +-----------------------------------------------------------------------------+----------------------------------------------------------------------------------+------------------+
 ; Node Name                                                                   ; Output Port Name                                                                 ; Output Port Type ;
 +-----------------------------------------------------------------------------+----------------------------------------------------------------------------------+------------------+
+; |snake|display1[1]~reg0                                                     ; |snake|display1[1]~reg0                                                          ; data_out0        ;
 ; |snake|display1[2]~reg0                                                     ; |snake|display1[2]~reg0                                                          ; data_out0        ;
 ; |snake|display2[4]~reg0                                                     ; |snake|display2[4]~reg0                                                          ; data_out0        ;
 ; |snake|display2[5]~reg0                                                     ; |snake|display2[5]~reg0                                                          ; data_out0        ;
@@ -446,26 +447,26 @@ The following table displays output ports that do not toggle to 0 during simulat
 ; |snake|\tick:iteration[17]                                                  ; |snake|\tick:iteration[17]                                                       ; data_out0        ;
 ; |snake|\tick:iteration[18]                                                  ; |snake|\tick:iteration[18]                                                       ; data_out0        ;
 ; |snake|\tick:iteration[19]                                                  ; |snake|\tick:iteration[19]                                                       ; data_out0        ;
-; |snake|Equal1~14                                                            ; |snake|Equal1~30                                                                 ; cascout          ;
+; |snake|Equal1~13                                                            ; |snake|Equal1~28                                                                 ; cascout          ;
 ; |snake|\tick:iteration[12]                                                  ; |snake|\tick:iteration[12]                                                       ; data_out0        ;
 ; |snake|\tick:iteration[13]                                                  ; |snake|\tick:iteration[13]                                                       ; data_out0        ;
 ; |snake|\tick:iteration[14]                                                  ; |snake|\tick:iteration[14]                                                       ; data_out0        ;
 ; |snake|\tick:iteration[15]                                                  ; |snake|\tick:iteration[15]                                                       ; data_out0        ;
-; |snake|Equal1~19                                                            ; |snake|Equal1~19                                                                 ; data_out0        ;
+; |snake|Equal1~18                                                            ; |snake|Equal1~18                                                                 ; data_out0        ;
 ; |snake|\tick:iteration[24]                                                  ; |snake|\tick:iteration[24]                                                       ; data_out0        ;
 ; |snake|\tick:iteration[25]                                                  ; |snake|\tick:iteration[25]                                                       ; data_out0        ;
 ; |snake|\tick:iteration[26]                                                  ; |snake|\tick:iteration[26]                                                       ; data_out0        ;
 ; |snake|\tick:iteration[27]                                                  ; |snake|\tick:iteration[27]                                                       ; data_out0        ;
-; |snake|Equal1~16                                                            ; |snake|Equal1~16                                                                 ; data_out0        ;
+; |snake|Equal1~15                                                            ; |snake|Equal1~15                                                                 ; data_out0        ;
 ; |snake|\tick:iteration[28]                                                  ; |snake|\tick:iteration[28]                                                       ; data_out0        ;
 ; |snake|\tick:iteration[29]                                                  ; |snake|\tick:iteration[29]                                                       ; data_out0        ;
 ; |snake|\tick:iteration[30]                                                  ; |snake|\tick:iteration[30]                                                       ; data_out0        ;
-; |snake|Equal1~17                                                            ; |snake|Equal1~34                                                                 ; cascout          ;
+; |snake|Equal1~16                                                            ; |snake|Equal1~32                                                                 ; cascout          ;
 ; |snake|\tick:iteration[20]                                                  ; |snake|\tick:iteration[20]                                                       ; data_out0        ;
 ; |snake|\tick:iteration[21]                                                  ; |snake|\tick:iteration[21]                                                       ; data_out0        ;
 ; |snake|\tick:iteration[22]                                                  ; |snake|\tick:iteration[22]                                                       ; data_out0        ;
 ; |snake|\tick:iteration[23]                                                  ; |snake|\tick:iteration[23]                                                       ; data_out0        ;
-; |snake|Equal1~20                                                            ; |snake|Equal1~20                                                                 ; data_out0        ;
+; |snake|Equal1~19                                                            ; |snake|Equal1~19                                                                 ; data_out0        ;
 ; |snake|Equal13~3                                                            ; |snake|Equal13~3                                                                 ; data_out0        ;
 ; |snake|\tick:ticks_count[4]                                                 ; |snake|\tick:ticks_count[4]                                                      ; data_out0        ;
 ; |snake|\tick:ticks_count[5]                                                 ; |snake|\tick:ticks_count[5]                                                      ; data_out0        ;
@@ -598,7 +599,7 @@ The following table displays output ports that do not toggle to 0 during simulat
 Info: *******************************************************************
 Info: Running Quartus II Simulator
     Info: Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
-    Info: Processing started: Sat May 30 20:27:51 2020
+    Info: Processing started: Sat May 30 20:43:28 2020
 Info: Command: quartus_sim --read_settings_files=on --write_settings_files=off snake -c snake
 Info: Using vector source file "D:/AGH_Laby/digital_tech/simulations/FPGA/snake_vhdl/snake_sim.vwf"
 Info: Inverted registers were found during simulation
@@ -619,12 +620,12 @@ Info: Inverted registers were found during simulation
 Info: Option to preserve fewer signal transitions to reduce memory requirements is enabled
     Info: Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
 Info: Simulation partitioned into 1 sub-simulations
-Info: Simulation coverage is      26.14 %
-Info: Number of transitions in simulation is 5292
+Info: Simulation coverage is      25.66 %
+Info: Number of transitions in simulation is 5354
 Info: Quartus II Simulator was successful. 0 errors, 0 warnings
     Info: Peak virtual memory: 157 megabytes
-    Info: Processing ended: Sat May 30 20:27:51 2020
-    Info: Elapsed time: 00:00:00
+    Info: Processing ended: Sat May 30 20:43:29 2020
+    Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:00
 
 
