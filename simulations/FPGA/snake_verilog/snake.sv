@@ -3,6 +3,7 @@ module snake (
 	output  reg[0:6] display1,
 	output  reg[0:6] display2
 );
+//parameter TICKS_PER_PHASE = 2717500;
 parameter TICKS_PER_PHASE = 10;
 parameter ITER_N = 12;
 int iteration = 0; 

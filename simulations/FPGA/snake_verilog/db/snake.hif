@@ -1486,7 +1486,7 @@ ON
 # case_sensitive
 # source_file
 snake.sv
-10ae253bcf7be3483a2faf29ad72e70
+9b7b85ae542c5b0c9cc608d5d2ba9bb
 9
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT

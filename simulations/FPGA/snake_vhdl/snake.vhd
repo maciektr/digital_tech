@@ -55,6 +55,7 @@ begin
 	constant ITER_N : natural := 12;
 	variable iteration : natural := 0;
 	
+	--constant TICKS_PER_PHASE : natural := 2717500;
 	constant TICKS_PER_PHASE : natural := 10;
 	variable ticks_count : natural := 0;
 	begin
