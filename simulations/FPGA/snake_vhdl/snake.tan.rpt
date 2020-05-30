@@ -1,0 +1,391 @@
+Classic Timing Analyzer report for snake
+Fri May 29 23:30:29 2020
+Quartus II Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Timing Analyzer Settings
+  4. Clock Settings Summary
+  5. Parallel Compilation
+  6. Clock Setup: 'clk'
+  7. tco
+  8. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                                                                 ;
++------------------------------+-------+---------------+----------------------------------+---------------------+------------------+------------+----------+--------------+
+; Type                         ; Slack ; Required Time ; Actual Time                      ; From                ; To               ; From Clock ; To Clock ; Failed Paths ;
++------------------------------+-------+---------------+----------------------------------+---------------------+------------------+------------+----------+--------------+
+; Worst-case tco               ; N/A   ; None          ; 19.300 ns                        ; display1[3]~reg0    ; display1[3]      ; clk        ; --       ; 0            ;
+; Clock Setup: 'clk'           ; N/A   ; None          ; 22.62 MHz ( period = 44.200 ns ) ; \tick:iteration[27] ; display2[4]~reg0 ; clk        ; clk      ; 0            ;
+; Total number of failed paths ;       ;               ;                                  ;                     ;                  ;            ;          ; 0            ;
++------------------------------+-------+---------------+----------------------------------+---------------------+------------------+------------+----------+--------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Settings                                                                                           ;
++---------------------------------------------------------------------+--------------------+------+----+-------------+
+; Option                                                              ; Setting            ; From ; To ; Entity Name ;
++---------------------------------------------------------------------+--------------------+------+----+-------------+
+; Device Name                                                         ; EPF10K70RC240-4    ;      ;    ;             ;
+; Timing Models                                                       ; Final              ;      ;    ;             ;
+; Default hold multicycle                                             ; Same as Multicycle ;      ;    ;             ;
+; Cut paths between unrelated clock domains                           ; On                 ;      ;    ;             ;
+; Cut off read during write signal paths                              ; On                 ;      ;    ;             ;
+; Cut off feedback from I/O pins                                      ; On                 ;      ;    ;             ;
+; Report Combined Fast/Slow Timing                                    ; Off                ;      ;    ;             ;
+; Ignore Clock Settings                                               ; Off                ;      ;    ;             ;
+; Analyze latches as synchronous elements                             ; On                 ;      ;    ;             ;
+; Enable Recovery/Removal analysis                                    ; Off                ;      ;    ;             ;
+; Enable Clock Latency                                                ; Off                ;      ;    ;             ;
+; Use TimeQuest Timing Analyzer                                       ; Off                ;      ;    ;             ;
+; Minimum Core Junction Temperature                                   ; 0                  ;      ;    ;             ;
+; Maximum Core Junction Temperature                                   ; 85                 ;      ;    ;             ;
+; Number of source nodes to report per destination node               ; 10                 ;      ;    ;             ;
+; Number of destination nodes to report                               ; 10                 ;      ;    ;             ;
+; Number of paths to report                                           ; 200                ;      ;    ;             ;
+; Report Minimum Timing Checks                                        ; Off                ;      ;    ;             ;
+; Use Fast Timing Models                                              ; Off                ;      ;    ;             ;
+; Report IO Paths Separately                                          ; Off                ;      ;    ;             ;
+; Perform Multicorner Analysis                                        ; Off                ;      ;    ;             ;
+; Reports the worst-case path for each clock domain and analysis      ; Off                ;      ;    ;             ;
+; Removes common clock path pessimism (CCPP) during slack computation ; Off                ;      ;    ;             ;
+; Output I/O Timing Endpoint                                          ; Near End           ;      ;    ;             ;
++---------------------------------------------------------------------+--------------------+------+----+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Settings Summary                                                                                                                                                             ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; Clock Node Name ; Clock Setting Name ; Type     ; Fmax Requirement ; Early Latency ; Late Latency ; Based on ; Multiply Base Fmax by ; Divide Base Fmax by ; Offset ; Phase offset ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; clk             ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'clk'                                                                                                                                                                                                                                   ;
++-----------------------------------------+-----------------------------------------------------+---------------------+--------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack                                   ; Actual fmax (period)                                ; From                ; To                 ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-----------------------------------------+-----------------------------------------------------+---------------------+--------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; N/A                                     ; 22.62 MHz ( period = 44.200 ns )                    ; \tick:iteration[25] ; display1[6]~reg0   ; clk        ; clk      ; None                        ; None                      ; 40.200 ns               ;
+; N/A                                     ; 22.62 MHz ( period = 44.200 ns )                    ; \tick:iteration[26] ; display1[6]~reg0   ; clk        ; clk      ; None                        ; None                      ; 40.200 ns               ;
+; N/A                                     ; 22.62 MHz ( period = 44.200 ns )                    ; \tick:iteration[27] ; display1[6]~reg0   ; clk        ; clk      ; None                        ; None                      ; 40.200 ns               ;
+; N/A                                     ; 22.62 MHz ( period = 44.200 ns )                    ; \tick:iteration[25] ; display2[3]~reg0   ; clk        ; clk      ; None                        ; None                      ; 40.200 ns               ;
+; N/A                                     ; 22.62 MHz ( period = 44.200 ns )                    ; \tick:iteration[26] ; display2[3]~reg0   ; clk        ; clk      ; None                        ; None                      ; 40.200 ns               ;
+; N/A                                     ; 22.62 MHz ( period = 44.200 ns )                    ; \tick:iteration[27] ; display2[3]~reg0   ; clk        ; clk      ; None                        ; None                      ; 40.200 ns               ;
+; N/A                                     ; 22.62 MHz ( period = 44.200 ns )                    ; \tick:iteration[25] ; display2[4]~reg0   ; clk        ; clk      ; None                        ; None                      ; 40.200 ns               ;
+; N/A                                     ; 22.62 MHz ( period = 44.200 ns )                    ; \tick:iteration[26] ; display2[4]~reg0   ; clk        ; clk      ; None                        ; None                      ; 40.200 ns               ;
+; N/A                                     ; 22.62 MHz ( period = 44.200 ns )                    ; \tick:iteration[27] ; display2[4]~reg0   ; clk        ; clk      ; None                        ; None                      ; 40.200 ns               ;
+; N/A                                     ; 22.78 MHz ( period = 43.900 ns )                    ; \tick:iteration[24] ; display1[6]~reg0   ; clk        ; clk      ; None                        ; None                      ; 39.900 ns               ;
+; N/A                                     ; 22.78 MHz ( period = 43.900 ns )                    ; \tick:iteration[24] ; display2[3]~reg0   ; clk        ; clk      ; None                        ; None                      ; 39.900 ns               ;
+; N/A                                     ; 22.78 MHz ( period = 43.900 ns )                    ; \tick:iteration[24] ; display2[4]~reg0   ; clk        ; clk      ; None                        ; None                      ; 39.900 ns               ;
+; N/A                                     ; 22.83 MHz ( period = 43.800 ns )                    ; \tick:iteration[18] ; display1[6]~reg0   ; clk        ; clk      ; None                        ; None                      ; 39.800 ns               ;
+; N/A                                     ; 22.83 MHz ( period = 43.800 ns )                    ; \tick:iteration[18] ; display2[3]~reg0   ; clk        ; clk      ; None                        ; None                      ; 39.800 ns               ;
+; N/A                                     ; 22.83 MHz ( period = 43.800 ns )                    ; \tick:iteration[18] ; display2[4]~reg0   ; clk        ; clk      ; None                        ; None                      ; 39.800 ns               ;
+; N/A                                     ; 22.88 MHz ( period = 43.700 ns )                    ; \tick:iteration[19] ; display1[6]~reg0   ; clk        ; clk      ; None                        ; None                      ; 39.700 ns               ;
+; N/A                                     ; 22.88 MHz ( period = 43.700 ns )                    ; \tick:iteration[28] ; display1[6]~reg0   ; clk        ; clk      ; None                        ; None                      ; 39.700 ns               ;
+; N/A                                     ; 22.88 MHz ( period = 43.700 ns )                    ; \tick:iteration[19] ; display2[3]~reg0   ; clk        ; clk      ; None                        ; None                      ; 39.700 ns               ;
+; N/A                                     ; 22.88 MHz ( period = 43.700 ns )                    ; \tick:iteration[28] ; display2[3]~reg0   ; clk        ; clk      ; None                        ; None                      ; 39.700 ns               ;
+; N/A                                     ; 22.88 MHz ( period = 43.700 ns )                    ; \tick:iteration[19] ; display2[4]~reg0   ; clk        ; clk      ; None                        ; None                      ; 39.700 ns               ;
+; N/A                                     ; 22.88 MHz ( period = 43.700 ns )                    ; \tick:iteration[28] ; display2[4]~reg0   ; clk        ; clk      ; None                        ; None                      ; 39.700 ns               ;
+; N/A                                     ; 22.94 MHz ( period = 43.600 ns )                    ; \tick:iteration[29] ; display1[6]~reg0   ; clk        ; clk      ; None                        ; None                      ; 39.600 ns               ;
+; N/A                                     ; 22.94 MHz ( period = 43.600 ns )                    ; \tick:iteration[30] ; display1[6]~reg0   ; clk        ; clk      ; None                        ; None                      ; 39.600 ns               ;
+; N/A                                     ; 22.94 MHz ( period = 43.600 ns )                    ; \tick:iteration[29] ; display2[3]~reg0   ; clk        ; clk      ; None                        ; None                      ; 39.600 ns               ;
+; N/A                                     ; 22.94 MHz ( period = 43.600 ns )                    ; \tick:iteration[30] ; display2[3]~reg0   ; clk        ; clk      ; None                        ; None                      ; 39.600 ns               ;
+; N/A                                     ; 22.94 MHz ( period = 43.600 ns )                    ; \tick:iteration[29] ; display2[4]~reg0   ; clk        ; clk      ; None                        ; None                      ; 39.600 ns               ;
+; N/A                                     ; 22.94 MHz ( period = 43.600 ns )                    ; \tick:iteration[30] ; display2[4]~reg0   ; clk        ; clk      ; None                        ; None                      ; 39.600 ns               ;
+; N/A                                     ; 23.09 MHz ( period = 43.300 ns )                    ; \tick:iteration[11] ; display1[6]~reg0   ; clk        ; clk      ; None                        ; None                      ; 39.300 ns               ;
+; N/A                                     ; 23.09 MHz ( period = 43.300 ns )                    ; \tick:iteration[11] ; display2[3]~reg0   ; clk        ; clk      ; None                        ; None                      ; 39.300 ns               ;
+; N/A                                     ; 23.09 MHz ( period = 43.300 ns )                    ; \tick:iteration[11] ; display2[4]~reg0   ; clk        ; clk      ; None                        ; None                      ; 39.300 ns               ;
+; N/A                                     ; 23.64 MHz ( period = 42.300 ns )                    ; \tick:iteration[23] ; display1[6]~reg0   ; clk        ; clk      ; None                        ; None                      ; 38.300 ns               ;
+; N/A                                     ; 23.64 MHz ( period = 42.300 ns )                    ; \tick:iteration[21] ; display1[6]~reg0   ; clk        ; clk      ; None                        ; None                      ; 38.300 ns               ;
+; N/A                                     ; 23.64 MHz ( period = 42.300 ns )                    ; \tick:iteration[23] ; display2[3]~reg0   ; clk        ; clk      ; None                        ; None                      ; 38.300 ns               ;
+; N/A                                     ; 23.64 MHz ( period = 42.300 ns )                    ; \tick:iteration[21] ; display2[3]~reg0   ; clk        ; clk      ; None                        ; None                      ; 38.300 ns               ;
+; N/A                                     ; 23.64 MHz ( period = 42.300 ns )                    ; \tick:iteration[23] ; display2[4]~reg0   ; clk        ; clk      ; None                        ; None                      ; 38.300 ns               ;
+; N/A                                     ; 23.64 MHz ( period = 42.300 ns )                    ; \tick:iteration[21] ; display2[4]~reg0   ; clk        ; clk      ; None                        ; None                      ; 38.300 ns               ;
+; N/A                                     ; 23.70 MHz ( period = 42.200 ns )                    ; \tick:iteration[22] ; display1[6]~reg0   ; clk        ; clk      ; None                        ; None                      ; 38.200 ns               ;
+; N/A                                     ; 23.70 MHz ( period = 42.200 ns )                    ; \tick:iteration[22] ; display2[3]~reg0   ; clk        ; clk      ; None                        ; None                      ; 38.200 ns               ;
+; N/A                                     ; 23.70 MHz ( period = 42.200 ns )                    ; \tick:iteration[22] ; display2[4]~reg0   ; clk        ; clk      ; None                        ; None                      ; 38.200 ns               ;
+; N/A                                     ; 23.75 MHz ( period = 42.100 ns )                    ; \tick:iteration[7]  ; display1[6]~reg0   ; clk        ; clk      ; None                        ; None                      ; 38.100 ns               ;
+; N/A                                     ; 23.75 MHz ( period = 42.100 ns )                    ; \tick:iteration[7]  ; display2[3]~reg0   ; clk        ; clk      ; None                        ; None                      ; 38.100 ns               ;
+; N/A                                     ; 23.75 MHz ( period = 42.100 ns )                    ; \tick:iteration[7]  ; display2[4]~reg0   ; clk        ; clk      ; None                        ; None                      ; 38.100 ns               ;
+; N/A                                     ; 23.81 MHz ( period = 42.000 ns )                    ; \tick:iteration[25] ; display1[1]~reg0   ; clk        ; clk      ; None                        ; None                      ; 38.000 ns               ;
+; N/A                                     ; 23.81 MHz ( period = 42.000 ns )                    ; \tick:iteration[26] ; display1[1]~reg0   ; clk        ; clk      ; None                        ; None                      ; 38.000 ns               ;
+; N/A                                     ; 23.81 MHz ( period = 42.000 ns )                    ; \tick:iteration[27] ; display1[1]~reg0   ; clk        ; clk      ; None                        ; None                      ; 38.000 ns               ;
+; N/A                                     ; 23.98 MHz ( period = 41.700 ns )                    ; \tick:iteration[24] ; display1[1]~reg0   ; clk        ; clk      ; None                        ; None                      ; 37.700 ns               ;
+; N/A                                     ; 24.04 MHz ( period = 41.600 ns )                    ; \tick:iteration[18] ; display1[1]~reg0   ; clk        ; clk      ; None                        ; None                      ; 37.600 ns               ;
+; N/A                                     ; 24.10 MHz ( period = 41.500 ns )                    ; \tick:iteration[19] ; display1[1]~reg0   ; clk        ; clk      ; None                        ; None                      ; 37.500 ns               ;
+; N/A                                     ; 24.10 MHz ( period = 41.500 ns )                    ; \tick:iteration[28] ; display1[1]~reg0   ; clk        ; clk      ; None                        ; None                      ; 37.500 ns               ;
+; N/A                                     ; 24.15 MHz ( period = 41.400 ns )                    ; \tick:iteration[29] ; display1[1]~reg0   ; clk        ; clk      ; None                        ; None                      ; 37.400 ns               ;
+; N/A                                     ; 24.15 MHz ( period = 41.400 ns )                    ; \tick:iteration[30] ; display1[1]~reg0   ; clk        ; clk      ; None                        ; None                      ; 37.400 ns               ;
+; N/A                                     ; 24.15 MHz ( period = 41.400 ns )                    ; \tick:iteration[17] ; display1[6]~reg0   ; clk        ; clk      ; None                        ; None                      ; 37.400 ns               ;
+; N/A                                     ; 24.15 MHz ( period = 41.400 ns )                    ; \tick:iteration[17] ; display2[3]~reg0   ; clk        ; clk      ; None                        ; None                      ; 37.400 ns               ;
+; N/A                                     ; 24.15 MHz ( period = 41.400 ns )                    ; \tick:iteration[17] ; display2[4]~reg0   ; clk        ; clk      ; None                        ; None                      ; 37.400 ns               ;
+; N/A                                     ; 24.33 MHz ( period = 41.100 ns )                    ; \tick:iteration[11] ; display1[1]~reg0   ; clk        ; clk      ; None                        ; None                      ; 37.100 ns               ;
+; N/A                                     ; 24.33 MHz ( period = 41.100 ns )                    ; \tick:iteration[16] ; display1[6]~reg0   ; clk        ; clk      ; None                        ; None                      ; 37.100 ns               ;
+; N/A                                     ; 24.33 MHz ( period = 41.100 ns )                    ; \tick:iteration[16] ; display2[3]~reg0   ; clk        ; clk      ; None                        ; None                      ; 37.100 ns               ;
+; N/A                                     ; 24.33 MHz ( period = 41.100 ns )                    ; \tick:iteration[16] ; display2[4]~reg0   ; clk        ; clk      ; None                        ; None                      ; 37.100 ns               ;
+; N/A                                     ; 24.39 MHz ( period = 41.000 ns )                    ; \tick:iteration[9]  ; display1[6]~reg0   ; clk        ; clk      ; None                        ; None                      ; 37.000 ns               ;
+; N/A                                     ; 24.39 MHz ( period = 41.000 ns )                    ; \tick:iteration[10] ; display1[6]~reg0   ; clk        ; clk      ; None                        ; None                      ; 37.000 ns               ;
+; N/A                                     ; 24.39 MHz ( period = 41.000 ns )                    ; \tick:iteration[9]  ; display2[3]~reg0   ; clk        ; clk      ; None                        ; None                      ; 37.000 ns               ;
+; N/A                                     ; 24.39 MHz ( period = 41.000 ns )                    ; \tick:iteration[10] ; display2[3]~reg0   ; clk        ; clk      ; None                        ; None                      ; 37.000 ns               ;
+; N/A                                     ; 24.39 MHz ( period = 41.000 ns )                    ; \tick:iteration[9]  ; display2[4]~reg0   ; clk        ; clk      ; None                        ; None                      ; 37.000 ns               ;
+; N/A                                     ; 24.39 MHz ( period = 41.000 ns )                    ; \tick:iteration[10] ; display2[4]~reg0   ; clk        ; clk      ; None                        ; None                      ; 37.000 ns               ;
+; N/A                                     ; 24.57 MHz ( period = 40.700 ns )                    ; \tick:iteration[8]  ; display1[6]~reg0   ; clk        ; clk      ; None                        ; None                      ; 36.700 ns               ;
+; N/A                                     ; 24.57 MHz ( period = 40.700 ns )                    ; \tick:iteration[8]  ; display2[3]~reg0   ; clk        ; clk      ; None                        ; None                      ; 36.700 ns               ;
+; N/A                                     ; 24.57 MHz ( period = 40.700 ns )                    ; \tick:iteration[8]  ; display2[4]~reg0   ; clk        ; clk      ; None                        ; None                      ; 36.700 ns               ;
+; N/A                                     ; 24.94 MHz ( period = 40.100 ns )                    ; \tick:iteration[23] ; display1[1]~reg0   ; clk        ; clk      ; None                        ; None                      ; 36.100 ns               ;
+; N/A                                     ; 24.94 MHz ( period = 40.100 ns )                    ; \tick:iteration[21] ; display1[1]~reg0   ; clk        ; clk      ; None                        ; None                      ; 36.100 ns               ;
+; N/A                                     ; 24.94 MHz ( period = 40.100 ns )                    ; \tick:iteration[15] ; display1[6]~reg0   ; clk        ; clk      ; None                        ; None                      ; 36.100 ns               ;
+; N/A                                     ; 24.94 MHz ( period = 40.100 ns )                    ; \tick:iteration[14] ; display1[6]~reg0   ; clk        ; clk      ; None                        ; None                      ; 36.100 ns               ;
+; N/A                                     ; 24.94 MHz ( period = 40.100 ns )                    ; \tick:iteration[13] ; display1[6]~reg0   ; clk        ; clk      ; None                        ; None                      ; 36.100 ns               ;
+; N/A                                     ; 24.94 MHz ( period = 40.100 ns )                    ; \tick:iteration[15] ; display2[3]~reg0   ; clk        ; clk      ; None                        ; None                      ; 36.100 ns               ;
+; N/A                                     ; 24.94 MHz ( period = 40.100 ns )                    ; \tick:iteration[14] ; display2[3]~reg0   ; clk        ; clk      ; None                        ; None                      ; 36.100 ns               ;
+; N/A                                     ; 24.94 MHz ( period = 40.100 ns )                    ; \tick:iteration[13] ; display2[3]~reg0   ; clk        ; clk      ; None                        ; None                      ; 36.100 ns               ;
+; N/A                                     ; 24.94 MHz ( period = 40.100 ns )                    ; \tick:iteration[15] ; display2[4]~reg0   ; clk        ; clk      ; None                        ; None                      ; 36.100 ns               ;
+; N/A                                     ; 24.94 MHz ( period = 40.100 ns )                    ; \tick:iteration[14] ; display2[4]~reg0   ; clk        ; clk      ; None                        ; None                      ; 36.100 ns               ;
+; N/A                                     ; 24.94 MHz ( period = 40.100 ns )                    ; \tick:iteration[13] ; display2[4]~reg0   ; clk        ; clk      ; None                        ; None                      ; 36.100 ns               ;
+; N/A                                     ; 25.00 MHz ( period = 40.000 ns )                    ; \tick:iteration[22] ; display1[1]~reg0   ; clk        ; clk      ; None                        ; None                      ; 36.000 ns               ;
+; N/A                                     ; 25.06 MHz ( period = 39.900 ns )                    ; \tick:iteration[7]  ; display1[1]~reg0   ; clk        ; clk      ; None                        ; None                      ; 35.900 ns               ;
+; N/A                                     ; 25.13 MHz ( period = 39.800 ns )                    ; \tick:iteration[12] ; display1[6]~reg0   ; clk        ; clk      ; None                        ; None                      ; 35.800 ns               ;
+; N/A                                     ; 25.13 MHz ( period = 39.800 ns )                    ; \tick:iteration[12] ; display2[3]~reg0   ; clk        ; clk      ; None                        ; None                      ; 35.800 ns               ;
+; N/A                                     ; 25.13 MHz ( period = 39.800 ns )                    ; \tick:iteration[12] ; display2[4]~reg0   ; clk        ; clk      ; None                        ; None                      ; 35.800 ns               ;
+; N/A                                     ; 25.19 MHz ( period = 39.700 ns )                    ; \tick:iteration[20] ; display1[6]~reg0   ; clk        ; clk      ; None                        ; None                      ; 35.700 ns               ;
+; N/A                                     ; 25.19 MHz ( period = 39.700 ns )                    ; \tick:iteration[6]  ; display1[6]~reg0   ; clk        ; clk      ; None                        ; None                      ; 35.700 ns               ;
+; N/A                                     ; 25.19 MHz ( period = 39.700 ns )                    ; \tick:iteration[5]  ; display1[6]~reg0   ; clk        ; clk      ; None                        ; None                      ; 35.700 ns               ;
+; N/A                                     ; 25.19 MHz ( period = 39.700 ns )                    ; \tick:iteration[20] ; display2[3]~reg0   ; clk        ; clk      ; None                        ; None                      ; 35.700 ns               ;
+; N/A                                     ; 25.19 MHz ( period = 39.700 ns )                    ; \tick:iteration[6]  ; display2[3]~reg0   ; clk        ; clk      ; None                        ; None                      ; 35.700 ns               ;
+; N/A                                     ; 25.19 MHz ( period = 39.700 ns )                    ; \tick:iteration[5]  ; display2[3]~reg0   ; clk        ; clk      ; None                        ; None                      ; 35.700 ns               ;
+; N/A                                     ; 25.19 MHz ( period = 39.700 ns )                    ; \tick:iteration[20] ; display2[4]~reg0   ; clk        ; clk      ; None                        ; None                      ; 35.700 ns               ;
+; N/A                                     ; 25.19 MHz ( period = 39.700 ns )                    ; \tick:iteration[6]  ; display2[4]~reg0   ; clk        ; clk      ; None                        ; None                      ; 35.700 ns               ;
+; N/A                                     ; 25.19 MHz ( period = 39.700 ns )                    ; \tick:iteration[5]  ; display2[4]~reg0   ; clk        ; clk      ; None                        ; None                      ; 35.700 ns               ;
+; N/A                                     ; 25.38 MHz ( period = 39.400 ns )                    ; \tick:iteration[4]  ; display1[6]~reg0   ; clk        ; clk      ; None                        ; None                      ; 35.400 ns               ;
+; N/A                                     ; 25.38 MHz ( period = 39.400 ns )                    ; \tick:iteration[4]  ; display2[3]~reg0   ; clk        ; clk      ; None                        ; None                      ; 35.400 ns               ;
+; N/A                                     ; 25.38 MHz ( period = 39.400 ns )                    ; \tick:iteration[4]  ; display2[4]~reg0   ; clk        ; clk      ; None                        ; None                      ; 35.400 ns               ;
+; N/A                                     ; 25.51 MHz ( period = 39.200 ns )                    ; \tick:iteration[17] ; display1[1]~reg0   ; clk        ; clk      ; None                        ; None                      ; 35.200 ns               ;
+; N/A                                     ; 25.58 MHz ( period = 39.100 ns )                    ; \tick:iteration[25] ; display2[5]~reg0   ; clk        ; clk      ; None                        ; None                      ; 35.100 ns               ;
+; N/A                                     ; 25.58 MHz ( period = 39.100 ns )                    ; \tick:iteration[26] ; display2[5]~reg0   ; clk        ; clk      ; None                        ; None                      ; 35.100 ns               ;
+; N/A                                     ; 25.58 MHz ( period = 39.100 ns )                    ; \tick:iteration[27] ; display2[5]~reg0   ; clk        ; clk      ; None                        ; None                      ; 35.100 ns               ;
+; N/A                                     ; 25.58 MHz ( period = 39.100 ns )                    ; \tick:iteration[25] ; display2[6]~reg0   ; clk        ; clk      ; None                        ; None                      ; 35.100 ns               ;
+; N/A                                     ; 25.58 MHz ( period = 39.100 ns )                    ; \tick:iteration[26] ; display2[6]~reg0   ; clk        ; clk      ; None                        ; None                      ; 35.100 ns               ;
+; N/A                                     ; 25.58 MHz ( period = 39.100 ns )                    ; \tick:iteration[27] ; display2[6]~reg0   ; clk        ; clk      ; None                        ; None                      ; 35.100 ns               ;
+; N/A                                     ; 25.64 MHz ( period = 39.000 ns )                    ; \tick:iteration[25] ; display1[2]~reg0   ; clk        ; clk      ; None                        ; None                      ; 35.000 ns               ;
+; N/A                                     ; 25.64 MHz ( period = 39.000 ns )                    ; \tick:iteration[26] ; display1[2]~reg0   ; clk        ; clk      ; None                        ; None                      ; 35.000 ns               ;
+; N/A                                     ; 25.64 MHz ( period = 39.000 ns )                    ; \tick:iteration[27] ; display1[2]~reg0   ; clk        ; clk      ; None                        ; None                      ; 35.000 ns               ;
+; N/A                                     ; 25.71 MHz ( period = 38.900 ns )                    ; \tick:iteration[16] ; display1[1]~reg0   ; clk        ; clk      ; None                        ; None                      ; 34.900 ns               ;
+; N/A                                     ; 25.77 MHz ( period = 38.800 ns )                    ; \tick:iteration[9]  ; display1[1]~reg0   ; clk        ; clk      ; None                        ; None                      ; 34.800 ns               ;
+; N/A                                     ; 25.77 MHz ( period = 38.800 ns )                    ; \tick:iteration[10] ; display1[1]~reg0   ; clk        ; clk      ; None                        ; None                      ; 34.800 ns               ;
+; N/A                                     ; 25.77 MHz ( period = 38.800 ns )                    ; \tick:iteration[24] ; display2[5]~reg0   ; clk        ; clk      ; None                        ; None                      ; 34.800 ns               ;
+; N/A                                     ; 25.77 MHz ( period = 38.800 ns )                    ; \tick:iteration[24] ; display2[6]~reg0   ; clk        ; clk      ; None                        ; None                      ; 34.800 ns               ;
+; N/A                                     ; 25.84 MHz ( period = 38.700 ns )                    ; \tick:iteration[24] ; display1[2]~reg0   ; clk        ; clk      ; None                        ; None                      ; 34.700 ns               ;
+; N/A                                     ; 25.84 MHz ( period = 38.700 ns )                    ; \tick:iteration[18] ; display2[5]~reg0   ; clk        ; clk      ; None                        ; None                      ; 34.700 ns               ;
+; N/A                                     ; 25.84 MHz ( period = 38.700 ns )                    ; \tick:iteration[18] ; display2[6]~reg0   ; clk        ; clk      ; None                        ; None                      ; 34.700 ns               ;
+; N/A                                     ; 25.91 MHz ( period = 38.600 ns )                    ; \tick:iteration[18] ; display1[2]~reg0   ; clk        ; clk      ; None                        ; None                      ; 34.600 ns               ;
+; N/A                                     ; 25.91 MHz ( period = 38.600 ns )                    ; \tick:iteration[19] ; display2[5]~reg0   ; clk        ; clk      ; None                        ; None                      ; 34.600 ns               ;
+; N/A                                     ; 25.91 MHz ( period = 38.600 ns )                    ; \tick:iteration[28] ; display2[5]~reg0   ; clk        ; clk      ; None                        ; None                      ; 34.600 ns               ;
+; N/A                                     ; 25.91 MHz ( period = 38.600 ns )                    ; \tick:iteration[19] ; display2[6]~reg0   ; clk        ; clk      ; None                        ; None                      ; 34.600 ns               ;
+; N/A                                     ; 25.91 MHz ( period = 38.600 ns )                    ; \tick:iteration[28] ; display2[6]~reg0   ; clk        ; clk      ; None                        ; None                      ; 34.600 ns               ;
+; N/A                                     ; 25.97 MHz ( period = 38.500 ns )                    ; \tick:iteration[8]  ; display1[1]~reg0   ; clk        ; clk      ; None                        ; None                      ; 34.500 ns               ;
+; N/A                                     ; 25.97 MHz ( period = 38.500 ns )                    ; \tick:iteration[19] ; display1[2]~reg0   ; clk        ; clk      ; None                        ; None                      ; 34.500 ns               ;
+; N/A                                     ; 25.97 MHz ( period = 38.500 ns )                    ; \tick:iteration[28] ; display1[2]~reg0   ; clk        ; clk      ; None                        ; None                      ; 34.500 ns               ;
+; N/A                                     ; 25.97 MHz ( period = 38.500 ns )                    ; \tick:iteration[29] ; display2[5]~reg0   ; clk        ; clk      ; None                        ; None                      ; 34.500 ns               ;
+; N/A                                     ; 25.97 MHz ( period = 38.500 ns )                    ; \tick:iteration[30] ; display2[5]~reg0   ; clk        ; clk      ; None                        ; None                      ; 34.500 ns               ;
+; N/A                                     ; 25.97 MHz ( period = 38.500 ns )                    ; \tick:iteration[29] ; display2[6]~reg0   ; clk        ; clk      ; None                        ; None                      ; 34.500 ns               ;
+; N/A                                     ; 25.97 MHz ( period = 38.500 ns )                    ; \tick:iteration[30] ; display2[6]~reg0   ; clk        ; clk      ; None                        ; None                      ; 34.500 ns               ;
+; N/A                                     ; 26.04 MHz ( period = 38.400 ns )                    ; \tick:iteration[29] ; display1[2]~reg0   ; clk        ; clk      ; None                        ; None                      ; 34.400 ns               ;
+; N/A                                     ; 26.04 MHz ( period = 38.400 ns )                    ; \tick:iteration[30] ; display1[2]~reg0   ; clk        ; clk      ; None                        ; None                      ; 34.400 ns               ;
+; N/A                                     ; 26.18 MHz ( period = 38.200 ns )                    ; \tick:iteration[11] ; display2[5]~reg0   ; clk        ; clk      ; None                        ; None                      ; 34.200 ns               ;
+; N/A                                     ; 26.18 MHz ( period = 38.200 ns )                    ; \tick:iteration[11] ; display2[6]~reg0   ; clk        ; clk      ; None                        ; None                      ; 34.200 ns               ;
+; N/A                                     ; 26.25 MHz ( period = 38.100 ns )                    ; \tick:iteration[11] ; display1[2]~reg0   ; clk        ; clk      ; None                        ; None                      ; 34.100 ns               ;
+; N/A                                     ; 26.39 MHz ( period = 37.900 ns )                    ; \tick:iteration[15] ; display1[1]~reg0   ; clk        ; clk      ; None                        ; None                      ; 33.900 ns               ;
+; N/A                                     ; 26.39 MHz ( period = 37.900 ns )                    ; \tick:iteration[14] ; display1[1]~reg0   ; clk        ; clk      ; None                        ; None                      ; 33.900 ns               ;
+; N/A                                     ; 26.39 MHz ( period = 37.900 ns )                    ; \tick:iteration[13] ; display1[1]~reg0   ; clk        ; clk      ; None                        ; None                      ; 33.900 ns               ;
+; N/A                                     ; 26.60 MHz ( period = 37.600 ns )                    ; \tick:iteration[12] ; display1[1]~reg0   ; clk        ; clk      ; None                        ; None                      ; 33.600 ns               ;
+; N/A                                     ; 26.67 MHz ( period = 37.500 ns )                    ; \tick:iteration[20] ; display1[1]~reg0   ; clk        ; clk      ; None                        ; None                      ; 33.500 ns               ;
+; N/A                                     ; 26.67 MHz ( period = 37.500 ns )                    ; \tick:iteration[6]  ; display1[1]~reg0   ; clk        ; clk      ; None                        ; None                      ; 33.500 ns               ;
+; N/A                                     ; 26.67 MHz ( period = 37.500 ns )                    ; \tick:iteration[5]  ; display1[1]~reg0   ; clk        ; clk      ; None                        ; None                      ; 33.500 ns               ;
+; N/A                                     ; 26.88 MHz ( period = 37.200 ns )                    ; \tick:iteration[4]  ; display1[1]~reg0   ; clk        ; clk      ; None                        ; None                      ; 33.200 ns               ;
+; N/A                                     ; 26.88 MHz ( period = 37.200 ns )                    ; \tick:iteration[25] ; display1[4]~reg0   ; clk        ; clk      ; None                        ; None                      ; 33.200 ns               ;
+; N/A                                     ; 26.88 MHz ( period = 37.200 ns )                    ; \tick:iteration[26] ; display1[4]~reg0   ; clk        ; clk      ; None                        ; None                      ; 33.200 ns               ;
+; N/A                                     ; 26.88 MHz ( period = 37.200 ns )                    ; \tick:iteration[27] ; display1[4]~reg0   ; clk        ; clk      ; None                        ; None                      ; 33.200 ns               ;
+; N/A                                     ; 26.88 MHz ( period = 37.200 ns )                    ; \tick:iteration[25] ; display1[5]~reg0   ; clk        ; clk      ; None                        ; None                      ; 33.200 ns               ;
+; N/A                                     ; 26.88 MHz ( period = 37.200 ns )                    ; \tick:iteration[26] ; display1[5]~reg0   ; clk        ; clk      ; None                        ; None                      ; 33.200 ns               ;
+; N/A                                     ; 26.88 MHz ( period = 37.200 ns )                    ; \tick:iteration[27] ; display1[5]~reg0   ; clk        ; clk      ; None                        ; None                      ; 33.200 ns               ;
+; N/A                                     ; 26.88 MHz ( period = 37.200 ns )                    ; \tick:iteration[23] ; display2[5]~reg0   ; clk        ; clk      ; None                        ; None                      ; 33.200 ns               ;
+; N/A                                     ; 26.88 MHz ( period = 37.200 ns )                    ; \tick:iteration[21] ; display2[5]~reg0   ; clk        ; clk      ; None                        ; None                      ; 33.200 ns               ;
+; N/A                                     ; 26.88 MHz ( period = 37.200 ns )                    ; \tick:iteration[23] ; display2[6]~reg0   ; clk        ; clk      ; None                        ; None                      ; 33.200 ns               ;
+; N/A                                     ; 26.88 MHz ( period = 37.200 ns )                    ; \tick:iteration[21] ; display2[6]~reg0   ; clk        ; clk      ; None                        ; None                      ; 33.200 ns               ;
+; N/A                                     ; 26.95 MHz ( period = 37.100 ns )                    ; \tick:iteration[23] ; display1[2]~reg0   ; clk        ; clk      ; None                        ; None                      ; 33.100 ns               ;
+; N/A                                     ; 26.95 MHz ( period = 37.100 ns )                    ; \tick:iteration[21] ; display1[2]~reg0   ; clk        ; clk      ; None                        ; None                      ; 33.100 ns               ;
+; N/A                                     ; 26.95 MHz ( period = 37.100 ns )                    ; \tick:iteration[22] ; display2[5]~reg0   ; clk        ; clk      ; None                        ; None                      ; 33.100 ns               ;
+; N/A                                     ; 26.95 MHz ( period = 37.100 ns )                    ; \tick:iteration[22] ; display2[6]~reg0   ; clk        ; clk      ; None                        ; None                      ; 33.100 ns               ;
+; N/A                                     ; 27.03 MHz ( period = 37.000 ns )                    ; \tick:iteration[22] ; display1[2]~reg0   ; clk        ; clk      ; None                        ; None                      ; 33.000 ns               ;
+; N/A                                     ; 27.03 MHz ( period = 37.000 ns )                    ; \tick:iteration[7]  ; display2[5]~reg0   ; clk        ; clk      ; None                        ; None                      ; 33.000 ns               ;
+; N/A                                     ; 27.03 MHz ( period = 37.000 ns )                    ; \tick:iteration[7]  ; display2[6]~reg0   ; clk        ; clk      ; None                        ; None                      ; 33.000 ns               ;
+; N/A                                     ; 27.10 MHz ( period = 36.900 ns )                    ; \tick:iteration[7]  ; display1[2]~reg0   ; clk        ; clk      ; None                        ; None                      ; 32.900 ns               ;
+; N/A                                     ; 27.10 MHz ( period = 36.900 ns )                    ; \tick:iteration[24] ; display1[4]~reg0   ; clk        ; clk      ; None                        ; None                      ; 32.900 ns               ;
+; N/A                                     ; 27.10 MHz ( period = 36.900 ns )                    ; \tick:iteration[24] ; display1[5]~reg0   ; clk        ; clk      ; None                        ; None                      ; 32.900 ns               ;
+; N/A                                     ; 27.10 MHz ( period = 36.900 ns )                    ; \tick:iteration[25] ; display2[0]~reg0   ; clk        ; clk      ; None                        ; None                      ; 32.900 ns               ;
+; N/A                                     ; 27.10 MHz ( period = 36.900 ns )                    ; \tick:iteration[26] ; display2[0]~reg0   ; clk        ; clk      ; None                        ; None                      ; 32.900 ns               ;
+; N/A                                     ; 27.10 MHz ( period = 36.900 ns )                    ; \tick:iteration[27] ; display2[0]~reg0   ; clk        ; clk      ; None                        ; None                      ; 32.900 ns               ;
+; N/A                                     ; 27.17 MHz ( period = 36.800 ns )                    ; \tick:iteration[25] ; display1[3]~reg0   ; clk        ; clk      ; None                        ; None                      ; 32.800 ns               ;
+; N/A                                     ; 27.17 MHz ( period = 36.800 ns )                    ; \tick:iteration[26] ; display1[3]~reg0   ; clk        ; clk      ; None                        ; None                      ; 32.800 ns               ;
+; N/A                                     ; 27.17 MHz ( period = 36.800 ns )                    ; \tick:iteration[27] ; display1[3]~reg0   ; clk        ; clk      ; None                        ; None                      ; 32.800 ns               ;
+; N/A                                     ; 27.17 MHz ( period = 36.800 ns )                    ; \tick:iteration[18] ; display1[4]~reg0   ; clk        ; clk      ; None                        ; None                      ; 32.800 ns               ;
+; N/A                                     ; 27.17 MHz ( period = 36.800 ns )                    ; \tick:iteration[18] ; display1[5]~reg0   ; clk        ; clk      ; None                        ; None                      ; 32.800 ns               ;
+; N/A                                     ; 27.25 MHz ( period = 36.700 ns )                    ; \tick:iteration[19] ; display1[4]~reg0   ; clk        ; clk      ; None                        ; None                      ; 32.700 ns               ;
+; N/A                                     ; 27.25 MHz ( period = 36.700 ns )                    ; \tick:iteration[28] ; display1[4]~reg0   ; clk        ; clk      ; None                        ; None                      ; 32.700 ns               ;
+; N/A                                     ; 27.25 MHz ( period = 36.700 ns )                    ; \tick:iteration[19] ; display1[5]~reg0   ; clk        ; clk      ; None                        ; None                      ; 32.700 ns               ;
+; N/A                                     ; 27.25 MHz ( period = 36.700 ns )                    ; \tick:iteration[28] ; display1[5]~reg0   ; clk        ; clk      ; None                        ; None                      ; 32.700 ns               ;
+; N/A                                     ; 27.32 MHz ( period = 36.600 ns )                    ; \tick:iteration[0]  ; \tick:iteration[3] ; clk        ; clk      ; None                        ; None                      ; 32.600 ns               ;
+; N/A                                     ; 27.32 MHz ( period = 36.600 ns )                    ; \tick:iteration[29] ; display1[4]~reg0   ; clk        ; clk      ; None                        ; None                      ; 32.600 ns               ;
+; N/A                                     ; 27.32 MHz ( period = 36.600 ns )                    ; \tick:iteration[30] ; display1[4]~reg0   ; clk        ; clk      ; None                        ; None                      ; 32.600 ns               ;
+; N/A                                     ; 27.32 MHz ( period = 36.600 ns )                    ; \tick:iteration[0]  ; \tick:iteration[2] ; clk        ; clk      ; None                        ; None                      ; 32.600 ns               ;
+; N/A                                     ; 27.32 MHz ( period = 36.600 ns )                    ; \tick:iteration[0]  ; \tick:iteration[0] ; clk        ; clk      ; None                        ; None                      ; 32.600 ns               ;
+; N/A                                     ; 27.32 MHz ( period = 36.600 ns )                    ; \tick:iteration[29] ; display1[5]~reg0   ; clk        ; clk      ; None                        ; None                      ; 32.600 ns               ;
+; N/A                                     ; 27.32 MHz ( period = 36.600 ns )                    ; \tick:iteration[30] ; display1[5]~reg0   ; clk        ; clk      ; None                        ; None                      ; 32.600 ns               ;
+; N/A                                     ; 27.32 MHz ( period = 36.600 ns )                    ; \tick:iteration[2]  ; display1[6]~reg0   ; clk        ; clk      ; None                        ; None                      ; 32.600 ns               ;
+; N/A                                     ; 27.32 MHz ( period = 36.600 ns )                    ; \tick:iteration[24] ; display2[0]~reg0   ; clk        ; clk      ; None                        ; None                      ; 32.600 ns               ;
+; N/A                                     ; 27.32 MHz ( period = 36.600 ns )                    ; \tick:iteration[2]  ; display2[3]~reg0   ; clk        ; clk      ; None                        ; None                      ; 32.600 ns               ;
+; N/A                                     ; 27.32 MHz ( period = 36.600 ns )                    ; \tick:iteration[2]  ; display2[4]~reg0   ; clk        ; clk      ; None                        ; None                      ; 32.600 ns               ;
+; N/A                                     ; 27.40 MHz ( period = 36.500 ns )                    ; \tick:iteration[24] ; display1[3]~reg0   ; clk        ; clk      ; None                        ; None                      ; 32.500 ns               ;
+; N/A                                     ; 27.40 MHz ( period = 36.500 ns )                    ; \tick:iteration[18] ; display2[0]~reg0   ; clk        ; clk      ; None                        ; None                      ; 32.500 ns               ;
+; N/A                                     ; 27.47 MHz ( period = 36.400 ns )                    ; \tick:iteration[18] ; display1[3]~reg0   ; clk        ; clk      ; None                        ; None                      ; 32.400 ns               ;
+; N/A                                     ; 27.47 MHz ( period = 36.400 ns )                    ; \tick:iteration[19] ; display2[0]~reg0   ; clk        ; clk      ; None                        ; None                      ; 32.400 ns               ;
+; N/A                                     ; 27.47 MHz ( period = 36.400 ns )                    ; \tick:iteration[28] ; display2[0]~reg0   ; clk        ; clk      ; None                        ; None                      ; 32.400 ns               ;
+; N/A                                     ; 27.55 MHz ( period = 36.300 ns )                    ; \tick:iteration[19] ; display1[3]~reg0   ; clk        ; clk      ; None                        ; None                      ; 32.300 ns               ;
+; N/A                                     ; 27.55 MHz ( period = 36.300 ns )                    ; \tick:iteration[28] ; display1[3]~reg0   ; clk        ; clk      ; None                        ; None                      ; 32.300 ns               ;
+; N/A                                     ; 27.55 MHz ( period = 36.300 ns )                    ; \tick:iteration[11] ; display1[4]~reg0   ; clk        ; clk      ; None                        ; None                      ; 32.300 ns               ;
+; N/A                                     ; 27.55 MHz ( period = 36.300 ns )                    ; \tick:iteration[11] ; display1[5]~reg0   ; clk        ; clk      ; None                        ; None                      ; 32.300 ns               ;
+; N/A                                     ; 27.55 MHz ( period = 36.300 ns )                    ; \tick:iteration[29] ; display2[0]~reg0   ; clk        ; clk      ; None                        ; None                      ; 32.300 ns               ;
+; N/A                                     ; 27.55 MHz ( period = 36.300 ns )                    ; \tick:iteration[30] ; display2[0]~reg0   ; clk        ; clk      ; None                        ; None                      ; 32.300 ns               ;
+; N/A                                     ; 27.55 MHz ( period = 36.300 ns )                    ; \tick:iteration[17] ; display2[5]~reg0   ; clk        ; clk      ; None                        ; None                      ; 32.300 ns               ;
+; N/A                                     ; 27.55 MHz ( period = 36.300 ns )                    ; \tick:iteration[17] ; display2[6]~reg0   ; clk        ; clk      ; None                        ; None                      ; 32.300 ns               ;
+; N/A                                     ; 27.62 MHz ( period = 36.200 ns )                    ; \tick:iteration[30] ; display1[3]~reg0   ; clk        ; clk      ; None                        ; None                      ; 32.200 ns               ;
+; N/A                                     ; 27.62 MHz ( period = 36.200 ns )                    ; \tick:iteration[25] ; display2[1]~reg0   ; clk        ; clk      ; None                        ; None                      ; 32.200 ns               ;
+; N/A                                     ; 27.62 MHz ( period = 36.200 ns )                    ; \tick:iteration[26] ; display2[1]~reg0   ; clk        ; clk      ; None                        ; None                      ; 32.200 ns               ;
+; N/A                                     ; 27.62 MHz ( period = 36.200 ns )                    ; \tick:iteration[27] ; display2[1]~reg0   ; clk        ; clk      ; None                        ; None                      ; 32.200 ns               ;
+; N/A                                     ; 27.62 MHz ( period = 36.200 ns )                    ; \tick:iteration[25] ; display2[2]~reg0   ; clk        ; clk      ; None                        ; None                      ; 32.200 ns               ;
+; N/A                                     ; 27.62 MHz ( period = 36.200 ns )                    ; \tick:iteration[26] ; display2[2]~reg0   ; clk        ; clk      ; None                        ; None                      ; 32.200 ns               ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;                     ;                    ;            ;          ;                             ;                           ;                         ;
++-----------------------------------------+-----------------------------------------------------+---------------------+--------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+
+
++---------------------------------------------------------------------------------+
+; tco                                                                             ;
++-------+--------------+------------+------------------+-------------+------------+
+; Slack ; Required tco ; Actual tco ; From             ; To          ; From Clock ;
++-------+--------------+------------+------------------+-------------+------------+
+; N/A   ; None         ; 19.300 ns  ; display1[3]~reg0 ; display1[3] ; clk        ;
+; N/A   ; None         ; 19.200 ns  ; display1[2]~reg0 ; display1[2] ; clk        ;
+; N/A   ; None         ; 19.200 ns  ; display1[1]~reg0 ; display1[1] ; clk        ;
+; N/A   ; None         ; 19.100 ns  ; display1[6]~reg0 ; display1[6] ; clk        ;
+; N/A   ; None         ; 19.100 ns  ; display1[0]~reg0 ; display1[0] ; clk        ;
+; N/A   ; None         ; 19.000 ns  ; display2[4]~reg0 ; display2[4] ; clk        ;
+; N/A   ; None         ; 19.000 ns  ; display2[3]~reg0 ; display2[3] ; clk        ;
+; N/A   ; None         ; 19.000 ns  ; display2[1]~reg0 ; display2[1] ; clk        ;
+; N/A   ; None         ; 18.900 ns  ; display2[6]~reg0 ; display2[6] ; clk        ;
+; N/A   ; None         ; 18.900 ns  ; display2[5]~reg0 ; display2[5] ; clk        ;
+; N/A   ; None         ; 18.900 ns  ; display2[2]~reg0 ; display2[2] ; clk        ;
+; N/A   ; None         ; 18.800 ns  ; display1[4]~reg0 ; display1[4] ; clk        ;
+; N/A   ; None         ; 18.700 ns  ; display2[0]~reg0 ; display2[0] ; clk        ;
+; N/A   ; None         ; 18.700 ns  ; display1[5]~reg0 ; display1[5] ; clk        ;
++-------+--------------+------------+------------------+-------------+------------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Classic Timing Analyzer
+    Info: Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
+    Info: Processing started: Fri May 29 23:30:29 2020
+Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off snake -c snake
+Info: Started post-fitting delay annotation
+Info: Delay annotation completed successfully
+Warning: Found pins functioning as undefined clocks and/or memory enables
+    Info: Assuming node "clk" is an undefined clock
+Info: Clock "clk" has Internal fmax of 22.62 MHz between source register "\tick:iteration[25]" and destination register "display1[6]~reg0" (period= 44.2 ns)
+    Info: + Longest register to register delay is 40.200 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC1_H40; Fanout = 3; REG Node = '\tick:iteration[25]'
+        Info: 2: + IC(0.500 ns) + CELL(2.700 ns) = 3.200 ns; Loc. = LC4_H40; Fanout = 1; COMB Node = 'Equal1~18'
+        Info: 3: + IC(0.500 ns) + CELL(1.700 ns) = 5.400 ns; Loc. = LC7_H40; Fanout = 1; COMB Node = 'Equal1~37'
+        Info: 4: + IC(0.000 ns) + CELL(2.000 ns) = 7.400 ns; Loc. = LC8_H40; Fanout = 2; COMB Node = 'Equal1~23'
+        Info: 5: + IC(2.900 ns) + CELL(2.700 ns) = 13.000 ns; Loc. = LC1_H27; Fanout = 7; COMB Node = 'Equal1~3'
+        Info: 6: + IC(3.000 ns) + CELL(2.700 ns) = 18.700 ns; Loc. = LC5_H30; Fanout = 3; COMB Node = 'Equal2~0'
+        Info: 7: + IC(0.500 ns) + CELL(2.700 ns) = 21.900 ns; Loc. = LC1_H30; Fanout = 2; COMB Node = 'WideOr4~0'
+        Info: 8: + IC(2.800 ns) + CELL(2.400 ns) = 27.100 ns; Loc. = LC1_H31; Fanout = 7; COMB Node = 'WideOr9~1'
+        Info: 9: + IC(2.800 ns) + CELL(2.700 ns) = 32.600 ns; Loc. = LC2_H32; Fanout = 4; COMB Node = 'WideNor0'
+        Info: 10: + IC(0.500 ns) + CELL(2.400 ns) = 35.500 ns; Loc. = LC1_H32; Fanout = 2; COMB Node = 'WideOr3~0'
+        Info: 11: + IC(2.700 ns) + CELL(2.000 ns) = 40.200 ns; Loc. = LC3_H30; Fanout = 1; REG Node = 'display1[6]~reg0'
+        Info: Total cell delay = 24.000 ns ( 59.70 % )
+        Info: Total interconnect delay = 16.200 ns ( 40.30 % )
+    Info: - Smallest clock skew is 0.000 ns
+        Info: + Shortest clock path from clock "clk" to destination register is 7.000 ns
+            Info: 1: + IC(0.000 ns) + CELL(2.900 ns) = 2.900 ns; Loc. = PIN_91; Fanout = 76; CLK Node = 'clk'
+            Info: 2: + IC(4.100 ns) + CELL(0.000 ns) = 7.000 ns; Loc. = LC3_H30; Fanout = 1; REG Node = 'display1[6]~reg0'
+            Info: Total cell delay = 2.900 ns ( 41.43 % )
+            Info: Total interconnect delay = 4.100 ns ( 58.57 % )
+        Info: - Longest clock path from clock "clk" to source register is 7.000 ns
+            Info: 1: + IC(0.000 ns) + CELL(2.900 ns) = 2.900 ns; Loc. = PIN_91; Fanout = 76; CLK Node = 'clk'
+            Info: 2: + IC(4.100 ns) + CELL(0.000 ns) = 7.000 ns; Loc. = LC1_H40; Fanout = 3; REG Node = '\tick:iteration[25]'
+            Info: Total cell delay = 2.900 ns ( 41.43 % )
+            Info: Total interconnect delay = 4.100 ns ( 58.57 % )
+    Info: + Micro clock to output delay of source is 1.400 ns
+    Info: + Micro setup delay of destination is 2.600 ns
+Info: tco from clock "clk" to destination pin "display1[3]" through register "display1[3]~reg0" is 19.300 ns
+    Info: + Longest clock path from clock "clk" to source register is 7.000 ns
+        Info: 1: + IC(0.000 ns) + CELL(2.900 ns) = 2.900 ns; Loc. = PIN_91; Fanout = 76; CLK Node = 'clk'
+        Info: 2: + IC(4.100 ns) + CELL(0.000 ns) = 7.000 ns; Loc. = LC7_H31; Fanout = 1; REG Node = 'display1[3]~reg0'
+        Info: Total cell delay = 2.900 ns ( 41.43 % )
+        Info: Total interconnect delay = 4.100 ns ( 58.57 % )
+    Info: + Micro clock to output delay of source is 1.400 ns
+    Info: + Longest register to pin delay is 10.900 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC7_H31; Fanout = 1; REG Node = 'display1[3]~reg0'
+        Info: 2: + IC(5.900 ns) + CELL(5.000 ns) = 10.900 ns; Loc. = PIN_9; Fanout = 0; PIN Node = 'display1[3]'
+        Info: Total cell delay = 5.000 ns ( 45.87 % )
+        Info: Total interconnect delay = 5.900 ns ( 54.13 % )
+Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 187 megabytes
+    Info: Processing ended: Fri May 29 23:30:29 2020
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:00
+
+

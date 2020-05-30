@@ -1,0 +1,629 @@
+Simulator report for snake
+Sat May 30 00:18:07 2020
+Quartus II Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. Coverage Summary
+  6. Complete 1/0-Value Coverage
+  7. Missing 1-Value Coverage
+  8. Missing 0-Value Coverage
+  9. Simulator INI Usage
+ 10. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-----------------------------------------------+
+; Simulator Summary                             ;
++-----------------------------+-----------------+
+; Type                        ; Value           ;
++-----------------------------+-----------------+
+; Simulation Start Time       ; 0 ps            ;
+; Simulation End Time         ; 2.0 s           ;
+; Simulation Netlist Size     ; 209 nodes       ;
+; Simulation Coverage         ;      27.72 %    ;
+; Total Number of Transitions ; 2627            ;
+; Simulation Breakpoints      ; 0               ;
+; Family                      ; FLEX10K         ;
+; Device                      ; EPF10K70RC240-4 ;
++-----------------------------+-----------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                         ;
++--------------------------------------------------------------------------------------------+---------------+---------------+
+; Option                                                                                     ; Setting       ; Default Value ;
++--------------------------------------------------------------------------------------------+---------------+---------------+
+; Simulation mode                                                                            ; Timing        ; Timing        ;
+; Start time                                                                                 ; 0 ns          ; 0 ns          ;
+; Simulation results format                                                                  ; CVWF          ;               ;
+; Vector input source                                                                        ; snake_sim.vwf ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On            ; On            ;
+; Check outputs                                                                              ; Off           ; Off           ;
+; Report simulation coverage                                                                 ; On            ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On            ; On            ;
+; Display missing 1-value coverage report                                                    ; On            ; On            ;
+; Display missing 0-value coverage report                                                    ; On            ; On            ;
+; Detect setup and hold time violations                                                      ; Off           ; Off           ;
+; Detect glitches                                                                            ; Off           ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off           ; Off           ;
+; Generate Signal Activity File                                                              ; Off           ; Off           ;
+; Generate VCD File for PowerPlay Power Analyzer                                             ; Off           ; Off           ;
+; Group bus channels in simulation results                                                   ; Off           ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On            ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE    ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off           ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; Off           ;               ;
+; Perform Glitch Filtering in Timing Simulation                                              ; Auto          ; Auto          ;
++--------------------------------------------------------------------------------------------+---------------+---------------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II to view the waveform report data.
+
+
++--------------------------------------------------------------------+
+; Coverage Summary                                                   ;
++-----------------------------------------------------+--------------+
+; Type                                                ; Value        ;
++-----------------------------------------------------+--------------+
+; Total coverage as a percentage                      ;      27.72 % ;
+; Total nodes checked                                 ; 209          ;
+; Total output ports checked                          ; 267          ;
+; Total output ports with complete 1/0-value coverage ; 74           ;
+; Total output ports with no 1/0-value coverage       ; 185          ;
+; Total output ports with no 1-value coverage         ; 189          ;
+; Total output ports with no 0-value coverage         ; 189          ;
++-----------------------------------------------------+--------------+
+
+
+The following table displays output ports that toggle between 1 and 0 during simulation.
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Complete 1/0-Value Coverage                                                                                                                                                     ;
++----------------------------------------------------------------------------+---------------------------------------------------------------------------------+------------------+
+; Node Name                                                                  ; Output Port Name                                                                ; Output Port Type ;
++----------------------------------------------------------------------------+---------------------------------------------------------------------------------+------------------+
+; |snake|display1[0]~reg0                                                    ; |snake|display1[0]~reg0                                                         ; data_out0        ;
+; |snake|display1[1]~reg0                                                    ; |snake|display1[1]~reg0                                                         ; data_out0        ;
+; |snake|display1[2]~reg0                                                    ; |snake|display1[2]~reg0                                                         ; data_out0        ;
+; |snake|display1[3]~reg0                                                    ; |snake|display1[3]~reg0                                                         ; data_out0        ;
+; |snake|display1[6]~reg0                                                    ; |snake|display1[6]~reg0                                                         ; data_out0        ;
+; |snake|display2[0]~reg0                                                    ; |snake|display2[0]~reg0                                                         ; data_out0        ;
+; |snake|display2[3]~reg0                                                    ; |snake|display2[3]~reg0                                                         ; data_out0        ;
+; |snake|display2[4]~reg0                                                    ; |snake|display2[4]~reg0                                                         ; data_out0        ;
+; |snake|display2[5]~reg0                                                    ; |snake|display2[5]~reg0                                                         ; data_out0        ;
+; |snake|display2[6]~reg0                                                    ; |snake|display2[6]~reg0                                                         ; data_out0        ;
+; |snake|\tick:iteration[1]                                                  ; |snake|\tick:iteration[1]                                                       ; data_out0        ;
+; |snake|\tick:iteration[3]                                                  ; |snake|\tick:iteration[3]                                                       ; data_out0        ;
+; |snake|\tick:iteration[2]                                                  ; |snake|\tick:iteration[2]                                                       ; data_out0        ;
+; |snake|Equal5~0                                                            ; |snake|Equal5~0                                                                 ; data_out0        ;
+; |snake|Equal8~0                                                            ; |snake|Equal8~0                                                                 ; data_out0        ;
+; |snake|Equal1~3                                                            ; |snake|Equal1~3                                                                 ; data_out0        ;
+; |snake|Equal3~0                                                            ; |snake|Equal3~0                                                                 ; data_out0        ;
+; |snake|Equal2~0                                                            ; |snake|Equal2~0                                                                 ; data_out0        ;
+; |snake|Equal9~0                                                            ; |snake|Equal9~0                                                                 ; data_out0        ;
+; |snake|WideOr4~0                                                           ; |snake|WideOr4~0                                                                ; data_out0        ;
+; |snake|Equal4~0                                                            ; |snake|Equal4~0                                                                 ; data_out0        ;
+; |snake|Equal2~1                                                            ; |snake|Equal2~1                                                                 ; data_out0        ;
+; |snake|WideOr4~1                                                           ; |snake|WideOr4~1                                                                ; data_out0        ;
+; |snake|Equal0~6                                                            ; |snake|Equal0~6                                                                 ; data_out0        ;
+; |snake|Equal6~0                                                            ; |snake|Equal6~0                                                                 ; data_out0        ;
+; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[1] ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[1]      ; data_out0        ;
+; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[1] ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[1]~COUT ; cout             ;
+; |snake|Equal11~0                                                           ; |snake|Equal11~0                                                                ; data_out0        ;
+; |snake|WideNor0~2                                                          ; |snake|WideNor0~2                                                               ; data_out0        ;
+; |snake|Equal5~1                                                            ; |snake|Equal5~1                                                                 ; data_out0        ;
+; |snake|Equal1~4                                                            ; |snake|Equal1~4                                                                 ; data_out0        ;
+; |snake|WideOr9~0                                                           ; |snake|WideOr9~0                                                                ; data_out0        ;
+; |snake|Equal3~1                                                            ; |snake|Equal3~1                                                                 ; data_out0        ;
+; |snake|WideOr9~1                                                           ; |snake|WideOr9~1                                                                ; data_out0        ;
+; |snake|WideNor0                                                            ; |snake|WideNor0                                                                 ; data_out0        ;
+; |snake|WideOr3~0                                                           ; |snake|WideOr3~0                                                                ; data_out0        ;
+; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[3] ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[3]      ; data_out0        ;
+; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[3] ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[3]~COUT ; cout             ;
+; |snake|WideOr2~0                                                           ; |snake|WideOr2~0                                                                ; data_out0        ;
+; |snake|WideOr7~0                                                           ; |snake|WideOr7~0                                                                ; data_out0        ;
+; |snake|WideOr5~0                                                           ; |snake|WideOr5~0                                                                ; data_out0        ;
+; |snake|\tick:iteration[0]                                                  ; |snake|\tick:iteration[0]                                                       ; data_out0        ;
+; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[2] ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[2]      ; data_out0        ;
+; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[2] ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[2]~COUT ; cout             ;
+; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[4] ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[4]      ; data_out0        ;
+; |snake|Equal14~4                                                           ; |snake|Equal14~4                                                                ; data_out0        ;
+; |snake|Equal14~5                                                           ; |snake|Equal14~5                                                                ; data_out0        ;
+; |snake|\tick:ticks_count[2]                                                ; |snake|\tick:ticks_count[2]                                                     ; data_out0        ;
+; |snake|\tick:ticks_count[1]                                                ; |snake|\tick:ticks_count[1]                                                     ; data_out0        ;
+; |snake|\tick:ticks_count[0]                                                ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[0]~COUT ; cout             ;
+; |snake|Equal0~16                                                           ; |snake|Equal0~32                                                                ; cascout          ;
+; |snake|\tick:ticks_count[3]                                                ; |snake|\tick:ticks_count[3]                                                     ; data_out0        ;
+; |snake|Equal0~22                                                           ; |snake|Equal0~22                                                                ; data_out0        ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[2] ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[2]      ; data_out0        ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[2] ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[2]~COUT ; cout             ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[1] ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[1]      ; data_out0        ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[1] ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[1]~COUT ; cout             ;
+; |snake|Equal15~4                                                           ; |snake|Equal15~4                                                                ; data_out0        ;
+; |snake|Equal15~5                                                           ; |snake|Equal15~5                                                                ; data_out0        ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[3] ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[3]      ; data_out0        ;
+; |snake|Equal14~21                                                          ; |snake|Equal14~21                                                               ; data_out0        ;
+; |snake|Equal15~21                                                          ; |snake|Equal15~21                                                               ; data_out0        ;
+; |snake|WideNor0~3                                                          ; |snake|WideNor0~3                                                               ; data_out0        ;
+; |snake|clk                                                                 ; |snake|clk~corein                                                               ; dataout          ;
+; |snake|display1[0]                                                         ; |snake|display1[0]                                                              ; padio            ;
+; |snake|display1[1]                                                         ; |snake|display1[1]                                                              ; padio            ;
+; |snake|display1[2]                                                         ; |snake|display1[2]                                                              ; padio            ;
+; |snake|display1[3]                                                         ; |snake|display1[3]                                                              ; padio            ;
+; |snake|display1[6]                                                         ; |snake|display1[6]                                                              ; padio            ;
+; |snake|display2[0]                                                         ; |snake|display2[0]                                                              ; padio            ;
+; |snake|display2[3]                                                         ; |snake|display2[3]                                                              ; padio            ;
+; |snake|display2[4]                                                         ; |snake|display2[4]                                                              ; padio            ;
+; |snake|display2[5]                                                         ; |snake|display2[5]                                                              ; padio            ;
+; |snake|display2[6]                                                         ; |snake|display2[6]                                                              ; padio            ;
++----------------------------------------------------------------------------+---------------------------------------------------------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 1 during simulation.
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Missing 1-Value Coverage                                                                                                                                                          ;
++-----------------------------------------------------------------------------+----------------------------------------------------------------------------------+------------------+
+; Node Name                                                                   ; Output Port Name                                                                 ; Output Port Type ;
++-----------------------------------------------------------------------------+----------------------------------------------------------------------------------+------------------+
+; |snake|\tick:ticks_count[24]                                                ; |snake|\tick:ticks_count[24]                                                     ; data_out0        ;
+; |snake|\tick:ticks_count[25]                                                ; |snake|\tick:ticks_count[25]                                                     ; data_out0        ;
+; |snake|\tick:ticks_count[26]                                                ; |snake|\tick:ticks_count[26]                                                     ; data_out0        ;
+; |snake|\tick:ticks_count[27]                                                ; |snake|\tick:ticks_count[27]                                                     ; data_out0        ;
+; |snake|Equal0~4                                                             ; |snake|Equal0~4                                                                  ; data_out0        ;
+; |snake|\tick:ticks_count[28]                                                ; |snake|\tick:ticks_count[28]                                                     ; data_out0        ;
+; |snake|\tick:ticks_count[29]                                                ; |snake|\tick:ticks_count[29]                                                     ; data_out0        ;
+; |snake|\tick:ticks_count[30]                                                ; |snake|\tick:ticks_count[30]                                                     ; data_out0        ;
+; |snake|Equal0~5                                                             ; |snake|Equal0~5                                                                  ; data_out0        ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[24] ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[24]      ; data_out0        ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[24] ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[24]~COUT ; cout             ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[25] ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[25]      ; data_out0        ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[25] ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[25]~COUT ; cout             ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[26] ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[26]      ; data_out0        ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[26] ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[26]~COUT ; cout             ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[27] ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[27]      ; data_out0        ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[27] ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[27]~COUT ; cout             ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[28] ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[28]      ; data_out0        ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[28] ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[28]~COUT ; cout             ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[29] ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[29]      ; data_out0        ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[29] ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[29]~COUT ; cout             ;
+; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[9]  ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[9]       ; data_out0        ;
+; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[9]  ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[9]~COUT  ; cout             ;
+; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[8]  ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[8]       ; data_out0        ;
+; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[8]  ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[8]~COUT  ; cout             ;
+; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[7]  ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[7]       ; data_out0        ;
+; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[7]  ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[7]~COUT  ; cout             ;
+; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[6]  ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[6]       ; data_out0        ;
+; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[6]  ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[6]~COUT  ; cout             ;
+; |snake|Equal14~3                                                            ; |snake|Equal14~3                                                                 ; data_out0        ;
+; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[5]  ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[5]       ; data_out0        ;
+; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[5]  ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[5]~COUT  ; cout             ;
+; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[4]  ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[4]~COUT  ; cout             ;
+; |snake|\tick:iteration[8]                                                   ; |snake|\tick:iteration[8]                                                        ; data_out0        ;
+; |snake|\tick:iteration[9]                                                   ; |snake|\tick:iteration[9]                                                        ; data_out0        ;
+; |snake|\tick:iteration[10]                                                  ; |snake|\tick:iteration[10]                                                       ; data_out0        ;
+; |snake|\tick:iteration[11]                                                  ; |snake|\tick:iteration[11]                                                       ; data_out0        ;
+; |snake|Equal1~14                                                            ; |snake|Equal1~30                                                                 ; cascout          ;
+; |snake|\tick:iteration[4]                                                   ; |snake|\tick:iteration[4]                                                        ; data_out0        ;
+; |snake|\tick:iteration[5]                                                   ; |snake|\tick:iteration[5]                                                        ; data_out0        ;
+; |snake|\tick:iteration[6]                                                   ; |snake|\tick:iteration[6]                                                        ; data_out0        ;
+; |snake|\tick:iteration[7]                                                   ; |snake|\tick:iteration[7]                                                        ; data_out0        ;
+; |snake|Equal1~21                                                            ; |snake|Equal1~21                                                                 ; data_out0        ;
+; |snake|\tick:iteration[16]                                                  ; |snake|\tick:iteration[16]                                                       ; data_out0        ;
+; |snake|\tick:iteration[17]                                                  ; |snake|\tick:iteration[17]                                                       ; data_out0        ;
+; |snake|\tick:iteration[18]                                                  ; |snake|\tick:iteration[18]                                                       ; data_out0        ;
+; |snake|\tick:iteration[19]                                                  ; |snake|\tick:iteration[19]                                                       ; data_out0        ;
+; |snake|Equal1~16                                                            ; |snake|Equal1~33                                                                 ; cascout          ;
+; |snake|\tick:iteration[12]                                                  ; |snake|\tick:iteration[12]                                                       ; data_out0        ;
+; |snake|\tick:iteration[13]                                                  ; |snake|\tick:iteration[13]                                                       ; data_out0        ;
+; |snake|\tick:iteration[14]                                                  ; |snake|\tick:iteration[14]                                                       ; data_out0        ;
+; |snake|\tick:iteration[15]                                                  ; |snake|\tick:iteration[15]                                                       ; data_out0        ;
+; |snake|Equal1~22                                                            ; |snake|Equal1~22                                                                 ; data_out0        ;
+; |snake|\tick:iteration[24]                                                  ; |snake|\tick:iteration[24]                                                       ; data_out0        ;
+; |snake|\tick:iteration[25]                                                  ; |snake|\tick:iteration[25]                                                       ; data_out0        ;
+; |snake|\tick:iteration[26]                                                  ; |snake|\tick:iteration[26]                                                       ; data_out0        ;
+; |snake|\tick:iteration[27]                                                  ; |snake|\tick:iteration[27]                                                       ; data_out0        ;
+; |snake|Equal1~18                                                            ; |snake|Equal1~18                                                                 ; data_out0        ;
+; |snake|\tick:iteration[28]                                                  ; |snake|\tick:iteration[28]                                                       ; data_out0        ;
+; |snake|\tick:iteration[29]                                                  ; |snake|\tick:iteration[29]                                                       ; data_out0        ;
+; |snake|\tick:iteration[30]                                                  ; |snake|\tick:iteration[30]                                                       ; data_out0        ;
+; |snake|Equal1~19                                                            ; |snake|Equal1~37                                                                 ; cascout          ;
+; |snake|\tick:iteration[20]                                                  ; |snake|\tick:iteration[20]                                                       ; data_out0        ;
+; |snake|\tick:iteration[21]                                                  ; |snake|\tick:iteration[21]                                                       ; data_out0        ;
+; |snake|\tick:iteration[22]                                                  ; |snake|\tick:iteration[22]                                                       ; data_out0        ;
+; |snake|\tick:iteration[23]                                                  ; |snake|\tick:iteration[23]                                                       ; data_out0        ;
+; |snake|Equal1~23                                                            ; |snake|Equal1~23                                                                 ; data_out0        ;
+; |snake|\tick:ticks_count[7]                                                 ; |snake|\tick:ticks_count[7]                                                      ; data_out0        ;
+; |snake|\tick:ticks_count[6]                                                 ; |snake|\tick:ticks_count[6]                                                      ; data_out0        ;
+; |snake|\tick:ticks_count[5]                                                 ; |snake|\tick:ticks_count[5]                                                      ; data_out0        ;
+; |snake|\tick:ticks_count[4]                                                 ; |snake|\tick:ticks_count[4]                                                      ; data_out0        ;
+; |snake|\tick:ticks_count[12]                                                ; |snake|\tick:ticks_count[12]                                                     ; data_out0        ;
+; |snake|\tick:ticks_count[13]                                                ; |snake|\tick:ticks_count[13]                                                     ; data_out0        ;
+; |snake|\tick:ticks_count[14]                                                ; |snake|\tick:ticks_count[14]                                                     ; data_out0        ;
+; |snake|\tick:ticks_count[15]                                                ; |snake|\tick:ticks_count[15]                                                     ; data_out0        ;
+; |snake|Equal0~18                                                            ; |snake|Equal0~35                                                                 ; cascout          ;
+; |snake|\tick:ticks_count[8]                                                 ; |snake|\tick:ticks_count[8]                                                      ; data_out0        ;
+; |snake|\tick:ticks_count[9]                                                 ; |snake|\tick:ticks_count[9]                                                      ; data_out0        ;
+; |snake|\tick:ticks_count[10]                                                ; |snake|\tick:ticks_count[10]                                                     ; data_out0        ;
+; |snake|\tick:ticks_count[11]                                                ; |snake|\tick:ticks_count[11]                                                     ; data_out0        ;
+; |snake|Equal0~23                                                            ; |snake|Equal0~23                                                                 ; data_out0        ;
+; |snake|\tick:ticks_count[20]                                                ; |snake|\tick:ticks_count[20]                                                     ; data_out0        ;
+; |snake|\tick:ticks_count[21]                                                ; |snake|\tick:ticks_count[21]                                                     ; data_out0        ;
+; |snake|\tick:ticks_count[22]                                                ; |snake|\tick:ticks_count[22]                                                     ; data_out0        ;
+; |snake|\tick:ticks_count[23]                                                ; |snake|\tick:ticks_count[23]                                                     ; data_out0        ;
+; |snake|Equal0~20                                                            ; |snake|Equal0~38                                                                 ; cascout          ;
+; |snake|\tick:ticks_count[16]                                                ; |snake|\tick:ticks_count[16]                                                     ; data_out0        ;
+; |snake|\tick:ticks_count[17]                                                ; |snake|\tick:ticks_count[17]                                                     ; data_out0        ;
+; |snake|\tick:ticks_count[18]                                                ; |snake|\tick:ticks_count[18]                                                     ; data_out0        ;
+; |snake|\tick:ticks_count[19]                                                ; |snake|\tick:ticks_count[19]                                                     ; data_out0        ;
+; |snake|Equal0~24                                                            ; |snake|Equal0~24                                                                 ; data_out0        ;
+; |snake|lpm_add_sub:Add1|addcore:adder|unreg_res_node[30]                    ; |snake|lpm_add_sub:Add1|addcore:adder|unreg_res_node[30]                         ; data_out0        ;
+; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[10] ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[10]      ; data_out0        ;
+; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[10] ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[10]~COUT ; cout             ;
+; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[11] ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[11]      ; data_out0        ;
+; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[11] ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[11]~COUT ; cout             ;
+; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[16] ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[16]      ; data_out0        ;
+; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[16] ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[16]~COUT ; cout             ;
+; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[17] ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[17]      ; data_out0        ;
+; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[17] ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[17]~COUT ; cout             ;
+; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[18] ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[18]      ; data_out0        ;
+; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[18] ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[18]~COUT ; cout             ;
+; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[19] ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[19]      ; data_out0        ;
+; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[19] ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[19]~COUT ; cout             ;
+; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[12] ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[12]      ; data_out0        ;
+; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[12] ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[12]~COUT ; cout             ;
+; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[13] ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[13]      ; data_out0        ;
+; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[13] ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[13]~COUT ; cout             ;
+; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[14] ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[14]      ; data_out0        ;
+; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[14] ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[14]~COUT ; cout             ;
+; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[15] ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[15]      ; data_out0        ;
+; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[15] ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[15]~COUT ; cout             ;
+; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[24] ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[24]      ; data_out0        ;
+; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[24] ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[24]~COUT ; cout             ;
+; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[25] ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[25]      ; data_out0        ;
+; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[25] ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[25]~COUT ; cout             ;
+; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[26] ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[26]      ; data_out0        ;
+; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[26] ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[26]~COUT ; cout             ;
+; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[27] ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[27]      ; data_out0        ;
+; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[27] ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[27]~COUT ; cout             ;
+; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[28] ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[28]      ; data_out0        ;
+; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[28] ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[28]~COUT ; cout             ;
+; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[29] ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[29]      ; data_out0        ;
+; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[29] ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[29]~COUT ; cout             ;
+; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[20] ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[20]      ; data_out0        ;
+; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[20] ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[20]~COUT ; cout             ;
+; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[21] ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[21]      ; data_out0        ;
+; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[21] ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[21]~COUT ; cout             ;
+; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[22] ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[22]      ; data_out0        ;
+; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[22] ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[22]~COUT ; cout             ;
+; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[23] ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[23]      ; data_out0        ;
+; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[23] ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[23]~COUT ; cout             ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[10] ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[10]      ; data_out0        ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[10] ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[10]~COUT ; cout             ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[9]  ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[9]       ; data_out0        ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[9]  ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[9]~COUT  ; cout             ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[8]  ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[8]       ; data_out0        ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[8]  ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[8]~COUT  ; cout             ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[7]  ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[7]       ; data_out0        ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[7]  ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[7]~COUT  ; cout             ;
+; |snake|Equal15~3                                                            ; |snake|Equal15~3                                                                 ; data_out0        ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[6]  ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[6]       ; data_out0        ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[6]  ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[6]~COUT  ; cout             ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[5]  ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[5]       ; data_out0        ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[5]  ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[5]~COUT  ; cout             ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[4]  ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[4]       ; data_out0        ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[4]  ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[4]~COUT  ; cout             ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[3]  ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[3]~COUT  ; cout             ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[12] ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[12]      ; data_out0        ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[12] ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[12]~COUT ; cout             ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[13] ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[13]      ; data_out0        ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[13] ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[13]~COUT ; cout             ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[14] ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[14]      ; data_out0        ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[14] ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[14]~COUT ; cout             ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[15] ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[15]      ; data_out0        ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[15] ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[15]~COUT ; cout             ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[11] ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[11]      ; data_out0        ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[11] ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[11]~COUT ; cout             ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[20] ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[20]      ; data_out0        ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[20] ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[20]~COUT ; cout             ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[21] ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[21]      ; data_out0        ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[21] ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[21]~COUT ; cout             ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[22] ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[22]      ; data_out0        ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[22] ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[22]~COUT ; cout             ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[23] ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[23]      ; data_out0        ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[23] ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[23]~COUT ; cout             ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[16] ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[16]      ; data_out0        ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[16] ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[16]~COUT ; cout             ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[17] ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[17]      ; data_out0        ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[17] ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[17]~COUT ; cout             ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[18] ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[18]      ; data_out0        ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[18] ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[18]~COUT ; cout             ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[19] ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[19]      ; data_out0        ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[19] ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[19]~COUT ; cout             ;
+; |snake|Equal14~15                                                           ; |snake|Equal14~31                                                                ; cascout          ;
+; |snake|Equal14~17                                                           ; |snake|Equal14~34                                                                ; cascout          ;
+; |snake|Equal14~22                                                           ; |snake|Equal14~22                                                                ; data_out0        ;
+; |snake|Equal14~19                                                           ; |snake|Equal14~37                                                                ; cascout          ;
+; |snake|Equal14~23                                                           ; |snake|Equal14~23                                                                ; data_out0        ;
+; |snake|lpm_add_sub:Add0|addcore:adder|unreg_res_node[30]                    ; |snake|lpm_add_sub:Add0|addcore:adder|unreg_res_node[30]                         ; data_out0        ;
+; |snake|Equal15~15                                                           ; |snake|Equal15~31                                                                ; cascout          ;
+; |snake|Equal15~17                                                           ; |snake|Equal15~34                                                                ; cascout          ;
+; |snake|Equal15~22                                                           ; |snake|Equal15~22                                                                ; data_out0        ;
+; |snake|Equal15~19                                                           ; |snake|Equal15~37                                                                ; cascout          ;
+; |snake|Equal15~23                                                           ; |snake|Equal15~23                                                                ; data_out0        ;
+; |snake|display1[4]                                                          ; |snake|display1[4]                                                               ; padio            ;
+; |snake|display1[5]                                                          ; |snake|display1[5]                                                               ; padio            ;
+; |snake|display2[1]                                                          ; |snake|display2[1]                                                               ; padio            ;
+; |snake|display2[2]                                                          ; |snake|display2[2]                                                               ; padio            ;
++-----------------------------------------------------------------------------+----------------------------------------------------------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 0 during simulation.
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Missing 0-Value Coverage                                                                                                                                                          ;
++-----------------------------------------------------------------------------+----------------------------------------------------------------------------------+------------------+
+; Node Name                                                                   ; Output Port Name                                                                 ; Output Port Type ;
++-----------------------------------------------------------------------------+----------------------------------------------------------------------------------+------------------+
+; |snake|display1[4]~reg0                                                     ; |snake|display1[4]~reg0                                                          ; data_out0        ;
+; |snake|display1[5]~reg0                                                     ; |snake|display1[5]~reg0                                                          ; data_out0        ;
+; |snake|display2[1]~reg0                                                     ; |snake|display2[1]~reg0                                                          ; data_out0        ;
+; |snake|display2[2]~reg0                                                     ; |snake|display2[2]~reg0                                                          ; data_out0        ;
+; |snake|\tick:ticks_count[24]                                                ; |snake|\tick:ticks_count[24]                                                     ; data_out0        ;
+; |snake|\tick:ticks_count[25]                                                ; |snake|\tick:ticks_count[25]                                                     ; data_out0        ;
+; |snake|\tick:ticks_count[26]                                                ; |snake|\tick:ticks_count[26]                                                     ; data_out0        ;
+; |snake|\tick:ticks_count[27]                                                ; |snake|\tick:ticks_count[27]                                                     ; data_out0        ;
+; |snake|Equal0~4                                                             ; |snake|Equal0~4                                                                  ; data_out0        ;
+; |snake|\tick:ticks_count[28]                                                ; |snake|\tick:ticks_count[28]                                                     ; data_out0        ;
+; |snake|\tick:ticks_count[29]                                                ; |snake|\tick:ticks_count[29]                                                     ; data_out0        ;
+; |snake|\tick:ticks_count[30]                                                ; |snake|\tick:ticks_count[30]                                                     ; data_out0        ;
+; |snake|Equal0~5                                                             ; |snake|Equal0~5                                                                  ; data_out0        ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[24] ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[24]      ; data_out0        ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[24] ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[24]~COUT ; cout             ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[25] ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[25]      ; data_out0        ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[25] ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[25]~COUT ; cout             ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[26] ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[26]      ; data_out0        ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[26] ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[26]~COUT ; cout             ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[27] ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[27]      ; data_out0        ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[27] ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[27]~COUT ; cout             ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[28] ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[28]      ; data_out0        ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[28] ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[28]~COUT ; cout             ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[29] ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[29]      ; data_out0        ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[29] ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[29]~COUT ; cout             ;
+; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[9]  ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[9]       ; data_out0        ;
+; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[9]  ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[9]~COUT  ; cout             ;
+; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[8]  ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[8]       ; data_out0        ;
+; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[8]  ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[8]~COUT  ; cout             ;
+; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[7]  ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[7]       ; data_out0        ;
+; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[7]  ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[7]~COUT  ; cout             ;
+; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[6]  ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[6]       ; data_out0        ;
+; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[6]  ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[6]~COUT  ; cout             ;
+; |snake|Equal14~3                                                            ; |snake|Equal14~3                                                                 ; data_out0        ;
+; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[5]  ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[5]       ; data_out0        ;
+; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[5]  ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[5]~COUT  ; cout             ;
+; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[4]  ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[4]~COUT  ; cout             ;
+; |snake|\tick:iteration[8]                                                   ; |snake|\tick:iteration[8]                                                        ; data_out0        ;
+; |snake|\tick:iteration[9]                                                   ; |snake|\tick:iteration[9]                                                        ; data_out0        ;
+; |snake|\tick:iteration[10]                                                  ; |snake|\tick:iteration[10]                                                       ; data_out0        ;
+; |snake|\tick:iteration[11]                                                  ; |snake|\tick:iteration[11]                                                       ; data_out0        ;
+; |snake|Equal1~14                                                            ; |snake|Equal1~30                                                                 ; cascout          ;
+; |snake|\tick:iteration[4]                                                   ; |snake|\tick:iteration[4]                                                        ; data_out0        ;
+; |snake|\tick:iteration[5]                                                   ; |snake|\tick:iteration[5]                                                        ; data_out0        ;
+; |snake|\tick:iteration[6]                                                   ; |snake|\tick:iteration[6]                                                        ; data_out0        ;
+; |snake|\tick:iteration[7]                                                   ; |snake|\tick:iteration[7]                                                        ; data_out0        ;
+; |snake|Equal1~21                                                            ; |snake|Equal1~21                                                                 ; data_out0        ;
+; |snake|\tick:iteration[16]                                                  ; |snake|\tick:iteration[16]                                                       ; data_out0        ;
+; |snake|\tick:iteration[17]                                                  ; |snake|\tick:iteration[17]                                                       ; data_out0        ;
+; |snake|\tick:iteration[18]                                                  ; |snake|\tick:iteration[18]                                                       ; data_out0        ;
+; |snake|\tick:iteration[19]                                                  ; |snake|\tick:iteration[19]                                                       ; data_out0        ;
+; |snake|Equal1~16                                                            ; |snake|Equal1~33                                                                 ; cascout          ;
+; |snake|\tick:iteration[12]                                                  ; |snake|\tick:iteration[12]                                                       ; data_out0        ;
+; |snake|\tick:iteration[13]                                                  ; |snake|\tick:iteration[13]                                                       ; data_out0        ;
+; |snake|\tick:iteration[14]                                                  ; |snake|\tick:iteration[14]                                                       ; data_out0        ;
+; |snake|\tick:iteration[15]                                                  ; |snake|\tick:iteration[15]                                                       ; data_out0        ;
+; |snake|Equal1~22                                                            ; |snake|Equal1~22                                                                 ; data_out0        ;
+; |snake|\tick:iteration[24]                                                  ; |snake|\tick:iteration[24]                                                       ; data_out0        ;
+; |snake|\tick:iteration[25]                                                  ; |snake|\tick:iteration[25]                                                       ; data_out0        ;
+; |snake|\tick:iteration[26]                                                  ; |snake|\tick:iteration[26]                                                       ; data_out0        ;
+; |snake|\tick:iteration[27]                                                  ; |snake|\tick:iteration[27]                                                       ; data_out0        ;
+; |snake|Equal1~18                                                            ; |snake|Equal1~18                                                                 ; data_out0        ;
+; |snake|\tick:iteration[28]                                                  ; |snake|\tick:iteration[28]                                                       ; data_out0        ;
+; |snake|\tick:iteration[29]                                                  ; |snake|\tick:iteration[29]                                                       ; data_out0        ;
+; |snake|\tick:iteration[30]                                                  ; |snake|\tick:iteration[30]                                                       ; data_out0        ;
+; |snake|Equal1~19                                                            ; |snake|Equal1~37                                                                 ; cascout          ;
+; |snake|\tick:iteration[20]                                                  ; |snake|\tick:iteration[20]                                                       ; data_out0        ;
+; |snake|\tick:iteration[21]                                                  ; |snake|\tick:iteration[21]                                                       ; data_out0        ;
+; |snake|\tick:iteration[22]                                                  ; |snake|\tick:iteration[22]                                                       ; data_out0        ;
+; |snake|\tick:iteration[23]                                                  ; |snake|\tick:iteration[23]                                                       ; data_out0        ;
+; |snake|Equal1~23                                                            ; |snake|Equal1~23                                                                 ; data_out0        ;
+; |snake|\tick:ticks_count[7]                                                 ; |snake|\tick:ticks_count[7]                                                      ; data_out0        ;
+; |snake|\tick:ticks_count[6]                                                 ; |snake|\tick:ticks_count[6]                                                      ; data_out0        ;
+; |snake|\tick:ticks_count[5]                                                 ; |snake|\tick:ticks_count[5]                                                      ; data_out0        ;
+; |snake|\tick:ticks_count[4]                                                 ; |snake|\tick:ticks_count[4]                                                      ; data_out0        ;
+; |snake|\tick:ticks_count[12]                                                ; |snake|\tick:ticks_count[12]                                                     ; data_out0        ;
+; |snake|\tick:ticks_count[13]                                                ; |snake|\tick:ticks_count[13]                                                     ; data_out0        ;
+; |snake|\tick:ticks_count[14]                                                ; |snake|\tick:ticks_count[14]                                                     ; data_out0        ;
+; |snake|\tick:ticks_count[15]                                                ; |snake|\tick:ticks_count[15]                                                     ; data_out0        ;
+; |snake|Equal0~18                                                            ; |snake|Equal0~35                                                                 ; cascout          ;
+; |snake|\tick:ticks_count[8]                                                 ; |snake|\tick:ticks_count[8]                                                      ; data_out0        ;
+; |snake|\tick:ticks_count[9]                                                 ; |snake|\tick:ticks_count[9]                                                      ; data_out0        ;
+; |snake|\tick:ticks_count[10]                                                ; |snake|\tick:ticks_count[10]                                                     ; data_out0        ;
+; |snake|\tick:ticks_count[11]                                                ; |snake|\tick:ticks_count[11]                                                     ; data_out0        ;
+; |snake|Equal0~23                                                            ; |snake|Equal0~23                                                                 ; data_out0        ;
+; |snake|\tick:ticks_count[20]                                                ; |snake|\tick:ticks_count[20]                                                     ; data_out0        ;
+; |snake|\tick:ticks_count[21]                                                ; |snake|\tick:ticks_count[21]                                                     ; data_out0        ;
+; |snake|\tick:ticks_count[22]                                                ; |snake|\tick:ticks_count[22]                                                     ; data_out0        ;
+; |snake|\tick:ticks_count[23]                                                ; |snake|\tick:ticks_count[23]                                                     ; data_out0        ;
+; |snake|Equal0~20                                                            ; |snake|Equal0~38                                                                 ; cascout          ;
+; |snake|\tick:ticks_count[16]                                                ; |snake|\tick:ticks_count[16]                                                     ; data_out0        ;
+; |snake|\tick:ticks_count[17]                                                ; |snake|\tick:ticks_count[17]                                                     ; data_out0        ;
+; |snake|\tick:ticks_count[18]                                                ; |snake|\tick:ticks_count[18]                                                     ; data_out0        ;
+; |snake|\tick:ticks_count[19]                                                ; |snake|\tick:ticks_count[19]                                                     ; data_out0        ;
+; |snake|Equal0~24                                                            ; |snake|Equal0~24                                                                 ; data_out0        ;
+; |snake|lpm_add_sub:Add1|addcore:adder|unreg_res_node[30]                    ; |snake|lpm_add_sub:Add1|addcore:adder|unreg_res_node[30]                         ; data_out0        ;
+; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[10] ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[10]      ; data_out0        ;
+; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[10] ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[10]~COUT ; cout             ;
+; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[11] ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[11]      ; data_out0        ;
+; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[11] ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[11]~COUT ; cout             ;
+; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[16] ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[16]      ; data_out0        ;
+; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[16] ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[16]~COUT ; cout             ;
+; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[17] ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[17]      ; data_out0        ;
+; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[17] ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[17]~COUT ; cout             ;
+; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[18] ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[18]      ; data_out0        ;
+; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[18] ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[18]~COUT ; cout             ;
+; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[19] ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[19]      ; data_out0        ;
+; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[19] ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[19]~COUT ; cout             ;
+; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[12] ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[12]      ; data_out0        ;
+; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[12] ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[12]~COUT ; cout             ;
+; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[13] ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[13]      ; data_out0        ;
+; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[13] ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[13]~COUT ; cout             ;
+; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[14] ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[14]      ; data_out0        ;
+; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[14] ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[14]~COUT ; cout             ;
+; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[15] ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[15]      ; data_out0        ;
+; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[15] ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[15]~COUT ; cout             ;
+; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[24] ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[24]      ; data_out0        ;
+; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[24] ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[24]~COUT ; cout             ;
+; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[25] ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[25]      ; data_out0        ;
+; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[25] ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[25]~COUT ; cout             ;
+; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[26] ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[26]      ; data_out0        ;
+; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[26] ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[26]~COUT ; cout             ;
+; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[27] ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[27]      ; data_out0        ;
+; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[27] ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[27]~COUT ; cout             ;
+; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[28] ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[28]      ; data_out0        ;
+; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[28] ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[28]~COUT ; cout             ;
+; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[29] ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[29]      ; data_out0        ;
+; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[29] ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[29]~COUT ; cout             ;
+; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[20] ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[20]      ; data_out0        ;
+; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[20] ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[20]~COUT ; cout             ;
+; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[21] ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[21]      ; data_out0        ;
+; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[21] ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[21]~COUT ; cout             ;
+; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[22] ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[22]      ; data_out0        ;
+; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[22] ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[22]~COUT ; cout             ;
+; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[23] ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[23]      ; data_out0        ;
+; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[23] ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[23]~COUT ; cout             ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[10] ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[10]      ; data_out0        ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[10] ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[10]~COUT ; cout             ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[9]  ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[9]       ; data_out0        ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[9]  ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[9]~COUT  ; cout             ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[8]  ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[8]       ; data_out0        ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[8]  ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[8]~COUT  ; cout             ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[7]  ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[7]       ; data_out0        ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[7]  ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[7]~COUT  ; cout             ;
+; |snake|Equal15~3                                                            ; |snake|Equal15~3                                                                 ; data_out0        ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[6]  ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[6]       ; data_out0        ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[6]  ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[6]~COUT  ; cout             ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[5]  ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[5]       ; data_out0        ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[5]  ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[5]~COUT  ; cout             ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[4]  ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[4]       ; data_out0        ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[4]  ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[4]~COUT  ; cout             ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[3]  ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[3]~COUT  ; cout             ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[12] ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[12]      ; data_out0        ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[12] ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[12]~COUT ; cout             ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[13] ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[13]      ; data_out0        ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[13] ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[13]~COUT ; cout             ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[14] ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[14]      ; data_out0        ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[14] ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[14]~COUT ; cout             ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[15] ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[15]      ; data_out0        ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[15] ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[15]~COUT ; cout             ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[11] ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[11]      ; data_out0        ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[11] ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[11]~COUT ; cout             ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[20] ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[20]      ; data_out0        ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[20] ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[20]~COUT ; cout             ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[21] ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[21]      ; data_out0        ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[21] ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[21]~COUT ; cout             ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[22] ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[22]      ; data_out0        ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[22] ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[22]~COUT ; cout             ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[23] ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[23]      ; data_out0        ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[23] ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[23]~COUT ; cout             ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[16] ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[16]      ; data_out0        ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[16] ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[16]~COUT ; cout             ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[17] ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[17]      ; data_out0        ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[17] ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[17]~COUT ; cout             ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[18] ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[18]      ; data_out0        ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[18] ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[18]~COUT ; cout             ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[19] ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[19]      ; data_out0        ;
+; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[19] ; |snake|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[19]~COUT ; cout             ;
+; |snake|Equal14~15                                                           ; |snake|Equal14~31                                                                ; cascout          ;
+; |snake|Equal14~17                                                           ; |snake|Equal14~34                                                                ; cascout          ;
+; |snake|Equal14~22                                                           ; |snake|Equal14~22                                                                ; data_out0        ;
+; |snake|Equal14~19                                                           ; |snake|Equal14~37                                                                ; cascout          ;
+; |snake|Equal14~23                                                           ; |snake|Equal14~23                                                                ; data_out0        ;
+; |snake|lpm_add_sub:Add0|addcore:adder|unreg_res_node[30]                    ; |snake|lpm_add_sub:Add0|addcore:adder|unreg_res_node[30]                         ; data_out0        ;
+; |snake|Equal15~15                                                           ; |snake|Equal15~31                                                                ; cascout          ;
+; |snake|Equal15~17                                                           ; |snake|Equal15~34                                                                ; cascout          ;
+; |snake|Equal15~22                                                           ; |snake|Equal15~22                                                                ; data_out0        ;
+; |snake|Equal15~19                                                           ; |snake|Equal15~37                                                                ; cascout          ;
+; |snake|Equal15~23                                                           ; |snake|Equal15~23                                                                ; data_out0        ;
++-----------------------------------------------------------------------------+----------------------------------------------------------------------------------+------------------+
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II Simulator
+    Info: Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
+    Info: Processing started: Sat May 30 00:18:07 2020
+Info: Command: quartus_sim --read_settings_files=on --write_settings_files=off snake -c snake
+Info: Using vector source file "D:/AGH_Laby/digital_tech/simulations/FPGA/snake_vhdl/snake_sim.vwf"
+Info: Inverted registers were found during simulation
+    Info: Register: |snake|display1[0]~reg0
+    Info: Register: |snake|display1[1]~reg0
+    Info: Register: |snake|display1[2]~reg0
+    Info: Register: |snake|display1[3]~reg0
+    Info: Register: |snake|display1[4]~reg0
+    Info: Register: |snake|display1[5]~reg0
+    Info: Register: |snake|display1[6]~reg0
+    Info: Register: |snake|display2[0]~reg0
+    Info: Register: |snake|display2[1]~reg0
+    Info: Register: |snake|display2[2]~reg0
+    Info: Register: |snake|display2[3]~reg0
+    Info: Register: |snake|display2[4]~reg0
+    Info: Register: |snake|display2[5]~reg0
+    Info: Register: |snake|display2[6]~reg0
+Info: Option to preserve fewer signal transitions to reduce memory requirements is enabled
+    Info: Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
+Info: Simulation partitioned into 1 sub-simulations
+Info: Simulation coverage is      27.72 %
+Info: Number of transitions in simulation is 2627
+Info: Quartus II Simulator was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 158 megabytes
+    Info: Processing ended: Sat May 30 00:18:07 2020
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:00
+
+
