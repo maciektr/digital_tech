@@ -138,11 +138,17 @@ Sprawozdanie - FPGA}
     
     \section{Symulacja działania programu}
         
+        
     
     \section{Przydział pinów}
+        W środowisku Quartus II wybrałem układ FLEX 10KE EPF10K70RC240-4 jako urządzenie docelowe dla napisanego programu. Następnie korzystając z funkcji \textit{Pin Planner}, oraz dokumentacji płytki Altera UP2 przygotowałem mapowanie portów algorytmu na odpowiednie piny układu. Pin zegarowy odczytałem z dokumentacji układu EPF10K70RC240-4 dostępnej pod adresem \url{https://www.intel.com/content/dam/www/programmable/us/en/pdfs/literature/dp/flex10k/archives/epf10k70.pdf}. Otrzymałem poniższy układ. 
         
-        Tak przygotowane mapowanie pinów układu pozwoli wyświetlić animację na wyświetlaczu dwóch cyfr FLEX\_DIGIT w prawym górnym rogu płytki rozwojowej. 
-    
+        \begin{center}
+            \includegraphics[height=5cm]{reports/img/fpga1.png}\\
+        \end{center}
+        
+        Tak przygotowane mapowanie pinów układu pozwoli wyświetlić animację na wyświetlaczu dwóch cyfr FLEX\_DIGIT znajdującym się w prawym górnym rogu płytki rozwojowej. 
+
     \includepdf{img/docs_p3.pdf}  
     \includepdf{img/docs_p8.pdf}  
     \includepdf{img/docs_p11.pdf}  
