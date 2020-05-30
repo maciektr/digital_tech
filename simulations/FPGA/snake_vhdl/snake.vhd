@@ -15,36 +15,35 @@ architecture arch1 of snake is
 	procedure display_phase(phase : in natural) is 
 	begin
 		case phase is
-		--  SEG NUMBERS  		   0123456
-			when 0 => display1 <= "0000001";
-			---when 0 => display1 <= "0001101";
-			when 1 => display1 <= "0001100";
+		--  SEG NUMBERS  		   6543210
+			when 0 => display1 <= "1011000";
+			when 1 => display1 <= "0011000";
 			when 2 => display1 <= "0001000";
 			when 3 => display1 <= "0000000";
-			when 4 => display1 <= "0000001";
-			when 5 => display1 <= "0000011";
-			when 6 => display1 <= "1000011";			
+			when 4 => display1 <= "1000000";
+			when 5 => display1 <= "1100000";
+			when 6 => display1 <= "1100001";			
 			when 7 => display1 <= "1000010";	
-			when 8 => display1 <= "1000000";
+			when 8 => display1 <= "0000001";
 			when 9 => display1 <= "0000000";
-			when 10 => display1 <= "0000001";
-			when 11 => display1 <= "0000101";
+			when 10 => display1 <= "1000000";
+			when 11 => display1 <= "1010000";
 			when others => display1 <= "1111111";
 		end case;
 		case phase is
-		--  SEG NUMBERS  		   0123456
+		--  SEG NUMBERS  		   6543210
 			when 0 => display2 <= "0000000";
 			when 1 => display2 <= "0001000";
-			when 2 => display2 <= "0011000";
-			when 3 => display2 <= "0011001";
-			when 4 => display2 <= "0010001";
-			when 5 => display2 <= "0000001";
+			when 2 => display2 <= "0001100";
+			when 3 => display2 <= "1001100";
+			when 4 => display2 <= "1000100";
+			when 5 => display2 <= "1000000";
 			when 6 => display2 <= "0000000";			
-			when 7 => display2 <= "1000000";	
-			when 8 => display2 <= "1100000";
-			when 9 => display2 <= "1100001";
-			when 10 => display2 <= "0100001";
-			when 11 => display2 <= "0000001";
+			when 7 => display2 <= "0000001";	
+			when 8 => display2 <= "0000011";
+			when 9 => display2 <= "1000011";
+			when 10 => display2 <= "1000010";
+			when 11 => display2 <= "1000000";
 			when others => display2 <= "1111111";
 		end case;
 		 
