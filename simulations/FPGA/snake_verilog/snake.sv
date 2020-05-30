@@ -4,7 +4,7 @@ module snake (
 	output  reg[0:6] display2
 );
 parameter TICKS_PER_PHASE = 10;
-parameter ITER_N = 13;
+parameter ITER_N = 12;
 int iteration = 0; 
 int ticks_count = 0; 
 
@@ -25,7 +25,6 @@ begin
 			9: display1 = 7'b0000000;
 			10: display1 = 7'b0000001;
 			11: display1 = 7'b0000101;
-			12: display1 = 7'b0001101;		
 			default : display1 = 7'b1111111;
 		endcase
 
@@ -42,7 +41,6 @@ begin
 			9: display2 = 7'b1100001;
 			10: display2 = 7'b0100001;
 			11: display2 = 7'b0000001;
-			12: display2 = 7'b0000000;		
 			default : display2 = 7'b1111111;
 		endcase
 

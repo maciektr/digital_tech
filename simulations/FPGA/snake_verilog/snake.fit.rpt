@@ -1,5 +1,5 @@
 Fitter report for snake
-Sat May 30 00:20:33 2020
+Sat May 30 16:41:27 2020
 Quartus II Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
 
 
@@ -55,14 +55,14 @@ applicable agreement for further details.
 +----------------------------------------------------------------------+
 ; Fitter Summary                                                       ;
 +-----------------------+----------------------------------------------+
-; Fitter Status         ; Successful - Sat May 30 00:20:33 2020        ;
+; Fitter Status         ; Successful - Sat May 30 16:41:27 2020        ;
 ; Quartus II Version    ; 9.0 Build 235 06/17/2009 SP 2 SJ Web Edition ;
 ; Revision Name         ; snake                                        ;
 ; Top-level Entity Name ; snake                                        ;
 ; Family                ; FLEX10K                                      ;
 ; Device                ; EPF10K70RC240-4                              ;
 ; Timing Models         ; Final                                        ;
-; Total logic elements  ; 199 / 3,744 ( 5 % )                          ;
+; Total logic elements  ; 197 / 3,744 ( 5 % )                          ;
 ; Total pins            ; 15 / 189 ( 8 % )                             ;
 ; Total memory bits     ; 0 / 18,432 ( 0 % )                           ;
 +-----------------------+----------------------------------------------+
@@ -142,20 +142,20 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-------------+-------+-----+------+--------------+--------------------------+---------------+----------------+---------------+---------------+------------+---------------+--------------+
 ; Name        ; Pin # ; Row ; Col. ; I/O Register ; Use Local Routing Output ; Power Up High ; Slow Slew Rate ; Single-Pin OE ; Single-Pin CE ; Open Drain ; TRI Primitive ; I/O Standard ;
 +-------------+-------+-----+------+--------------+--------------------------+---------------+----------------+---------------+---------------+------------+---------------+--------------+
-; display1[6] ; 39    ;  F  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
-; display1[5] ; 41    ;  F  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
-; display1[4] ; 144   ;  F  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
-; display1[3] ; 71    ; --  ; 43   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
-; display1[2] ; 38    ;  F  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
-; display1[1] ; 230   ; --  ; 43   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
-; display1[0] ; 40    ;  F  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
-; display2[6] ; 146   ;  F  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
-; display2[5] ; 147   ;  F  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
-; display2[4] ; 163   ;  C  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
-; display2[3] ; 53    ;  I  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
-; display2[2] ; 36    ;  F  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
-; display2[1] ; 148   ;  F  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
-; display2[0] ; 137   ;  H  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; display1[6] ; 13    ;  B  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; display1[5] ; 12    ;  B  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; display1[4] ; 11    ;  A  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; display1[3] ; 9     ;  A  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; display1[2] ; 8     ;  A  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; display1[1] ; 7     ;  A  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; display1[0] ; 6     ;  A  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; display2[6] ; 24    ;  C  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; display2[5] ; 23    ;  C  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; display2[4] ; 21    ;  C  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; display2[3] ; 20    ;  C  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; display2[2] ; 19    ;  C  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; display2[1] ; 18    ;  B  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; display2[0] ; 17    ;  B  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
 +-------------+-------+-----+------+--------------+--------------------------+---------------+----------------+---------------+---------------+------------+---------------+--------------+
 
 
@@ -169,25 +169,25 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; 3     ; ^nCEO       ;              ;
 ; 4     ; #TDO        ;              ;
 ; 5     ; VCC_INT     ;              ;
-; 6     ; GND*        ;              ;
-; 7     ; GND*        ;              ;
-; 8     ; GND*        ;              ;
-; 9     ; GND*        ;              ;
+; 6     ; display1[0] ; TTL          ;
+; 7     ; display1[1] ; TTL          ;
+; 8     ; display1[2] ; TTL          ;
+; 9     ; display1[3] ; TTL          ;
 ; 10    ; GND_INT     ;              ;
-; 11    ; GND*        ;              ;
-; 12    ; GND*        ;              ;
-; 13    ; GND*        ;              ;
+; 11    ; display1[4] ; TTL          ;
+; 12    ; display1[5] ; TTL          ;
+; 13    ; display1[6] ; TTL          ;
 ; 14    ; GND*        ;              ;
 ; 15    ; GND*        ;              ;
 ; 16    ; VCC_INT     ;              ;
-; 17    ; GND*        ;              ;
-; 18    ; GND*        ;              ;
-; 19    ; GND*        ;              ;
-; 20    ; GND*        ;              ;
-; 21    ; GND*        ;              ;
+; 17    ; display2[0] ; TTL          ;
+; 18    ; display2[1] ; TTL          ;
+; 19    ; display2[2] ; TTL          ;
+; 20    ; display2[3] ; TTL          ;
+; 21    ; display2[4] ; TTL          ;
 ; 22    ; GND_INT     ;              ;
-; 23    ; GND*        ;              ;
-; 24    ; GND*        ;              ;
+; 23    ; display2[5] ; TTL          ;
+; 24    ; display2[6] ; TTL          ;
 ; 25    ; GND*        ;              ;
 ; 26    ; GND*        ;              ;
 ; 27    ; VCC_INT     ;              ;
@@ -199,12 +199,12 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; 33    ; GND*        ;              ;
 ; 34    ; GND*        ;              ;
 ; 35    ; GND*        ;              ;
-; 36    ; display2[2] ; TTL          ;
+; 36    ; GND*        ;              ;
 ; 37    ; VCC_INT     ;              ;
-; 38    ; display1[2] ; TTL          ;
-; 39    ; display1[6] ; TTL          ;
-; 40    ; display1[0] ; TTL          ;
-; 41    ; display1[5] ; TTL          ;
+; 38    ; GND*        ;              ;
+; 39    ; GND*        ;              ;
+; 40    ; GND*        ;              ;
+; 41    ; GND*        ;              ;
 ; 42    ; GND_INT     ;              ;
 ; 43    ; GND*        ;              ;
 ; 44    ; GND*        ;              ;
@@ -216,7 +216,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; 50    ; GND*        ;              ;
 ; 51    ; GND*        ;              ;
 ; 52    ; GND_INT     ;              ;
-; 53    ; display2[3] ; TTL          ;
+; 53    ; GND*        ;              ;
 ; 54    ; GND*        ;              ;
 ; 55    ; GND*        ;              ;
 ; 56    ; GND*        ;              ;
@@ -234,7 +234,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; 68    ; GND*        ;              ;
 ; 69    ; GND_INT     ;              ;
 ; 70    ; GND*        ;              ;
-; 71    ; display1[3] ; TTL          ;
+; 71    ; GND*        ;              ;
 ; 72    ; GND*        ;              ;
 ; 73    ; GND*        ;              ;
 ; 74    ; GND*        ;              ;
@@ -300,18 +300,18 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; 134   ; GND*        ;              ;
 ; 135   ; GND_INT     ;              ;
 ; 136   ; GND*        ;              ;
-; 137   ; display2[0] ; TTL          ;
+; 137   ; GND*        ;              ;
 ; 138   ; GND*        ;              ;
 ; 139   ; GND*        ;              ;
 ; 140   ; VCC_INT     ;              ;
 ; 141   ; GND*        ;              ;
 ; 142   ; GND*        ;              ;
 ; 143   ; GND*        ;              ;
-; 144   ; display1[4] ; TTL          ;
+; 144   ; GND*        ;              ;
 ; 145   ; GND_INT     ;              ;
-; 146   ; display2[6] ; TTL          ;
-; 147   ; display2[5] ; TTL          ;
-; 148   ; display2[1] ; TTL          ;
+; 146   ; GND*        ;              ;
+; 147   ; GND*        ;              ;
+; 148   ; GND*        ;              ;
 ; 149   ; GND*        ;              ;
 ; 150   ; VCC_INT     ;              ;
 ; 151   ; GND*        ;              ;
@@ -326,7 +326,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; 160   ; VCC_INT     ;              ;
 ; 161   ; GND*        ;              ;
 ; 162   ; GND*        ;              ;
-; 163   ; display2[4] ; TTL          ;
+; 163   ; GND*        ;              ;
 ; 164   ; GND*        ;              ;
 ; 165   ; GND_INT     ;              ;
 ; 166   ; GND*        ;              ;
@@ -393,7 +393,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; 227   ; GND*        ;              ;
 ; 228   ; GND*        ;              ;
 ; 229   ; GND*        ;              ;
-; 230   ; display1[1] ; TTL          ;
+; 230   ; GND*        ;              ;
 ; 231   ; GND*        ;              ;
 ; 232   ; GND_INT     ;              ;
 ; 233   ; GND*        ;              ;
@@ -413,7 +413,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; Name     ; Pin #   ; Fan-Out ; Usage        ; Global Usage ;
 +----------+---------+---------+--------------+--------------+
 ; clk      ; 91      ; 78      ; Clock        ; Pin          ;
-; Equal0~5 ; LC7_I12 ; 46      ; Clock enable ; Non-global   ;
+; Equal0~5 ; LC8_I19 ; 46      ; Clock enable ; Non-global   ;
 +----------+---------+---------+--------------+--------------+
 
 
@@ -450,8 +450,8 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +--------+-------+
 ; Length ; Count ;
 +--------+-------+
+; 2      ; 13    ;
 ; 3      ; 1     ;
-; 2      ; 15    ;
 +--------+-------+
 
 
@@ -461,55 +461,55 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; Name                                                                      ; Fan-Out ;
 +---------------------------------------------------------------------------+---------+
 ; Equal0~34                                                                 ; 46      ;
-; iteration[3]~67                                                           ; 18      ;
-; iteration[0]~70                                                           ; 15      ;
-; iteration[1]~68                                                           ; 15      ;
-; WideNor0~2                                                                ; 8       ;
-; Equal1~32                                                                 ; 7       ;
-; Equal13~4                                                                 ; 7       ;
+; lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[0]~COUT  ; 14      ;
+; iteration[3]~77                                                           ; 13      ;
+; iteration[1]~67                                                           ; 13      ;
+; WideNor0~4                                                                ; 9       ;
+; Equal3~2                                                                  ; 6       ;
+; Equal5~1                                                                  ; 5       ;
+; iteration[2]~76                                                           ; 5       ;
+; Equal1~30                                                                 ; 4       ;
+; Equal10~1                                                                 ; 4       ;
+; Equal1~31                                                                 ; 4       ;
+; Equal8~2                                                                  ; 4       ;
 ; lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[0]~COUT  ; 4       ;
-; Equal4~1                                                                  ; 4       ;
-; lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[18]~COUT ; 3       ;
-; lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[16]~COUT ; 3       ;
 ; lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[13]~COUT ; 3       ;
+; lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[11]~COUT ; 3       ;
+; lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[9]~COUT  ; 3       ;
+; lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[10]~COUT ; 3       ;
+; lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[12]~COUT ; 3       ;
+; lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[15]~COUT ; 3       ;
+; lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[1]~COUT  ; 3       ;
 ; lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[17]~COUT ; 3       ;
-; lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[7]~COUT  ; 3       ;
-; lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[19]~COUT ; 3       ;
-; lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[14]~COUT ; 3       ;
-; lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[20]~COUT ; 3       ;
-; lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[8]~COUT  ; 3       ;
-; Equal14~33                                                                ; 3       ;
-; Equal3~2                                                                  ; 3       ;
-; Equal9~1                                                                  ; 3       ;
 ; lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[15]~COUT ; 3       ;
-; lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[3]~COUT  ; 3       ;
-; Equal2~2                                                                  ; 3       ;
+; lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[14]~COUT ; 3       ;
+; lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[16]~COUT ; 3       ;
 ; lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[7]~COUT  ; 3       ;
-; lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[5]~COUT  ; 3       ;
-; lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[4]~COUT  ; 3       ;
 ; lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[6]~COUT  ; 3       ;
-; iteration[2]~69                                                           ; 3       ;
-; lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[23]~COUT ; 3       ;
+; lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[5]~COUT  ; 3       ;
 ; lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[3]~COUT  ; 3       ;
-; lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[2]~COUT  ; 3       ;
+; lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[23]~COUT ; 3       ;
+; Equal1~32                                                                 ; 3       ;
+; WideOr9~1                                                                 ; 3       ;
 ; lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[1]~COUT  ; 3       ;
+; lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[2]~COUT  ; 3       ;
+; lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[12]~COUT ; 3       ;
+; Equal2~1                                                                  ; 3       ;
+; lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[9]~COUT  ; 3       ;
+; lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[13]~COUT ; 3       ;
+; Equal9~1                                                                  ; 3       ;
+; lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[10]~COUT ; 3       ;
+; lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[8]~COUT  ; 3       ;
+; lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[4]~COUT  ; 3       ;
+; lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[11]~COUT ; 3       ;
+; lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[3]~COUT  ; 3       ;
 ; lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[22]~COUT ; 3       ;
 ; lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[21]~COUT ; 3       ;
-; lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[1]~COUT  ; 3       ;
-; lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[17]~COUT ; 3       ;
-; lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[16]~COUT ; 3       ;
-; lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[19]~COUT ; 3       ;
+; lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[20]~COUT ; 3       ;
 ; lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[18]~COUT ; 3       ;
-; Equal10~1                                                                 ; 3       ;
-; lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[12]~COUT ; 3       ;
+; lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[16]~COUT ; 3       ;
+; lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[17]~COUT ; 3       ;
 ; lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[14]~COUT ; 3       ;
-; lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[13]~COUT ; 3       ;
-; lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[27]~COUT ; 3       ;
-; lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[15]~COUT ; 3       ;
-; lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[9]~COUT  ; 3       ;
-; lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[24]~COUT ; 3       ;
-; lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[29]~COUT ; 3       ;
-; lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[11]~COUT ; 3       ;
 +---------------------------------------------------------------------------+---------+
 
 
@@ -518,15 +518,15 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +--------------------------+----------------+
 ; Number of Logic Elements ; Number of LABs ;
 +--------------------------+----------------+
-; 0                        ; 433            ;
-; 1                        ; 10             ;
-; 2                        ; 0              ;
-; 3                        ; 1              ;
-; 4                        ; 0              ;
+; 0                        ; 429            ;
+; 1                        ; 15             ;
+; 2                        ; 1              ;
+; 3                        ; 0              ;
+; 4                        ; 1              ;
 ; 5                        ; 0              ;
-; 6                        ; 2              ;
-; 7                        ; 2              ;
-; 8                        ; 20             ;
+; 6                        ; 0              ;
+; 7                        ; 0              ;
+; 8                        ; 22             ;
 +--------------------------+----------------+
 
 
@@ -535,13 +535,13 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-----------------------------+----------------+
 ; Local Routing Interconnects ; Number of LABs ;
 +-----------------------------+----------------+
-; 0                           ; 454            ;
-; 1                           ; 1              ;
+; 0                           ; 453            ;
+; 1                           ; 2              ;
 ; 2                           ; 1              ;
-; 3                           ; 4              ;
-; 4                           ; 3              ;
+; 3                           ; 1              ;
+; 4                           ; 7              ;
 ; 5                           ; 3              ;
-; 6                           ; 2              ;
+; 6                           ; 1              ;
 +-----------------------------+----------------+
 
 
@@ -550,96 +550,104 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+----------------+
 ; LAB External Interconnects ; Number of LABs ;
 +----------------------------+----------------+
-; 0 - 1                      ; 443            ;
-; 2 - 3                      ; 1              ;
-; 4 - 5                      ; 0              ;
-; 6 - 7                      ; 2              ;
-; 8 - 9                      ; 14             ;
-; 10 - 11                    ; 2              ;
-; 12 - 13                    ; 3              ;
-; 14 - 15                    ; 1              ;
-; 16 - 17                    ; 0              ;
-; 18 - 19                    ; 2              ;
+; 0                          ; 429            ;
+; 1                          ; 14             ;
+; 2                          ; 2              ;
+; 3                          ; 0              ;
+; 4                          ; 0              ;
+; 5                          ; 0              ;
+; 6                          ; 0              ;
+; 7                          ; 2              ;
+; 8                          ; 7              ;
+; 9                          ; 3              ;
+; 10                         ; 2              ;
+; 11                         ; 3              ;
+; 12                         ; 3              ;
+; 13                         ; 0              ;
+; 14                         ; 0              ;
+; 15                         ; 1              ;
+; 16                         ; 1              ;
+; 17                         ; 1              ;
 +----------------------------+----------------+
 
 
-+-------------------------------------------------------------------------------------------+
-; Row Interconnect                                                                          ;
-+-------+----------------------+-----------------------------+------------------------------+
-; Row   ; Interconnect Used    ; Left Half Interconnect Used ; Right Half Interconnect Used ;
-+-------+----------------------+-----------------------------+------------------------------+
-;  A    ;  0 / 208 ( 0 % )     ;  0 / 104 ( 0 % )            ;  0 / 104 ( 0 % )             ;
-;  B    ;  0 / 208 ( 0 % )     ;  0 / 104 ( 0 % )            ;  0 / 104 ( 0 % )             ;
-;  C    ;  1 / 208 ( < 1 % )   ;  0 / 104 ( 0 % )            ;  0 / 104 ( 0 % )             ;
-;  D    ;  0 / 208 ( 0 % )     ;  0 / 104 ( 0 % )            ;  0 / 104 ( 0 % )             ;
-;  E    ;  0 / 208 ( 0 % )     ;  0 / 104 ( 0 % )            ;  0 / 104 ( 0 % )             ;
-;  F    ;  12 / 208 ( 6 % )    ;  0 / 104 ( 0 % )            ;  84 / 104 ( 81 % )           ;
-;  G    ;  0 / 208 ( 0 % )     ;  0 / 104 ( 0 % )            ;  0 / 104 ( 0 % )             ;
-;  H    ;  1 / 208 ( < 1 % )   ;  0 / 104 ( 0 % )            ;  0 / 104 ( 0 % )             ;
-;  I    ;  2 / 208 ( < 1 % )   ;  66 / 104 ( 63 % )          ;  1 / 104 ( < 1 % )           ;
-; Total ;  16 / 1872 ( < 1 % ) ;  66 / 936 ( 7 % )           ;  85 / 936 ( 9 % )            ;
-+-------+----------------------+-----------------------------+------------------------------+
++-----------------------------------------------------------------------------------------+
+; Row Interconnect                                                                        ;
++-------+--------------------+-----------------------------+------------------------------+
+; Row   ; Interconnect Used  ; Left Half Interconnect Used ; Right Half Interconnect Used ;
++-------+--------------------+-----------------------------+------------------------------+
+;  A    ;  5 / 208 ( 2 % )   ;  66 / 104 ( 63 % )          ;  0 / 104 ( 0 % )             ;
+;  B    ;  4 / 208 ( 2 % )   ;  0 / 104 ( 0 % )            ;  0 / 104 ( 0 % )             ;
+;  C    ;  5 / 208 ( 2 % )   ;  0 / 104 ( 0 % )            ;  0 / 104 ( 0 % )             ;
+;  D    ;  0 / 208 ( 0 % )   ;  0 / 104 ( 0 % )            ;  0 / 104 ( 0 % )             ;
+;  E    ;  0 / 208 ( 0 % )   ;  0 / 104 ( 0 % )            ;  0 / 104 ( 0 % )             ;
+;  F    ;  0 / 208 ( 0 % )   ;  0 / 104 ( 0 % )            ;  0 / 104 ( 0 % )             ;
+;  G    ;  0 / 208 ( 0 % )   ;  0 / 104 ( 0 % )            ;  0 / 104 ( 0 % )             ;
+;  H    ;  0 / 208 ( 0 % )   ;  0 / 104 ( 0 % )            ;  0 / 104 ( 0 % )             ;
+;  I    ;  11 / 208 ( 5 % )  ;  81 / 104 ( 78 % )          ;  0 / 104 ( 0 % )             ;
+; Total ;  25 / 1872 ( 1 % ) ;  147 / 936 ( 16 % )         ;  0 / 936 ( 0 % )             ;
++-------+--------------------+-----------------------------+------------------------------+
 
 
-+-----------------------------+
-; LAB Column Interconnect     ;
-+-------+---------------------+
-; Col.  ; Interconnect Used   ;
-+-------+---------------------+
-; 1     ;  0 / 24 ( 0 % )     ;
-; 2     ;  0 / 24 ( 0 % )     ;
-; 3     ;  0 / 24 ( 0 % )     ;
-; 4     ;  0 / 24 ( 0 % )     ;
-; 5     ;  0 / 24 ( 0 % )     ;
-; 6     ;  0 / 24 ( 0 % )     ;
-; 7     ;  0 / 24 ( 0 % )     ;
-; 8     ;  0 / 24 ( 0 % )     ;
-; 9     ;  0 / 24 ( 0 % )     ;
-; 10    ;  0 / 24 ( 0 % )     ;
-; 11    ;  0 / 24 ( 0 % )     ;
-; 12    ;  1 / 24 ( 4 % )     ;
-; 13    ;  0 / 24 ( 0 % )     ;
-; 14    ;  0 / 24 ( 0 % )     ;
-; 15    ;  0 / 24 ( 0 % )     ;
-; 16    ;  0 / 24 ( 0 % )     ;
-; 17    ;  0 / 24 ( 0 % )     ;
-; 18    ;  0 / 24 ( 0 % )     ;
-; 19    ;  0 / 24 ( 0 % )     ;
-; 20    ;  0 / 24 ( 0 % )     ;
-; 21    ;  0 / 24 ( 0 % )     ;
-; 22    ;  0 / 24 ( 0 % )     ;
-; 23    ;  0 / 24 ( 0 % )     ;
-; 24    ;  0 / 24 ( 0 % )     ;
-; 25    ;  0 / 24 ( 0 % )     ;
-; 26    ;  0 / 24 ( 0 % )     ;
-; 27    ;  0 / 24 ( 0 % )     ;
-; 28    ;  0 / 24 ( 0 % )     ;
-; 29    ;  0 / 24 ( 0 % )     ;
-; 30    ;  0 / 24 ( 0 % )     ;
-; 31    ;  0 / 24 ( 0 % )     ;
-; 32    ;  0 / 24 ( 0 % )     ;
-; 33    ;  0 / 24 ( 0 % )     ;
-; 34    ;  0 / 24 ( 0 % )     ;
-; 35    ;  0 / 24 ( 0 % )     ;
-; 36    ;  0 / 24 ( 0 % )     ;
-; 37    ;  0 / 24 ( 0 % )     ;
-; 38    ;  0 / 24 ( 0 % )     ;
-; 39    ;  0 / 24 ( 0 % )     ;
-; 40    ;  0 / 24 ( 0 % )     ;
-; 41    ;  0 / 24 ( 0 % )     ;
-; 42    ;  1 / 24 ( 4 % )     ;
-; 43    ;  3 / 24 ( 13 % )    ;
-; 44    ;  1 / 24 ( 4 % )     ;
-; 45    ;  0 / 24 ( 0 % )     ;
-; 46    ;  0 / 24 ( 0 % )     ;
-; 47    ;  0 / 24 ( 0 % )     ;
-; 48    ;  0 / 24 ( 0 % )     ;
-; 49    ;  0 / 24 ( 0 % )     ;
-; 50    ;  0 / 24 ( 0 % )     ;
-; 51    ;  0 / 24 ( 0 % )     ;
-; 52    ;  0 / 24 ( 0 % )     ;
-; Total ;  6 / 1248 ( < 1 % ) ;
-+-------+---------------------+
++----------------------------+
+; LAB Column Interconnect    ;
++-------+--------------------+
+; Col.  ; Interconnect Used  ;
++-------+--------------------+
+; 1     ;  0 / 24 ( 0 % )    ;
+; 2     ;  0 / 24 ( 0 % )    ;
+; 3     ;  0 / 24 ( 0 % )    ;
+; 4     ;  0 / 24 ( 0 % )    ;
+; 5     ;  0 / 24 ( 0 % )    ;
+; 6     ;  0 / 24 ( 0 % )    ;
+; 7     ;  0 / 24 ( 0 % )    ;
+; 8     ;  0 / 24 ( 0 % )    ;
+; 9     ;  0 / 24 ( 0 % )    ;
+; 10    ;  0 / 24 ( 0 % )    ;
+; 11    ;  0 / 24 ( 0 % )    ;
+; 12    ;  0 / 24 ( 0 % )    ;
+; 13    ;  0 / 24 ( 0 % )    ;
+; 14    ;  3 / 24 ( 13 % )   ;
+; 15    ;  2 / 24 ( 8 % )    ;
+; 16    ;  0 / 24 ( 0 % )    ;
+; 17    ;  6 / 24 ( 25 % )   ;
+; 18    ;  0 / 24 ( 0 % )    ;
+; 19    ;  4 / 24 ( 17 % )   ;
+; 20    ;  0 / 24 ( 0 % )    ;
+; 21    ;  0 / 24 ( 0 % )    ;
+; 22    ;  0 / 24 ( 0 % )    ;
+; 23    ;  2 / 24 ( 8 % )    ;
+; 24    ;  0 / 24 ( 0 % )    ;
+; 25    ;  1 / 24 ( 4 % )    ;
+; 26    ;  0 / 24 ( 0 % )    ;
+; 27    ;  0 / 24 ( 0 % )    ;
+; 28    ;  0 / 24 ( 0 % )    ;
+; 29    ;  0 / 24 ( 0 % )    ;
+; 30    ;  0 / 24 ( 0 % )    ;
+; 31    ;  0 / 24 ( 0 % )    ;
+; 32    ;  0 / 24 ( 0 % )    ;
+; 33    ;  0 / 24 ( 0 % )    ;
+; 34    ;  0 / 24 ( 0 % )    ;
+; 35    ;  0 / 24 ( 0 % )    ;
+; 36    ;  0 / 24 ( 0 % )    ;
+; 37    ;  0 / 24 ( 0 % )    ;
+; 38    ;  0 / 24 ( 0 % )    ;
+; 39    ;  0 / 24 ( 0 % )    ;
+; 40    ;  0 / 24 ( 0 % )    ;
+; 41    ;  0 / 24 ( 0 % )    ;
+; 42    ;  0 / 24 ( 0 % )    ;
+; 43    ;  0 / 24 ( 0 % )    ;
+; 44    ;  0 / 24 ( 0 % )    ;
+; 45    ;  0 / 24 ( 0 % )    ;
+; 46    ;  0 / 24 ( 0 % )    ;
+; 47    ;  0 / 24 ( 0 % )    ;
+; 48    ;  0 / 24 ( 0 % )    ;
+; 49    ;  0 / 24 ( 0 % )    ;
+; 50    ;  0 / 24 ( 0 % )    ;
+; 51    ;  0 / 24 ( 0 % )    ;
+; 52    ;  0 / 24 ( 0 % )    ;
+; Total ;  18 / 1248 ( 1 % ) ;
++-------+--------------------+
 
 
 +---------------------------+
@@ -657,13 +665,13 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-----------------------------------+---------------------+
 ; Resource                          ; Usage               ;
 +-----------------------------------+---------------------+
-; Total logic elements              ; 199 / 3,744 ( 5 % ) ;
+; Total logic elements              ; 197 / 3,744 ( 5 % ) ;
 ; Registers                         ; 78 / 3,744 ( 2 % )  ;
-; Logic elements in carry chains    ; 63                  ;
+; Logic elements in carry chains    ; 64                  ;
 ; User inserted logic elements      ; 0                   ;
 ; I/O pins                          ; 15 / 189 ( 8 % )    ;
-;     -- Clock pins                 ; 1 / 2 ( 50 % )      ;
-;     -- Dedicated input pins       ; 0 / 4 ( 0 % )       ;
+;     -- Clock pins                 ; 2 / 2 ( 100 % )     ;
+;     -- Dedicated input pins       ; 2 / 4 ( 50 % )      ;
 ; Global signals                    ; 1                   ;
 ; EABs                              ; 0 / 9 ( 0 % )       ;
 ; Total memory bits                 ; 0 / 18,432 ( 0 % )  ;
@@ -672,8 +680,8 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; Maximum fan-out                   ; 78                  ;
 ; Highest non-global fan-out signal ; Equal0~5            ;
 ; Highest non-global fan-out        ; 46                  ;
-; Total fan-out                     ; 599                 ;
-; Average fan-out                   ; 2.80                ;
+; Total fan-out                     ; 590                 ;
+; Average fan-out                   ; 2.78                ;
 +-----------------------------------+---------------------+
 
 
@@ -682,7 +690,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +------------------------------------+-------------+--------------+-------------+------+--------------+-------------------+------------------+-----------------+------------+---------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node         ; Logic Cells ; LC Registers ; Memory Bits ; Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                                           ; Library Name ;
 +------------------------------------+-------------+--------------+-------------+------+--------------+-------------------+------------------+-----------------+------------+---------------------------------------------------------------+--------------+
-; |snake                             ; 199 (137)   ; 78           ; 0           ; 15   ; 121 (59)     ; 59 (59)           ; 19 (19)          ; 63 (1)          ; 0 (0)      ; |snake                                                        ; work         ;
+; |snake                             ; 197 (135)   ; 78           ; 0           ; 15   ; 119 (57)     ; 59 (59)           ; 19 (19)          ; 64 (2)          ; 0 (0)      ; |snake                                                        ; work         ;
 ;    |lpm_add_sub:Add0|              ; 31 (0)      ; 0            ; 0           ; 0    ; 31 (0)       ; 0 (0)             ; 0 (0)            ; 31 (0)          ; 0 (0)      ; |snake|lpm_add_sub:Add0                                       ; work         ;
 ;       |addcore:adder|              ; 31 (1)      ; 0            ; 0           ; 0    ; 31 (1)       ; 0 (0)             ; 0 (0)            ; 31 (1)          ; 0 (0)      ; |snake|lpm_add_sub:Add0|addcore:adder                         ; work         ;
 ;          |a_csnbuffer:result_node| ; 30 (30)     ; 0            ; 0           ; 0    ; 30 (30)      ; 0 (0)             ; 0 (0)            ; 30 (30)         ; 0 (0)      ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node ; work         ;
@@ -728,7 +736,7 @@ The pin-out file can be found in D:/AGH_Laby/digital_tech/simulations/FPGA/snake
 Info: *******************************************************************
 Info: Running Quartus II Fitter
     Info: Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
-    Info: Processing started: Sat May 30 00:20:30 2020
+    Info: Processing started: Sat May 30 16:41:24 2020
 Info: Command: quartus_fit --read_settings_files=off --write_settings_files=off snake -c snake
 Info: Selected device EPF10K70RC240-4 for design "snake"
 Warning: Feature SignalProbe is not available with your current license
@@ -739,7 +747,7 @@ Info: Timing requirements not specified -- optimizing circuit to achieve the fol
     Info: Not setting a global tco requirement
     Info: Not setting a global tpd requirement
 Info: Inserted 0 logic cells in first fitting attempt
-Info: Started fitting attempt 1 on Sat May 30 2020 at 00:20:31
+Info: Started fitting attempt 1 on Sat May 30 2020 at 16:41:25
 Info: Fitter placement preparation operations beginning
 Info: Fitter placement preparation operations ending: elapsed time is 00:00:00
 Info: Fitter placement operations beginning
@@ -748,7 +756,7 @@ Info: Fitter routing operations beginning
 Info: Fitter routing operations ending: elapsed time is 00:00:00
 Info: Quartus II Fitter was successful. 0 errors, 1 warning
     Info: Peak virtual memory: 235 megabytes
-    Info: Processing ended: Sat May 30 00:20:33 2020
+    Info: Processing ended: Sat May 30 16:41:27 2020
     Info: Elapsed time: 00:00:03
     Info: Total CPU time (on all processors): 00:00:03
 

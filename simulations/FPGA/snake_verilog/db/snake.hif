@@ -1486,7 +1486,7 @@ ON
 # case_sensitive
 # source_file
 snake.sv
-e1bd2be7ea91fa5baeb62aee5246f5b4
+10ae253bcf7be3483a2faf29ad72e70
 9
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -1510,7 +1510,7 @@ TICKS_PER_PHASE
 PARAMETER_SIGNED_DEC
 DEF
 ITER_N
-13
+12
 PARAMETER_SIGNED_DEC
 DEF
 }

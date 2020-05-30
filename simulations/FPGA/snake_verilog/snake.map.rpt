@@ -1,5 +1,5 @@
 Analysis & Synthesis report for snake
-Sat May 30 00:20:30 2020
+Sat May 30 16:41:23 2020
 Quartus II Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
 
 
@@ -44,12 +44,12 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                               ;
 +-----------------------------+----------------------------------------------+
-; Analysis & Synthesis Status ; Successful - Sat May 30 00:20:30 2020        ;
+; Analysis & Synthesis Status ; Successful - Sat May 30 16:41:23 2020        ;
 ; Quartus II Version          ; 9.0 Build 235 06/17/2009 SP 2 SJ Web Edition ;
 ; Revision Name               ; snake                                        ;
 ; Top-level Entity Name       ; snake                                        ;
 ; Family                      ; FLEX10K                                      ;
-; Total logic elements        ; 199                                          ;
+; Total logic elements        ; 197                                          ;
 ; Total pins                  ; 15                                           ;
 ; Total memory bits           ; 0                                            ;
 +-----------------------------+----------------------------------------------+
@@ -143,20 +143,20 @@ applicable agreement for further details.
 +-----------------------------------+---------+
 ; Resource                          ; Usage   ;
 +-----------------------------------+---------+
-; Total logic elements              ; 199     ;
-; Total combinational functions     ; 140     ;
+; Total logic elements              ; 197     ;
+; Total combinational functions     ; 138     ;
 ;     -- Total 4-input functions    ; 49      ;
-;     -- Total 3-input functions    ; 12      ;
-;     -- Total 2-input functions    ; 13      ;
-;     -- Total 1-input functions    ; 66      ;
+;     -- Total 3-input functions    ; 10      ;
+;     -- Total 2-input functions    ; 11      ;
+;     -- Total 1-input functions    ; 68      ;
 ;     -- Total 0-input functions    ; 0       ;
 ; Total registers                   ; 78      ;
-; Total logic cells in carry chains ; 63      ;
+; Total logic cells in carry chains ; 64      ;
 ; I/O pins                          ; 15      ;
 ; Maximum fan-out node              ; clk     ;
 ; Maximum fan-out                   ; 78      ;
-; Total fan-out                     ; 599     ;
-; Average fan-out                   ; 2.80    ;
+; Total fan-out                     ; 590     ;
+; Average fan-out                   ; 2.78    ;
 +-----------------------------------+---------+
 
 
@@ -165,7 +165,7 @@ applicable agreement for further details.
 +------------------------------------+-------------+--------------+-------------+------+--------------+-------------------+------------------+-----------------+------------+---------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node         ; Logic Cells ; LC Registers ; Memory Bits ; Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                                           ; Library Name ;
 +------------------------------------+-------------+--------------+-------------+------+--------------+-------------------+------------------+-----------------+------------+---------------------------------------------------------------+--------------+
-; |snake                             ; 199 (137)   ; 78           ; 0           ; 15   ; 121 (59)     ; 59 (59)           ; 19 (19)          ; 63 (1)          ; 0 (0)      ; |snake                                                        ; work         ;
+; |snake                             ; 197 (135)   ; 78           ; 0           ; 15   ; 119 (57)     ; 59 (59)           ; 19 (19)          ; 64 (2)          ; 0 (0)      ; |snake                                                        ; work         ;
 ;    |lpm_add_sub:Add0|              ; 31 (0)      ; 0            ; 0           ; 0    ; 31 (0)       ; 0 (0)             ; 0 (0)            ; 31 (0)          ; 0 (0)      ; |snake|lpm_add_sub:Add0                                       ; work         ;
 ;       |addcore:adder|              ; 31 (1)      ; 0            ; 0           ; 0    ; 31 (1)       ; 0 (0)             ; 0 (0)            ; 31 (1)          ; 0 (0)      ; |snake|lpm_add_sub:Add0|addcore:adder                         ; work         ;
 ;          |a_csnbuffer:result_node| ; 30 (30)     ; 0            ; 0           ; 0    ; 30 (30)      ; 0 (0)             ; 0 (0)            ; 30 (30)         ; 0 (0)      ; |snake|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node ; work         ;
@@ -215,7 +215,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Parameter Name  ; Value ; Type                                        ;
 +-----------------+-------+---------------------------------------------+
 ; TICKS_PER_PHASE ; 10    ; Signed Integer                              ;
-; ITER_N          ; 13    ; Signed Integer                              ;
+; ITER_N          ; 12    ; Signed Integer                              ;
 +-----------------+-------+---------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -282,13 +282,13 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
-    Info: Processing started: Sat May 30 00:20:29 2020
+    Info: Processing started: Sat May 30 16:41:22 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off snake -c snake
 Info: Found 1 design units, including 1 entities, in source file snake.sv
     Info: Found entity 1: snake
 Info: Elaborating entity "snake" for the top level hierarchy
 Warning (10762): Verilog HDL Case Statement warning at snake.sv(15): can't check case statement for completeness because the case expression has too many possible states
-Warning (10762): Verilog HDL Case Statement warning at snake.sv(32): can't check case statement for completeness because the case expression has too many possible states
+Warning (10762): Verilog HDL Case Statement warning at snake.sv(31): can't check case statement for completeness because the case expression has too many possible states
 Info: Inferred 2 megafunctions from design logic
     Info: Inferred adder/subtractor megafunction ("lpm_add_sub") from the following logic: "Add0"
     Info: Inferred adder/subtractor megafunction ("lpm_add_sub") from the following logic: "Add1"
@@ -303,13 +303,13 @@ Info: Elaborated megafunction instantiation "lpm_add_sub:Add0|addcore:adder|a_cs
 Info: Elaborated megafunction instantiation "lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node", which is child of megafunction instantiation "lpm_add_sub:Add0"
 Info: Elaborated megafunction instantiation "lpm_add_sub:Add0|altshift:result_ext_latency_ffs", which is child of megafunction instantiation "lpm_add_sub:Add0"
 Info: Elaborated megafunction instantiation "lpm_add_sub:Add0|altshift:carry_ext_latency_ffs", which is child of megafunction instantiation "lpm_add_sub:Add0"
-Info: Implemented 214 device resources after synthesis - the final resource count might be different
+Info: Implemented 212 device resources after synthesis - the final resource count might be different
     Info: Implemented 1 input pins
     Info: Implemented 14 output pins
-    Info: Implemented 199 logic cells
+    Info: Implemented 197 logic cells
 Info: Quartus II Analysis & Synthesis was successful. 0 errors, 2 warnings
     Info: Peak virtual memory: 228 megabytes
-    Info: Processing ended: Sat May 30 00:20:30 2020
+    Info: Processing ended: Sat May 30 16:41:23 2020
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 
