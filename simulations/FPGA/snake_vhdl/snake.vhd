@@ -16,7 +16,8 @@ architecture arch1 of snake is
 	begin
 		case phase is
 		--  SEG NUMBERS  		   0123456
-			when 0 => display1 <= "0001101";
+			when 0 => display1 <= "0000001";
+			---when 0 => display1 <= "0001101";
 			when 1 => display1 <= "0001100";
 			when 2 => display1 <= "0001000";
 			when 3 => display1 <= "0000000";
@@ -28,7 +29,6 @@ architecture arch1 of snake is
 			when 9 => display1 <= "0000000";
 			when 10 => display1 <= "0000001";
 			when 11 => display1 <= "0000101";
-			when 12 => display1 <= "0001101";
 			when others => display1 <= "1111111";
 		end case;
 		case phase is
@@ -45,7 +45,6 @@ architecture arch1 of snake is
 			when 9 => display2 <= "1100001";
 			when 10 => display2 <= "0100001";
 			when 11 => display2 <= "0000001";
-			when 12 => display2 <= "0000000";
 			when others => display2 <= "1111111";
 		end case;
 		 
@@ -54,7 +53,7 @@ architecture arch1 of snake is
 begin 
 	
 	tick : process(clk) is
-	constant ITER_N : natural := 13;
+	constant ITER_N : natural := 12;
 	variable iteration : natural := 0;
 	
 	constant TICKS_PER_PHASE : natural := 10;
