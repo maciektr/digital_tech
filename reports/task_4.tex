@@ -17,6 +17,8 @@
 \usepackage{listings}
 \usepackage{listingsutf8}
 \usepackage{pdfpages}
+\usepackage[hidelinks]{hyperref}
+
 
 \geometry{
 a4paper,
@@ -83,7 +85,7 @@ Sprawozdanie - FPGA}
 }
     \maketitle
     \section{Opis zrealizowanego projektu}
-        W ramach zadania praktycznego przygotowałem implementację algorytmu wyświetlającego na dwóch wyświetlaczach siedmiosegmentowych animację węża. Algorytm zaimplementowałem w dwóch wersjach - w języku SystemVerilog i VHDL dla płytki rozwojowej Altera UP2 wyposażonej w układ FPGA FLEX 10KE EPF10K70RC240-4. Wykorzystałem środowisko Quartus II 9.0SP2, w którym przeprowadziłem symulację działania programu. \\
+        W ramach zadania praktycznego przygotowałem implementację algorytmu wyświetlającego na dwóch wyświetlaczach siedmiosegmentowych animację węża. Algorytm zaimplementowałem w dwóch wersjach - w języku SystemVerilog i VHDL dla płytki rozwojowej Altera UP2 wyposażonej w układ FPGA FLEX 10KE EPF10K70RC240-4 dostępnej pod adresem \url{http://eelinux.ee.usm.maine.edu/courses/ele373/upds.pdf}. Wykorzystałem środowisko Quartus II 9.0SP2, w którym przeprowadziłem symulację działania programu. \\
         
         Sekwencję stanów wyjść wyświetlacza odpowiadającą za wyświetlenie zaplanowanej animacji wyznaczyłem na podstawie dokumentacji zestawu edukacyjnego Altera UP2. Strony opisujące rozmieszczenie segmentów wyświetlacza led na płytce, oraz przypisane im piny układu FPGA zostały dołączone na końcu poniższego sprawozdania.
         \begin{center}
@@ -129,12 +131,13 @@ Sprawozdanie - FPGA}
         W architekturze \textit{arch1} zarejestrowany jest proces \textit{tick} uruchamiany sygnałem \textit{clk}. Z każdym rosnącym zboczem 
         sygnału zegarowego, przeprowadzana jest analiza logiczna analogiczna do tej zapisanej w języku SystemVerilog. Jeśli licznik taktów wskazuje zero, następuje zmiana stanu animacji za pomocą wcześniej zdefiniowanej procedury, oraz inkrementacja zmiennej identyfikującej następny stan animacji. Jest ona zerowana, gdy zrówna się co do wartości ze stałą ITER\_N. Z każdym taktem zegara następuje inkrementacja licznika taktów, który jest zerowany gdy zrówna się co do wartości ze stałą TICKS\_PER\_PHASE. \\
         
-        
+        Algorytm implementuje opóźnienie animacji względem zegara w sposób analogiczny do opisanego w poprzednim punkcie.\\ 
     
         Poniżej zamieszczam kod algorytmu zapisanego w języku VHDL. 
         \lstinputlisting[language=VHDL]{../simulations/FPGA/snake_vhdl/snake.vhd}
     
     \section{Symulacja działania programu}
+        
     
     \section{Przydział pinów}
         
@@ -142,6 +145,7 @@ Sprawozdanie - FPGA}
     
     \includepdf{img/docs_p3.pdf}  
     \includepdf{img/docs_p8.pdf}  
+    \includepdf{img/docs_p11.pdf}  
     \includepdf{img/docs_p12.pdf}
     
 \end{document}
