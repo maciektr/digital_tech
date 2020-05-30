@@ -137,14 +137,20 @@ Sprawozdanie - FPGA}
         \lstinputlisting[language=VHDL]{../simulations/FPGA/snake_vhdl/snake.vhd}
     
     \section{Symulacja działania programu}
+        Długość symulacji ustaliłem na cztery sekundy. Symulacje oparłem o plik określający kształt fali. Z dokumentacji płytki rozwojowej Altera UP2 odczytać możemy częstotliwość sygnału generowanego przez zegar jako $25.175Mhz$. Oznacza, to że zegar generuje sygnał o okresie $39.7ns$ (jako że okres jest odwrotnością częstotliwości). Jeśli chcielibyśmy otrzymać animację z dziesięcioma zmianami stanu na sekundę, odpowiadałoby to ustawieniu stałej TICKS\_PER\_PHASE na wartość 2717500. W praktyce symulacja o takiej dokładności wymaga sporej mocy obliczeniowej, dlatego na jej potrzeby ustawiłem stałą na 10. Do pliku symulacji dodałem sygnał wejściowy układu zegara o okresie 10 ms. Takie uproszczenie symulacji nie ma wpływu na możliwość pokazania poprawności działania algorytmu. 
+        \begin{center}
+            \includegraphics[height=10cm]{reports/img/fpga_clock.png}\\
+        \end{center}
         
+        
+
         
     
     \section{Przydział pinów}
         W środowisku Quartus II wybrałem układ FLEX 10KE EPF10K70RC240-4 jako urządzenie docelowe dla napisanego programu. Następnie korzystając z funkcji \textit{Pin Planner}, oraz dokumentacji płytki Altera UP2 przygotowałem mapowanie portów algorytmu na odpowiednie piny układu. Pin zegarowy odczytałem z dokumentacji układu EPF10K70RC240-4 dostępnej pod adresem \url{https://www.intel.com/content/dam/www/programmable/us/en/pdfs/literature/dp/flex10k/archives/epf10k70.pdf}. Otrzymałem poniższy układ. 
         
         \begin{center}
-            \includegraphics[height=5cm]{reports/img/fpga1.png}\\
+            \includegraphics[height=10cm]{reports/img/fpga_1.png}\\
         \end{center}
         
         Tak przygotowane mapowanie pinów układu pozwoli wyświetlić animację na wyświetlaczu dwóch cyfr FLEX\_DIGIT znajdującym się w prawym górnym rogu płytki rozwojowej. 
