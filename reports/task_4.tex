@@ -16,6 +16,7 @@
 \usepackage{colortbl}
 \usepackage{listings}
 \usepackage{listingsutf8}
+\usepackage{pdfpages}
 
 \geometry{
 a4paper,
@@ -67,7 +68,6 @@ Sprawozdanie - FPGA}
   frame=single,	                   % adds a frame around the code
   keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
   keywordstyle=\color{blue},       % keyword style
-  language=Octave,                 % the language of the code
   morekeywords={*,...},            % if you want to add more keywords to the set
   numbers=left,                    % where to put the line-numbers; possible values are (none, left, right)
   numbersep=5pt,                   % how far the line-numbers are from the code
@@ -85,22 +85,27 @@ Sprawozdanie - FPGA}
     \section{Opis zrealizowanego projektu}
         W ramach zadania praktycznego przygotowałem implementację algorytmu wyświetlającego na dwóch wyświetlaczach siedmiosegmentowych animację węża. Algorytm zaimplementowałem w dwóch wersjach - w języku SystemVerilog i VHDL dla płytki rozwojowej Altera UP2 wyposażonej w układ FPGA FLEX 10KE EPF10K70RC240-4. Wykorzystałem środowisko Quartus II 9.0SP2, w którym przeprowadziłem symulację działania programu. \\
         
-        
+        Sekwencję stanów wyjść wyświetlacza odpowiadającą za wyświetlenie zaplanowanej animacji wyznaczyłem na podstawie dokumentacji zestawu edukacyjnego Altera UP2. Strony opisujące rozmieszczenie segmentów wyświetlacza led na płytce, oraz przypisane im piny układu FPGA zostały dołączone na końcu poniższego sprawozdania.
         \begin{center}
             \includegraphics[height=5cm]{reports/img/7seg.png}\\
         \end{center}
-
-    
+        Poniżej zamieszczam przyjętą sekwencję stanów wysokich pozwalających uzyskać zaplanowaną animację.
     
     \section{Implementacja w języku SystemVerilog}
-        \lstinputlisting[language=SystemVerilog]{../simulations/FPGA/snake_verilog/snake.sv}
+        \lstinputlisting[language=Verilog]{../simulations/FPGA/snake_verilog/snake.sv}
     
     \section{Implementacja w języku VHDL}
         \lstinputlisting[language=VHDL]{../simulations/FPGA/snake_vhdl/snake.vhd}
     
-    \section{Przydział pinów}
     
     \section{Symulacja działania programu}
     
+    \section{Przydział pinów}
+        
+        Tak przygotowane mapowanie pinów układu pozwoli wyświetlić animację na wyświetlaczu dwóch cyfr FLEX\_DIGIT w prawym górnym rogu płytki rozwojowej. 
+    
+    \includepdf{img/docs_p3.pdf}  
+    \includepdf{img/docs_p8.pdf}  
+    \includepdf{img/docs_p12.pdf}
     
 \end{document}
