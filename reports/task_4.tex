@@ -90,13 +90,49 @@ Sprawozdanie - FPGA}
             \includegraphics[height=5cm]{reports/img/7seg.png}\\
         \end{center}
         Poniżej zamieszczam przyjętą sekwencję stanów wysokich pozwalających uzyskać zaplanowaną animację.
+        \begin{enumerate}
+            \item Digit1 G; Digit1 E; Digit1 D
+            \item Digit1 E; Digit1 D; Digit2 D
+            \item Digit1 D; Digit2 D; Digit2 C
+            \item Digit2 D; Digit2 C; Digit2 G
+            \item Digit2 C; Digit2 G; Digit1 G
+            \item Digit2 G; Digit1 G; Digit1 F
+            \item Digit1 G; Digit1 F; Digit1 A
+            \item Digit1 F; Digit1 A; Digit2 A
+            \item Digit1 A; Digit2 A; Digit2 B
+            \item Digit2 A; Digit2 B; Digit2 G
+            \item Digit2 B; Digit2 G; Digit1 G
+            \item Digit2 G; Digit1 G; Digit1 E
+            \item Digit1 G; Digit1 E; Digit1 D
+        \end{enumerate}
+        Stan opisany numerem 13 jest tożsamy ze stanem początkowym układu. Animacja ma zatem postać dwunastu ustawień wyświetlacza wyświetlanych w cyklu. 
     
     \section{Implementacja w języku SystemVerilog}
+        Jako wejście układu przyjęty został sygnał zegarowy (oznaczony clk). Jako wyjście układu zadeklarowano dwie jednowymiarowe macierze typu reg, każda o 7 wyjściach, które następnie zostaną zmapowane do odpowiednich pinów wyświetlacza. Algorytm definiuje też dwie stałe parametryczne znane na etapie kompilacji. Pierwszą z nich jest ITER\_N będącą stałą wewnętrzną układu wskazującą ilość przyjętych stanów animacji. Drugą jest TICKS\_PER\_PHASE określająca co ile taktów zegara nastąpić ma zmiana stanu animacji na kolejny. W programie wykorzystano dwie zmienne lokalne przechowujące liczby naturalne.\\
+        
+        Ustawione zostało sterowanie zdarzeniowe uruchamiające poniższą logikę za każdym rosnącym zboczem sygnału zegarowego. Jeśli zmienna lokalna odpowiedzialna za zliczanie zaobserwowanych taktów zegara wskazuje na zero, na wyświetlaczu wyświetlona zostaje sekwencja odpowiadająca aktualnemu stanowi symulacji. Następuje inkrementacja zmiennej wskazującej następny stan symulacji. Jeśli zmienna ta wskazuje na wartość równą stałej ITER\_N, zostaje ona wyzerowana. Z każdym taktem procesora następuje inkrementacja zmiennej zliczającej takty. Jeśli zrówna się ona co do wartości ze stałą TICKS\_PER\_PHASE, zostaje wyzerowana.\\
+        
+        Za wyświetlenie odpowiedniego stanu animacji na wyświetlaczu odpowiedzialne są dwie instrukcje warunkowe \textit{case}. Wartości zmiennych typu reg modyfikowane są poprzez przypisanie odpowiedniej liczby siedmiobitowej zapisanej binarnie.\\
+        
+        Mechanizm zliczania taktów zegara został zaimplementowany w celu spowolnienia animacji. Jej prędkość zależna jest od częstotliwości sygnału generowanego przez wbudowany w płytkę Altera UP2 układ zegarowy. Zbyt duża prędkość skutkować będzie niskimi walorami estetycznymi. Wielokrotnością spowolnienia sterować można za pomocą stałej parametrycznej TICKS\_PER\_PHASE. Może ona przyjąć wartość dowolnej liczby naturalnej z przedziału $<1,\infty)$.\\
+        
+        Poniżej zamieszczam kod algorytmu zapisanego w języku SystemVerilog.
         \lstinputlisting[language=Verilog]{../simulations/FPGA/snake_verilog/snake.sv}
-    
+
+        
     \section{Implementacja w języku VHDL}
-        \lstinputlisting[language=VHDL]{../simulations/FPGA/snake_vhdl/snake.vhd}
+        Jako wejście układu przyjęty został sygnał zegarowy (oznaczony clk). Jako wyjście układu zadeklarowano dwa wektory wartości logicznych o siedmiu elementach , które następnie zostaną zmapowane do odpowiednich pinów wyświetlacza. Program definiuje też dwie stałe parametryczne znane na etapie kompilacji. Pierwszą z nich jest ITER\_N będącą stałą wewnętrzną układu wskazującą ilość przyjętych stanów animacji. Drugą jest TICKS\_PER\_PHASE określająca co ile taktów zegara nastąpić ma zmiana stanu animacji na kolejny. Może ona przyjmować wartości postaci liczb naturalnych większych lub równych jeden. W programie wykorzystano dwie zmienne lokalne przechowujące liczby naturalne.\\
+        
+        Program korzysta z biblioteki IEEE, importując moduły odpowiedzialne za standardową logikę i operacje numeryczne. Definiuje także element \textit{snake}, oraz związaną z nim architekturę \textit{arch1}. Wspomniana architektura definiuje procedurę display\_phase przyjmującą jako argument liczbę naturalną. Odpowiedzialna jest ona za wyświetlenie na wyświetlaczu stanu animacji związanego z liczbą przyjętą jako argument. Wykorzystuje do tego instrukcję warunkową \textit{case}, za pomocą której wypełnia wektory odpowiednimi stanami wyjść. Warto zauważyć, że wektory indeksowane są od prawej strony. Stanowi to pewien kontrast do poprzedniego programu, w którym wartości w jednowymiarowej macierzy indeksowane były od lewej strony. Z tego powodu w celu zachowania tej samej kolejności pinów na wyjściu (tzn. kompatybilności z tym samym mapowaniem do pinów wyświetlacza) konieczne jest odbicie lustrzane przypisywanych w wektorach wartości. \\
+        
+        
+        W architekturze \textit{arch1} zarejestrowany jest proces \textit{tick} uruchamiany sygnałem \textit{clk}. Z każdym rosnącym zboczem 
+        sygnału zegarowego, przeprowadzana jest analiza logiczna analogiczna do tej zapisanej w języku SystemVerilog. Jeśli licznik taktów wskazuje zero, następuje zmiana stanu animacji za pomocą wcześniej zdefiniowanej procedury, oraz inkrementacja zmiennej identyfikującej następny stan animacji. Jest ona zerowana, gdy zrówna się co do wartości ze stałą ITER\_N. Z każdym taktem zegara następuje inkrementacja licznika taktów, który jest zerowany gdy zrówna się co do wartości ze stałą TICKS\_PER\_PHASE. \\
+        
+        
     
+        Poniżej zamieszczam kod algorytmu zapisanego w języku VHDL. 
+        \lstinputlisting[language=VHDL]{../simulations/FPGA/snake_vhdl/snake.vhd}
     
     \section{Symulacja działania programu}
     
