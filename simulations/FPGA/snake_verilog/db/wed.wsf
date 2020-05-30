@@ -239,7 +239,7 @@ VECTOR("D:/AGH_Laby/digital_tech/simulations/FPGA/snake_verilog/db/snake.sim.cvw
 	ZOOM{
 		ZBEGIN = 0;
 		ZEND = 4000000000000;
-		NUMERATOR = 1362;
+		NUMERATOR = 1379;
 		DENOMINATOR = 4000000000000;
 		TOP_INDEX = 0;
 	}
