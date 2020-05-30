@@ -85,9 +85,9 @@ Sprawozdanie - FPGA}
 }
     \maketitle
     \section{Opis zrealizowanego projektu}
-        W ramach zadania praktycznego przygotowałem implementację algorytmu wyświetlającego na dwóch wyświetlaczach siedmiosegmentowych animację węża. Algorytm zaimplementowałem w dwóch wersjach - w języku SystemVerilog i VHDL dla płytki rozwojowej Altera UP2 wyposażonej w układ FPGA FLEX 10KE EPF10K70RC240-4 dostępnej pod adresem \url{http://eelinux.ee.usm.maine.edu/courses/ele373/upds.pdf}. Wykorzystałem środowisko Quartus II 9.0SP2, w którym przeprowadziłem symulację działania programu. \\
+        W ramach zadania praktycznego przygotowałem implementację algorytmu wyświetlającego na dwóch wyświetlaczach siedmiosegmentowych animację węża. Algorytm zaimplementowałem w dwóch wersjach - w języku SystemVerilog i VHDL dla płytki rozwojowej Altera UP2 wyposażonej w układ FPGA FLEX 10KE EPF10K70RC240-4. Wykorzystałem środowisko Quartus II 9.0SP2, w którym przeprowadziłem symulację działania programu. \\
         
-        Sekwencję stanów wyjść wyświetlacza odpowiadającą za wyświetlenie zaplanowanej animacji wyznaczyłem na podstawie dokumentacji zestawu edukacyjnego Altera UP2. Strony opisujące rozmieszczenie segmentów wyświetlacza led na płytce, oraz przypisane im piny układu FPGA zostały dołączone na końcu poniższego sprawozdania.
+        Sekwencję stanów wyjść wyświetlacza odpowiadającą za wyświetlenie zaplanowanej animacji wyznaczyłem na podstawie dokumentacji zestawu edukacyjnego Altera UP2 dostępnej pod adresem \url{http://eelinux.ee.usm.maine.edu/courses/ele373/upds.pdf}. Strony opisujące rozmieszczenie segmentów wyświetlacza led na płytce, oraz przypisane im piny układu FPGA zostały dołączone na końcu poniższego sprawozdania.
         \begin{center}
             \includegraphics[height=5cm]{reports/img/7seg.png}\\
         \end{center}
@@ -132,7 +132,7 @@ Sprawozdanie - FPGA}
         sygnału zegarowego, przeprowadzana jest analiza logiczna analogiczna do tej zapisanej w języku SystemVerilog. Jeśli licznik taktów wskazuje zero, następuje zmiana stanu animacji za pomocą wcześniej zdefiniowanej procedury, oraz inkrementacja zmiennej identyfikującej następny stan animacji. Jest ona zerowana, gdy zrówna się co do wartości ze stałą ITER\_N. Z każdym taktem zegara następuje inkrementacja licznika taktów, który jest zerowany gdy zrówna się co do wartości ze stałą TICKS\_PER\_PHASE. \\
         
         Algorytm implementuje opóźnienie animacji względem zegara w sposób analogiczny do opisanego w poprzednim punkcie.\\ 
-    
+        
         Poniżej zamieszczam kod algorytmu zapisanego w języku VHDL. 
         \lstinputlisting[language=VHDL]{../simulations/FPGA/snake_vhdl/snake.vhd}
     
@@ -149,7 +149,29 @@ Sprawozdanie - FPGA}
         \begin{center}
             \includegraphics[width=18cm]{reports/img/fpga_sim_out2.png}\\
         \end{center}
+        Zauważmy, że otrzymany wykres ma przebieg cykliczny. Cztery złącza (display1[1], display1[2], display2[4], display2[5]) nie są włączane w żadnym momencie symulacji. Odpowiadają one za pionowe segmenty ze środka wyświetlacza po których wąż się nie porusza. Dwa złącza (display1[6] i display2[6]) występują częściej niż pozostałe. Odpowiadają one za poziome segmenty ze środka wyświetlacza. Każdy z segmentów zapalany jest zawsze na trzy kolejne stany animacji (odpowiada to długości węża). \\
         
+        Wiem, że:\\
+        Wyjścia display1[0 - 6] odpowiadają segmentom Digit1 A-G.\\
+        Wyjścia display2[0 - 6] odpowiadają segmentom Digit2 A-G.\\
+        Tłumacząc opis sekwencji z pierwszej sekcji tego sprawozdania otrzymujemy: 
+        \begin{enumerate}
+            \item display1 6; display1 4; display1 3
+            \item display1 4; display1 3; display2 3  
+            \item display1 3; display2 3; display2 2
+            \item display2 3; display2 2; display2 6
+            \item display2 2; display2 6; display1 6
+            \item display2 6; display1 6; display1 5
+            \item display1 6; display1 5; display1 0
+            \item display1 5; display1 0; display2 0
+            \item display1 0; display2 0; display2 1
+            \item display2 0; display2 1; display2 6
+            \item display2 1; display2 6; display1 6
+            \item display2 6; display1 6; display1 4
+            \item display1 6; display1 4; display1 3
+        \end{enumerate}
+
+        Porównując zapisane stany animacji z otrzymanymi wynikami symulacji stwierdzić możemy poprawność zaproponowanych algorytmów.
     
     \section{Przydział pinów}
         W środowisku Quartus II wybrałem układ FLEX 10KE EPF10K70RC240-4 jako urządzenie docelowe dla napisanego programu. Następnie korzystając z funkcji \textit{Pin Planner}, oraz dokumentacji płytki Altera UP2 przygotowałem mapowanie portów algorytmu na odpowiednie piny układu. Pin zegarowy odczytałem z dokumentacji układu EPF10K70RC240-4 dostępnej pod adresem \url{https://www.intel.com/content/dam/www/programmable/us/en/pdfs/literature/dp/flex10k/archives/epf10k70.pdf}. Otrzymałem poniższy układ. 
