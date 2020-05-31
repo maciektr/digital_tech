@@ -95,7 +95,114 @@ Sprawozdanie - bramki logiczne}
                     \label{tab:my_label}
                 \end{table}
             \end{center}
+            W powyższej tabeli wyjście J odpowiada za wynik sumowania, a wyjście I za informację o przepełnieniu. Możemy ich wartości opisać poniższymi tabelami. 
+            \begin{center}
+                \begin{table}[ht]
+                    \centering
+                    \begin{tabular}{|c|c|c|}
+                        \hline
+                        C / F & 0 & 1\\
+                        \hline
+                        0 & 0 & 1\\
+                        \hline
+                        1 & 1 & 0\\
+                        \hline
+                    \end{tabular}
+                    \caption{Tabela prawdy dla wyjścia J (wynik dodawania).}
+                    \label{tab:my_label}
+                \end{table}
+            \end{center}
+            \begin{center}
+                \begin{table}[ht]
+                    \centering
+                    \begin{tabular}{|c|c|c|}
+                        \hline
+                        C / F & 0 & 1\\
+                        \hline
+                        0 & 0 & 0\\
+                        \hline
+                        1 & 0 & 1\\
+                        \hline
+                    \end{tabular}
+                    \caption{Tabela prawdy dla wyjścia I (informacja o przepełnieniu).}
+                    \label{tab:my_label}
+                \end{table}
+            \end{center}
+            Z powyższych tabel odczytać możemy zależności opisujące stany na tych wyjściach.
+            $$I = FC$$
+            $$J = F\overline{C} + \overline{F}C = F\oplus C$$
             
+            Sumując liczby dwubitowe, będziemy musieli rozpatrzyć wynik z poprzedniej pary bitów. Oznacza to, że będziemy musieli rozpatrzyć trzy bity na wejściu. Tabelę prawdy takiej operacji przedstawiono poniżej. Małym i oznaczono przepełnienie z sumy poprzedniej pary bitów.
+            \begin{center}
+                \begin{table}[ht]
+                    \centering
+                    \begin{tabular}{|c|c|c|c|}
+                        \hline
+                        B & E & i & HI\\
+                        \specialrule{1pt}{1pt}{1pt}
+                        0 & 0 & 0 & 00\\
+                        \hline
+                        0 & 0 & 1 & 01\\
+                        \hline
+                        0 & 1 & 0 & 01\\
+                        \hline
+                        0 & 1 & 1 & 10\\
+                        \hline
+                        1 & 0 & 0 & 01\\
+                        \hline
+                        1 & 0 & 1 & 10\\
+                        \hline
+                        1 & 1 & 0 & 10\\
+                        \hline
+                        1 & 1 & 1 & 11\\
+                        \hline 
+                    \end{tabular}
+                    \caption{Tabela prawdy dla sumy dwóch bitów.}
+                    \label{tab:my_label}
+                \end{table}
+            \end{center}
+            Dla takiej sumy również zapiszemy zależności konkretnych wyjść. 
+            % \begin{center}
+            %     \begin{table}[ht]
+            %         \centering
+            %         \begin{tabular}{|c|c|c|c|c|}
+            %             \hline
+            %             B / Ei & 00 & 01 & 11 & 10 \\
+            %             \hline
+            %             0 & 0 & 1 & 0 & 1\\
+            %             \hline
+            %             1 & 1 & 0 & 1 & 0\\
+            %             \hline
+            %         \end{tabular}
+            %         \caption{Tabela prawdy dla wyjścia I (wynik dodawania).}
+            %         \label{tab:my_label}
+            %     \end{table}
+            % \end{center}
+            % \begin{center}
+            %     \begin{table}[ht]
+            %         \centering
+            %         \begin{tabular}{|c|c|c|c|c|}
+            %             \hline
+            %             B / Ei & 00 & 01 & 11 & 10 \\
+            %             \hline
+            %             0 & 0 & 0 & 1 & 0\\
+            %             \hline
+            %             1 & 0 & 1 & 1 & 1\\
+            %             \hline
+            %         \end{tabular}
+            %         \caption{Tabela prawdy dla wyjścia H (informacja o przepełnieniu).}
+            %         \label{tab:my_label}
+            %     \end{table}
+            % \end{center}
+            \begin{center}
+                \includegraphics[widht=18cm]{reports/img/Z1A_tab1.png}\\
+            \end{center}
+            \begin{center}
+                \includegraphics[widht=18cm]{reports/img/Z1A_tab2.png}\\
+            \end{center}
+
+
+
 
         \subsection{Sumator pełny i pół-pełny}
             Dla sumy najmniej ważnych bitów na wejściu sumatora otrzymujemy dwa sygnały - po jednym bicie od każdej z liczb. Jednakże, wynik dodawania dwóch liczb jednobitowych jest liczbą dwubitową. Dlatego, na wyjściu podajemy dwa sygnały - stan najmniej ważnego bitu liczby wynikowej i informacje o tym, czy wystąpiło przepełnienie.\\
@@ -220,7 +327,7 @@ Sprawozdanie - bramki logiczne}
             \end{center}
             W celu uproszczenia układu wykonać należy minimalizację metodą Karnaugh dla każdego z wyjść wyświetlacza. Niech $x_1, x_2, x_4, x_8$ określają kolejne bity, czterobitowej liczby $x$ w kolejności od najmniej do najbardziej znaczącego bitu. Wtedy:
             \begin{center}
-                \includegraphics[height=9cm]{reports/img/Z1A_table_1.png}\\
+                \includegraphics[width=18cm]{reports/img/Z1C_tab_1.png}\\
             \end{center}
 
             % \begin{center}
@@ -252,7 +359,7 @@ Sprawozdanie - bramki logiczne}
             $$A = (\overline{x_1}+x_2+x_4+x_8)(x_1+x_2+\overline{x_4}+x_8)(\overline{x_1}+x_2+\overline{x_4}+\overline{x_8})(\overline{x_1}+\overline{x_2}+x_4+\overline{x_8})$$
             Analogiczną analizę przeprowadzimy dla każdego z pozostałych wejść wyświetlacza.
             \begin{center}
-                \includegraphics[height=9cm]{reports/img/Z1A_table_3.png}\\
+                \includegraphics[width=18cm]{reports/img/Z1C_tab_3.png}\\
             \end{center}
             % \begin{center}
             %     \begin{table}[ht]
@@ -280,7 +387,7 @@ Sprawozdanie - bramki logiczne}
             Skąd otrzymujemy (przez dopełnienie):
             $$ B = (\overline{x_1}+x_2+\overline{x_4}+x_8)(\overline{x_1}+\overline{x_2}+\overline{x_8})(x_1+x_2+\overline{x_4}+\overline{x_8})(x_1+\overline{x_2}+\overline{x_4})$$
             \begin{center}
-                \includegraphics[height=9cm]{reports/img/Z1A_table_4.png}\\
+                \includegraphics[width=18cm]{reports/img/Z1C_tab_4.png}\\
             \end{center}
             % \begin{center}
             %     \begin{table}[ht]
@@ -308,7 +415,7 @@ Sprawozdanie - bramki logiczne}
             Skąd otrzymujemy (przez dopełnienie):
             $$C = (x_1+\overline{x_2}+x_4+x_8)(\overline{x_2}+\overline{x_4}+\overline{x_8})(x_1+x_2+\overline{x_4}+\overline{x_8})$$
             \begin{center}
-                \includegraphics[height=9cm]{reports/img/Z1A_table_5.png}\\
+                \includegraphics[width=18cm]{reports/img/Z1C_tab_5.png}\\
             \end{center}
             % \begin{center}
             %     \begin{table}[ht]
@@ -336,7 +443,7 @@ Sprawozdanie - bramki logiczne}
             Skąd otrzymujemy (przez dopełnienie):
             $$D = (x_1+x_2+\overline{x_4}+x_8)(\overline{x_1}+x_2+x_4)(\overline{x_1}+\overline{x_2}+\overline{x_4})(x_1+\overline{x_2}+x_4+\overline{x_8})$$
             \begin{center}
-                \includegraphics[height=9cm]{reports/img/Z1A_table_6.png}\\
+                \includegraphics[width=18cm]{reports/img/Z1C_tab_6.png}\\
             \end{center}
             % \begin{center}
             %     \begin{table}[ht]
@@ -364,7 +471,7 @@ Sprawozdanie - bramki logiczne}
             Skąd otrzymujemy (przez dopełnienie):
             $$E = (\overline{x_1}+x_8)(x_1+x_2+\overline{x_4}+x_8)(\overline{x_1}+x_2+x_4+\overline{x_8})$$
             \begin{center}
-                \includegraphics[height=9cm]{reports/img/Z1A_table_7.png}\\
+                \includegraphics[width=18cm]{reports/img/Z1C_tab_7.png}\\
             \end{center}
             % \begin{center}
             %     \begin{table}[ht]
@@ -392,7 +499,7 @@ Sprawozdanie - bramki logiczne}
             Skąd otrzymujemy (przez dopełnienie):
             $$F = (\overline{x_1}+x_2+\overline{x_4}+\overline{x_8})(\overline{x_1}+\overline{x_2}+\overline{x_4}+x_8)(\overline{x_1}+x_4+x_8)(x_1+\overline{x_2}+x_4+x_8)$$
             \begin{center}
-                \includegraphics[height=9cm]{reports/img/Z1A_table_8.png}\\
+                \includegraphics[width=18cm]{reports/img/Z1C_tab_8.png}\\
             \end{center}
             % \begin{center}
             %     \begin{table}[ht]
