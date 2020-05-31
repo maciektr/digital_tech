@@ -51,6 +51,52 @@ Sprawozdanie - bramki logiczne}
 \begin{document}
     \maketitle
     \section{Układ sumujący dwie liczby trzybitowe}
+        \subsection{Realizowana funkcja logiczna}
+            Układ ma trzy wejścia, ABC odpowiadające za bity pierwszej z liczb i DEF odpowiadające za bity drugiej, oraz cztery wyjścia GHIJ.
+            Gdy sumujemy pojedyńczą parę bitów, możemy otrzymać cztery sytuacje opisane poniższą tabelą prawdy. 
+            \begin{center}
+                \begin{table}[ht]
+                    \centering
+                    \begin{tabular}{|c|c|c|}
+                        \hline
+                        C & F & J\\
+                        \specialrule{1pt}{1pt}{1pt}
+                        0 & 0 & 0\\
+                        \hline
+                        0 & 1 & 1\\
+                        \hline
+                        1 & 0 & 1\\
+                        \hline
+                        1 & 1 & 0\\
+                        \hline 
+                    \end{tabular}
+                    \caption{Tabela prawdy dla sumy dwóch bitów.}
+                    \label{tab:my_label}
+                \end{table}
+            \end{center}
+            W ostatniej sytuacji, gdy oba sumowane bity miały stan wysoki otrzymaliśmy zero. Jednak powinniśmy otrzymać dwa w zapisie dziesiętnym, to jest 10 w zapisie binarnym. Dzieje się tak dlatego, że w tabeli przewidzieliśmy zaledwie pojedyncze wyjście. Nastąpiło tak zwane przepełnienie, to znaczy otrzymana liczba nie daje się reprezentować w przewidzianym zakresie bitów. Zostanie on zatem rozszerzony do dwóch bitów. 
+            \begin{center}
+                \begin{table}[ht]
+                    \centering
+                    \begin{tabular}{|c|c|c|}
+                        \hline
+                        C & F & IJ\\
+                        \specialrule{1pt}{1pt}{1pt}
+                        0 & 0 & 00\\
+                        \hline
+                        0 & 1 & 01\\
+                        \hline
+                        1 & 0 & 01\\
+                        \hline
+                        1 & 1 & 10\\
+                        \hline 
+                    \end{tabular}
+                    \caption{Tabela prawdy dla sumy dwóch bitów.}
+                    \label{tab:my_label}
+                \end{table}
+            \end{center}
+            
+
         \subsection{Sumator pełny i pół-pełny}
             Dla sumy najmniej ważnych bitów na wejściu sumatora otrzymujemy dwa sygnały - po jednym bicie od każdej z liczb. Jednakże, wynik dodawania dwóch liczb jednobitowych jest liczbą dwubitową. Dlatego, na wyjściu podajemy dwa sygnały - stan najmniej ważnego bitu liczby wynikowej i informacje o tym, czy wystąpiło przepełnienie.\\
             Taki układ nazywamy sumatorem pół-pełnym, jednobitowym. Do jego wykonania wystarczą dwie bramki logiczne - xor i and, do których podłączymy sygnały wejściowe. Wyjście bramki xor będzie stanem bitu w wyniku, a wyjście bramki and informacją o przepełnieniu. \\
@@ -100,7 +146,12 @@ Sprawozdanie - bramki logiczne}
             
     \section{Układ sprawdzający równość dwóch liczb}
         \subsection{Konstrukcja układu}
-            Zauważmy, że dwie liczby są równe wtedy i tylko wtedy, gdy wszystkie reprezentujące je bity, na odpowiednich pozycjach, są sobie równe. Zatem w celu wykazania ich równości, wystarczy wykorzystać bramki xor w ilości odpowiadającej liczbie bitów. Jeżeli wszystkie z bramek podadzą na wyjściu stan niski, to liczby są równe.
+            Układ komparatora dwóch liczb czterobitowych ma cztery wejścia, ABCD odpowiadające za bity pierwszej z liczb i EFGH odpowiadające za bity drugiej. Chcemy zrealizować funkcję logiczną 
+            $$(A==E)\land(B==F)\land(C==G)\land(D==H)$$
+            Co jest równoważne z
+            $$(\neg(A\oplus E))\land(\neg(B\oplus F))\land(\neg(C\oplus G))\land(\neg(D\oplus H))$$
+            $$\neg((A\oplus E)\lor(B\oplus F)\lor(C\oplus G)\lor(D\oplus H))$$
+            Zatem w celu wykazania ich równości, wystarczy zastosować bramki XOR w ilości odpowiadającej liczbie bitów, których wyjścia zestawić należy bramką NOR. 
 
         \subsection{Projekt układu}
             \begin{center}
@@ -169,187 +220,202 @@ Sprawozdanie - bramki logiczne}
             \end{center}
             W celu uproszczenia układu wykonać należy minimalizację metodą Karnaugh dla każdego z wyjść wyświetlacza. Niech $x_1, x_2, x_4, x_8$ określają kolejne bity, czterobitowej liczby $x$ w kolejności od najmniej do najbardziej znaczącego bitu. Wtedy:
             \begin{center}
-                \begin{table}
-                    \centering
-                    \begin{tabularx}{\textwidth}{|Y *{5}{Y|}}
-                        \cline{3-6} 
-                        \multicolumn{2}{c|}{} &
-                        \multicolumn{4}{c|}{$x_8x_4$}\\
-                        
-                        \multicolumn{2}{c|}{} & \multicolumn{1}{c}{00} & \multicolumn{1}{c}{01} & \multicolumn{1}{c}{11} & \multicolumn{1}{c|}{10}\\
-                        \hline
-                         
-                        \multirow{4}{*}{$x_2x_1$} & 00 & 1 & 0 & 1 & 1 \\
-                                                  & 01 & 0 & 1 & 0 & 1 \\
-                                                  & 11 & 1 & 1 & 1 & 0 \\
-                                                  & 10 & 1 & 1 & 1 & 1 \\
-                        
-                         \hline 
-                    \end{tabularx}
-                    \caption{Wyjście A}
-                    \label{tab:my_label}
-                \end{table}
+                \includegraphics[height=9cm]{reports/img/Z1A_table_1.png}\\
             \end{center}
 
+            % \begin{center}
+            %     \begin{table}
+            %         \centering
+            %         \begin{tabularx}{\textwidth}{|Y *{5}{Y|}}
+            %             \cline{3-6} 
+            %             \multicolumn{2}{c|}{} &
+            %             \multicolumn{4}{c|}{$x_8x_4$}\\
+                        
+            %             \multicolumn{2}{c|}{} & \multicolumn{1}{c}{00} & \multicolumn{1}{c}{01} & \multicolumn{1}{c}{11} & \multicolumn{1}{c|}{10}\\
+            %             \hline
+                         
+            %             \multirow{4}{*}{$x_2x_1$} & 00 & 1 & 0 & 1 & 1 \\
+            %                                       & 01 & 0 & 1 & 0 & 1 \\
+            %                                       & 11 & 1 & 1 & 1 & 0 \\
+            %                                       & 10 & 1 & 1 & 1 & 1 \\
+                        
+            %              \hline 
+            %         \end{tabularx}
+            %         \caption{Wyjście A}
+            %         \label{tab:my_label}
+            %     \end{table}
+            % \end{center}
+
             Zauważmy, że wartości zera logicznego w powyższej tabeli jest zdecydowanie mniej, niż stanów wysokich. Dlatego to po nich będziemy grupować, zatem otrzymamy wynik poprzez dopełnienie.\\
-            Każdą z grup zer możemy opisać poprzez określenie w postaci alternatywy logicznej wszystkich pozostałych wartości w tablicy, za wyjątkiem tej grupy. Jeśli na tak skonstruowanych opisach grup użyjemy koniunkcji logicznej otrzymamy formułę opisującą poprawnie rozkład stanów wysokich i niskich względem sygnału wejściowego dla danego wejścia wyświetlacza. \\
+            Każdą z grup zer możemy opisać poprzez określenie w postaci alternatywy logicznej wszystkich pozostałych wartości w tablicy, za wyjątkiem tej grupy. Taką grupę konstruujemy poprzez negację logiczną. Jeśli na tak przygotowanych grupach użyjemy koniunkcji logicznej otrzymamy formułę opisującą poprawnie rozkład stanów wysokich i niskich względem sygnału wejściowego dla danego wejścia wyświetlacza. \\
             Skąd otrzymujemy (przez dopełnienie):
             $$A = (\overline{x_1}+x_2+x_4+x_8)(x_1+x_2+\overline{x_4}+x_8)(\overline{x_1}+x_2+\overline{x_4}+\overline{x_8})(\overline{x_1}+\overline{x_2}+x_4+\overline{x_8})$$
             Analogiczną analizę przeprowadzimy dla każdego z pozostałych wejść wyświetlacza.
-            
             \begin{center}
-                \begin{table}[ht]
-                    \centering
-                    \begin{tabularx}{\textwidth}{|Y *{5}{Y|}}
-                        \cline{3-6} 
-                        \multicolumn{2}{c|}{} &
-                        \multicolumn{4}{c|}{$x_8x_4$}\\
-                        
-                        \multicolumn{2}{c|}{} & \multicolumn{1}{c}{00} & \multicolumn{1}{c}{01} & \multicolumn{1}{c}{11} & \multicolumn{1}{c|}{10}\\
-                        \hline
-                         
-                        \multirow{4}{*}{$x_2x_1$} & 00 & 1 & 1 & 0 & 1 \\
-                                                  & 01 & 1 & 0 & 1 & 1 \\
-                                                  & 11 & 1 & 1 & 0 & 0 \\
-                                                  & 10 & 1 & 0 & 0 & 1 \\
-                        
-                         \hline 
-                    \end{tabularx}
-                    \caption{Wyjście B}
-                    \label{tab:my_label}
-                \end{table}
+                \includegraphics[height=9cm]{reports/img/Z1A_table_3.png}\\
             \end{center}
+            % \begin{center}
+            %     \begin{table}[ht]
+            %         \centering
+            %         \begin{tabularx}{\textwidth}{|Y *{5}{Y|}}
+            %             \cline{3-6} 
+            %             \multicolumn{2}{c|}{} &
+            %             \multicolumn{4}{c|}{$x_8x_4$}\\
+                        
+            %             \multicolumn{2}{c|}{} & \multicolumn{1}{c}{00} & \multicolumn{1}{c}{01} & \multicolumn{1}{c}{11} & \multicolumn{1}{c|}{10}\\
+            %             \hline
+                         
+            %             \multirow{4}{*}{$x_2x_1$} & 00 & 1 & 1 & 0 & 1 \\
+            %                                       & 01 & 1 & 0 & 1 & 1 \\
+            %                                       & 11 & 1 & 1 & 0 & 0 \\
+            %                                       & 10 & 1 & 0 & 0 & 1 \\
+                        
+            %              \hline 
+            %         \end{tabularx}
+            %         \caption{Wyjście B}
+            %         \label{tab:my_label}
+            %     \end{table}
+            % \end{center}
             \FloatBarrier
             Skąd otrzymujemy (przez dopełnienie):
             $$ B = (\overline{x_1}+x_2+\overline{x_4}+x_8)(\overline{x_1}+\overline{x_2}+\overline{x_8})(x_1+x_2+\overline{x_4}+\overline{x_8})(x_1+\overline{x_2}+\overline{x_4})$$
-            
             \begin{center}
-                \begin{table}[ht]
-                    \centering
-                    \begin{tabularx}{\textwidth}{|Y *{5}{Y|}}
-                        \cline{3-6} 
-                        \multicolumn{2}{c|}{} &
-                        \multicolumn{4}{c|}{$x_8x_4$}\\
-                        
-                        \multicolumn{2}{c|}{} & \multicolumn{1}{c}{00} & \multicolumn{1}{c}{01} & \multicolumn{1}{c}{11} & \multicolumn{1}{c|}{10}\\
-                        \hline
-                         
-                        \multirow{4}{*}{$x_2x_1$} & 00 & 1 & 1 & 0 & 1 \\
-                                                  & 01 & 1 & 1 & 1 & 1 \\
-                                                  & 11 & 1 & 1 & 0 & 1 \\
-                                                  & 10 & 0 & 1 & 0 & 1 \\
-                        
-                         \hline 
-                    \end{tabularx}
-                    \caption{Wyjście C}
-                    \label{tab:my_label}
-                \end{table}
+                \includegraphics[height=9cm]{reports/img/Z1A_table_4.png}\\
             \end{center}
+            % \begin{center}
+            %     \begin{table}[ht]
+            %         \centering
+            %         \begin{tabularx}{\textwidth}{|Y *{5}{Y|}}
+            %             \cline{3-6} 
+            %             \multicolumn{2}{c|}{} &
+            %             \multicolumn{4}{c|}{$x_8x_4$}\\
+                        
+            %             \multicolumn{2}{c|}{} & \multicolumn{1}{c}{00} & \multicolumn{1}{c}{01} & \multicolumn{1}{c}{11} & \multicolumn{1}{c|}{10}\\
+            %             \hline
+                         
+            %             \multirow{4}{*}{$x_2x_1$} & 00 & 1 & 1 & 0 & 1 \\
+            %                                       & 01 & 1 & 1 & 1 & 1 \\
+            %                                       & 11 & 1 & 1 & 0 & 1 \\
+            %                                       & 10 & 0 & 1 & 0 & 1 \\
+                        
+            %              \hline 
+            %         \end{tabularx}
+            %         \caption{Wyjście C}
+            %         \label{tab:my_label}
+            %     \end{table}
+            % \end{center}
             \FloatBarrier
             Skąd otrzymujemy (przez dopełnienie):
             $$C = (x_1+\overline{x_2}+x_4+x_8)(\overline{x_2}+\overline{x_4}+\overline{x_8})(x_1+x_2+\overline{x_4}+\overline{x_8})$$
-            
             \begin{center}
-                \begin{table}[ht]
-                    \centering
-                    \begin{tabularx}{\textwidth}{|Y *{5}{Y|}}
-                        \cline{3-6} 
-                        \multicolumn{2}{c|}{} &
-                        \multicolumn{4}{c|}{$x_8x_4$}\\
-                        
-                        \multicolumn{2}{c|}{} & \multicolumn{1}{c}{00} & \multicolumn{1}{c}{01} & \multicolumn{1}{c}{11} & \multicolumn{1}{c|}{10}\\
-                        \hline
-                         
-                        \multirow{4}{*}{$x_2x_1$} & 00 & 1 & 0 & 1 & 1 \\
-                                                  & 01 & 0 & 1 & 1 & 0 \\
-                                                  & 11 & 1 & 0 & 0 & 1 \\
-                                                  & 10 & 1 & 1 & 1 & 0 \\
-                        
-                         \hline 
-                    \end{tabularx}
-                    \caption{Wyjście D}
-                    \label{tab:my_label}
-                \end{table}
+                \includegraphics[height=9cm]{reports/img/Z1A_table_5.png}\\
             \end{center}
+            % \begin{center}
+            %     \begin{table}[ht]
+            %         \centering
+            %         \begin{tabularx}{\textwidth}{|Y *{5}{Y|}}
+            %             \cline{3-6} 
+            %             \multicolumn{2}{c|}{} &
+            %             \multicolumn{4}{c|}{$x_8x_4$}\\
+                        
+            %             \multicolumn{2}{c|}{} & \multicolumn{1}{c}{00} & \multicolumn{1}{c}{01} & \multicolumn{1}{c}{11} & \multicolumn{1}{c|}{10}\\
+            %             \hline
+                         
+            %             \multirow{4}{*}{$x_2x_1$} & 00 & 1 & 0 & 1 & 1 \\
+            %                                       & 01 & 0 & 1 & 1 & 0 \\
+            %                                       & 11 & 1 & 0 & 0 & 1 \\
+            %                                       & 10 & 1 & 1 & 1 & 0 \\
+                        
+            %              \hline 
+            %         \end{tabularx}
+            %         \caption{Wyjście D}
+            %         \label{tab:my_label}
+            %     \end{table}
+            % \end{center}
             \FloatBarrier
             Skąd otrzymujemy (przez dopełnienie):
             $$D = (x_1+x_2+\overline{x_4}+x_8)(\overline{x_1}+x_2+x_4)(\overline{x_1}+\overline{x_2}+\overline{x_4})(x_1+\overline{x_2}+x_4+\overline{x_8})$$
-        
             \begin{center}
-                \begin{table}[ht]
-                    \centering
-                    \begin{tabularx}{\textwidth}{|Y *{5}{Y|}}
-                        \cline{3-6} 
-                        \multicolumn{2}{c|}{} &
-                        \multicolumn{4}{c|}{$x_8x_4$}\\
-                        
-                        \multicolumn{2}{c|}{} & \multicolumn{1}{c}{00} & \multicolumn{1}{c}{01} & \multicolumn{1}{c}{11} & \multicolumn{1}{c|}{10}\\
-                        \hline
-                         
-                        \multirow{4}{*}{$x_2x_1$} & 00 & 1 & 0 & 1 & 1 \\
-                                                  & 01 & 0 & 0 & 1 & 0 \\
-                                                  & 11 & 0 & 0 & 1 & 1 \\
-                                                  & 10 & 1 & 1 & 1 & 1 \\
-                        
-                         \hline 
-                    \end{tabularx}
-                    \caption{Wyjście E}
-                    \label{tab:my_label}
-                \end{table}
+                \includegraphics[height=9cm]{reports/img/Z1A_table_6.png}\\
             \end{center}
+            % \begin{center}
+            %     \begin{table}[ht]
+            %         \centering
+            %         \begin{tabularx}{\textwidth}{|Y *{5}{Y|}}
+            %             \cline{3-6} 
+            %             \multicolumn{2}{c|}{} &
+            %             \multicolumn{4}{c|}{$x_8x_4$}\\
+                        
+            %             \multicolumn{2}{c|}{} & \multicolumn{1}{c}{00} & \multicolumn{1}{c}{01} & \multicolumn{1}{c}{11} & \multicolumn{1}{c|}{10}\\
+            %             \hline
+                         
+            %             \multirow{4}{*}{$x_2x_1$} & 00 & 1 & 0 & 1 & 1 \\
+            %                                       & 01 & 0 & 0 & 1 & 0 \\
+            %                                       & 11 & 0 & 0 & 1 & 1 \\
+            %                                       & 10 & 1 & 1 & 1 & 1 \\
+                        
+            %              \hline 
+            %         \end{tabularx}
+            %         \caption{Wyjście E}
+            %         \label{tab:my_label}
+            %     \end{table}
+            % \end{center}
             \FloatBarrier
             Skąd otrzymujemy (przez dopełnienie):
             $$E = (\overline{x_1}+x_8)(x_1+x_2+\overline{x_4}+x_8)(\overline{x_1}+x_2+x_4+\overline{x_8})$$
-            
             \begin{center}
-                \begin{table}[ht]
-                    \centering
-                    \begin{tabularx}{\textwidth}{|Y *{5}{Y|}}
-                        \cline{3-6} 
-                        \multicolumn{2}{c|}{} &
-                        \multicolumn{4}{c|}{$x_8x_4$}\\
-                        
-                        \multicolumn{2}{c|}{} & \multicolumn{1}{c}{00} & \multicolumn{1}{c}{01} & \multicolumn{1}{c}{11} & \multicolumn{1}{c|}{10}\\
-                        \hline
-                         
-                        \multirow{4}{*}{$x_2x_1$} & 00 & 1 & 1 & 1 & 1 \\
-                                                  & 01 & 0 & 1 & 0 & 1 \\
-                                                  & 11 & 0 & 0 & 1 & 1 \\
-                                                  & 10 & 0 & 1 & 1 & 1 \\
-                        
-                         \hline 
-                    \end{tabularx}
-                    \caption{Wyjście F}
-                    \label{tab:my_label}
-                \end{table}
+                \includegraphics[height=9cm]{reports/img/Z1A_table_7.png}\\
             \end{center}
+            % \begin{center}
+            %     \begin{table}[ht]
+            %         \centering
+            %         \begin{tabularx}{\textwidth}{|Y *{5}{Y|}}
+            %             \cline{3-6} 
+            %             \multicolumn{2}{c|}{} &
+            %             \multicolumn{4}{c|}{$x_8x_4$}\\
+                        
+            %             \multicolumn{2}{c|}{} & \multicolumn{1}{c}{00} & \multicolumn{1}{c}{01} & \multicolumn{1}{c}{11} & \multicolumn{1}{c|}{10}\\
+            %             \hline
+                         
+            %             \multirow{4}{*}{$x_2x_1$} & 00 & 1 & 1 & 1 & 1 \\
+            %                                       & 01 & 0 & 1 & 0 & 1 \\
+            %                                       & 11 & 0 & 0 & 1 & 1 \\
+            %                                       & 10 & 0 & 1 & 1 & 1 \\
+                        
+            %              \hline 
+            %         \end{tabularx}
+            %         \caption{Wyjście F}
+            %         \label{tab:my_label}
+            %     \end{table}
+            % \end{center}
             \FloatBarrier
             Skąd otrzymujemy (przez dopełnienie):
             $$F = (\overline{x_1}+x_2+\overline{x_4}+\overline{x_8})(\overline{x_1}+\overline{x_2}+\overline{x_4}+x_8)(\overline{x_1}+x_4+x_8)(x_1+\overline{x_2}+x_4+x_8)$$
-
-            
             \begin{center}
-                \begin{table}[ht]
-                    \centering
-                    \begin{tabularx}{\textwidth}{|Y *{5}{Y|}}
-                        \cline{3-6} 
-                        \multicolumn{2}{c|}{} &
-                        \multicolumn{4}{c|}{$x_8x_4$}\\
-                        
-                        \multicolumn{2}{c|}{} & \multicolumn{1}{c}{00} & \multicolumn{1}{c}{01} & \multicolumn{1}{c}{11} & \multicolumn{1}{c|}{10}\\
-                        \hline
-                         
-                        \multirow{4}{*}{$x_2x_1$} & 00 & 0 & 1 & 0 & 1 \\
-                                                  & 01 & 0 & 1 & 1 & 1 \\
-                                                  & 11 & 1 & 0 & 1 & 1 \\
-                                                  & 10 & 1 & 1 & 1 & 1 \\
-                        
-                         \hline 
-                    \end{tabularx}
-                    \caption{Wyjście G}
-                    \label{tab:my_label}
-                \end{table}
+                \includegraphics[height=9cm]{reports/img/Z1A_table_8.png}\\
             \end{center}
+            % \begin{center}
+            %     \begin{table}[ht]
+            %         \centering
+            %         \begin{tabularx}{\textwidth}{|Y *{5}{Y|}}
+            %             \cline{3-6} 
+            %             \multicolumn{2}{c|}{} &
+            %             \multicolumn{4}{c|}{$x_8x_4$}\\
+                        
+            %             \multicolumn{2}{c|}{} & \multicolumn{1}{c}{00} & \multicolumn{1}{c}{01} & \multicolumn{1}{c}{11} & \multicolumn{1}{c|}{10}\\
+            %             \hline
+                         
+            %             \multirow{4}{*}{$x_2x_1$} & 00 & 0 & 1 & 0 & 1 \\
+            %                                       & 01 & 0 & 1 & 1 & 1 \\
+            %                                       & 11 & 1 & 0 & 1 & 1 \\
+            %                                       & 10 & 1 & 1 & 1 & 1 \\
+                        
+            %              \hline 
+            %         \end{tabularx}
+            %         \caption{Wyjście G}
+            %         \label{tab:my_label}
+            %     \end{table}
+            % \end{center}
             \FloatBarrier
             Skąd otrzymujemy (przez dopełnienie):
             $$G = (x_2+x_4+x_8)(\overline{x_1}+\overline{x_2}+\overline{x_4}+x_8)(x_1+x_2+\overline{x_4}+\overline{x_8})$$
