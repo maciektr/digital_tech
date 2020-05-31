@@ -8,7 +8,6 @@
 \usepackage{listingsutf8}
 \usepackage{multirow}
 \usepackage{siunitx}
-\usepackage{multirow}
 \usepackage{booktabs}
 \usepackage{tabularx}
 \usepackage{placeins}
@@ -85,12 +84,14 @@ Sprawozdanie - bramki logiczne}
             Wynik operacji zilustrowano poprzez wykorzystanie wyświetlacza HEX. 
         
         \subsection{Symulacja}
+            W celu przetestowania układu dla wszystkich par liczba trzybitowych generator ustawiony został w tryb generowania wszystkich liczb sześciobitowych od $111111$ do $000000$. Trzy najmniej znaczące bity odpowiadają za jedną z generowanych liczb, trzy najmniej znaczące za drugą.   
             \begin{center}
                 \includegraphics[height=9cm]{reports/img/Z1A_gen.png}\\
             \end{center}
             \begin{center}
                 \includegraphics[height=9cm]{reports/img/Z1A_analize.png}\\
             \end{center}
+            Z ekranu analizatora logicznego odczytać możemy wynikową liczbę czterobitową, oraz trzybitowe liczby wejściowe od których jest zależna. Na tej podstawie możemy stwierdzić poprawność implementacji.
 
             
         \subsection{Wnioski}
@@ -116,6 +117,7 @@ Sprawozdanie - bramki logiczne}
     \section{Transkoder czterobitowych cyfr szesnastkowych na wyświetlacz siedmiosegmentowy}
         \subsection{Minimalizacja funkcji boolowskich}
             Wyświetlaczem sterować można poprzez 7 wyjść, ponumerowanych od A do G, każde z nich odpowiada za inny segment wyświetlacza. W poniższej tabeli zebrano opis ustawień wyjść odpowiedzialnych za wyświetlanie każdej z liczb czterobitowych.
+            \newpage
             \begin{center}
                 \begin{table}[ht]
                     \centering
@@ -165,11 +167,9 @@ Sprawozdanie - bramki logiczne}
                     \label{tab:my_label}
                 \end{table}
             \end{center}
-            \FloatBarrier
-            
             W celu uproszczenia układu wykonać należy minimalizację metodą Karnaugh dla każdego z wyjść wyświetlacza. Niech $x_1, x_2, x_4, x_8$ określają kolejne bity, czterobitowej liczby $x$ w kolejności od najmniej do najbardziej znaczącego bitu. Wtedy:
             \begin{center}
-                \begin{table}[ht]
+                \begin{table}
                     \centering
                     \begin{tabularx}{\textwidth}{|Y *{5}{Y|}}
                         \cline{3-6} 
@@ -190,7 +190,7 @@ Sprawozdanie - bramki logiczne}
                     \label{tab:my_label}
                 \end{table}
             \end{center}
-            \FloatBarrier
+
             Zauważmy, że wartości zera logicznego w powyższej tabeli jest zdecydowanie mniej, niż stanów wysokich. Dlatego to po nich będziemy grupować, zatem otrzymamy wynik poprzez dopełnienie.\\
             Każdą z grup zer możemy opisać poprzez określenie w postaci alternatywy logicznej wszystkich pozostałych wartości w tablicy, za wyjątkiem tej grupy. Jeśli na tak skonstruowanych opisach grup użyjemy koniunkcji logicznej otrzymamy formułę opisującą poprawnie rozkład stanów wysokich i niskich względem sygnału wejściowego dla danego wejścia wyświetlacza. \\
             Skąd otrzymujemy (przez dopełnienie):
@@ -439,7 +439,7 @@ Sprawozdanie - bramki logiczne}
             \begin{center}
                 \includegraphics[height=9cm]{reports/img/Z1C_analize.png}\\
             \end{center}
-            Za pomocą analizatora logicznego, oraz 
+            Za pomocą analizatora logicznego, oraz podłączonego wyświetlacza siedmiosegmentowego możemy stwierdzić poprawność działania dekodera.
 
         \subsection{Wnioski}
             Minimalizacja funkcji logicznych metodą Karnaugha pozwala  w sposób intuicyjny konstruować układy realizujące funkcje logiczne. Daje ona nam łatwość konstrukcji złożonych wyrażeń w sposób graficzny przy zapewnionej poprawności działania. W efekcie proces projektowania jest prostszy w porównaniu do próby minimalizacji klasycznego zapisu algebry booleowskiej.\\
