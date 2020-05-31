@@ -195,38 +195,38 @@ Sprawozdanie - bramki logiczne}
             %     \end{table}
             % \end{center}
             \begin{center}
-                \includegraphics[widht=18cm]{reports/img/Z1A_tab1.png}\\
+                \includegraphics[widht=18cm]{reports/img/Z1A_tab_1.png}\\
             \end{center}
             \begin{center}
-                \includegraphics[widht=18cm]{reports/img/Z1A_tab2.png}\\
+                \includegraphics[widht=18cm]{reports/img/Z1A_tab_2.png}\\
             \end{center}
-
+            Skąd otrzymujemy poniższe zależności. 
+            $$I = B\overline{E}\overline{i} + \overline{B}\overline{E}i + BEi + \overline{B}E\overline{i} = B(\overline{E}\overline{i} + Ei) + \overline{B}(\overline{E}i + E\overline{i}) = \overline{B}(E\oplus i) + B(\overline{(E\oplus i)}) = B\oplus(E\oplus i)$$
+            $$H = Ei + B(E + i) = Ei + BE + Bi$$
 
 
 
         \subsection{Sumator pełny i pół-pełny}
             Dla sumy najmniej ważnych bitów na wejściu sumatora otrzymujemy dwa sygnały - po jednym bicie od każdej z liczb. Jednakże, wynik dodawania dwóch liczb jednobitowych jest liczbą dwubitową. Dlatego, na wyjściu podajemy dwa sygnały - stan najmniej ważnego bitu liczby wynikowej i informacje o tym, czy wystąpiło przepełnienie.\\
-            Taki układ nazywamy sumatorem pół-pełnym, jednobitowym. Do jego wykonania wystarczą dwie bramki logiczne - xor i and, do których podłączymy sygnały wejściowe. Wyjście bramki xor będzie stanem bitu w wyniku, a wyjście bramki and informacją o przepełnieniu. \\
+            Taki układ nazywamy sumatorem pół-pełnym, jednobitowym. Do jego wykonania wykorzystano dwie bramki logiczne - xor i and, do których podłączymy sygnały wejściowe. Wyjście bramki xor będzie stanem bitu w wyniku, a wyjście bramki and informacją o przepełnieniu. \\
             \begin{figure}[h!]
                 \centering
                 \includegraphics[width=13cm]{reports/img/Z1A_polpelny.png}
                 \caption{Sumator pół-pełny}
             \end{figure}\\
             \FloatBarrier
-            Jednakże, w tej sytuacji podczas sumowania kolejnych bitów będziemy musieli rozpatrzyć trzy sygnały wejściowe - dwa jak poprzednio informujące o wartościach bitów w dodawanej liczbie, a trzeci informujący czy w poprzedniej operacji dodawania wystąpiło przepełnienie. Na wyjściu ponownie znajdą się dwa sygnały - jak w sumatorze pół-pełnym.\\
-            Układ realizujący taką sumę nazywamy sumatorem pełnym. Do jego wykonania będziemy potrzebować aż pięciu bramek. 
+            Podczas sumowania kolejnych bitów będziemy musieli rozpatrzyć trzy sygnały wejściowe - dwa jak poprzednio informujące o wartościach bitów w dodawanej liczbie, a trzeci informujący czy w poprzedniej operacji dodawania wystąpiło przepełnienie. Na wyjściu ponownie znajdą się dwa sygnały - jak w sumatorze pół-pełnym.\\
+            Układ realizujący taką sumę nazywamy sumatorem pełnym.
             \begin{figure}[h!]
                 \centering
                 \includegraphics[width=13cm]{reports/img/Z1A_pelny.png}
                 \caption{Sumator pełny}
             \end{figure}\\
-            Podobnie jak poprzednio skierujemy wejścia pochodzące od bitów sumowanych liczb na bramkę xor oraz and. Teraz jednak musimy rozpatrzeć kilka przypadków. Jeśli oba bity mają stan wysoki (zatem stan wysoki pojawi się za bramką and), lub choć jeden z nich przyjmuje stan wysoki, a w poprzedniej sumie wystąpiło przepełnienie, to wtedy również i w tej operacji wystąpi przepełnienie. Jeśli zaś stan wysoki przyjmuje dokładnie jeden bit z wejścia, lub nie przyjmuje go żaden z bitów, za to w poprzedniej sumie wystąpiło przepełnienie, to wtedy stan wysoki przyjmuje także bit liczby wynikowej.\\
-            Układ realizujący tą prostą logikę nazywamy sumatorem pełnym.
             \FloatBarrier
         
         \subsection{Konstrukcja układu sumującego}
-            Zauważmy, że tak skonstruowane sumatory pełne możemy dowolnie długo łączyć, otrzymując na ich wyjściach poprawną sumę arytmetyczną liczb przekazanych na wejścia. W celu ograniczenia ilości użytych bramek logicznych do wykonania sumy najmniej znaczących bitów używamy sumatora pół-pełnego.\\ 
-            Aby wykonać sumę dwóch liczb trzybitowych potrzebować będziemy zatem jedynie dwóch sumatorów pełnych i jednego pół-pełnego.
+            Zauważmy, że tak skonstruowane sumatory pełne można dowolnie długo łączyć, otrzymując na ich wyjściach poprawną sumę arytmetyczną liczb przekazanych na wejścia. W celu ograniczenia ilości użytych bramek logicznych do wykonania sumy najmniej znaczących bitów używamy sumatora pół-pełnego.\\ 
+            Aby wykonać sumę dwóch liczb trzybitowych potrzeba dwóch sumatorów pełnych i jednego pół-pełnego.
 
         \subsection{Projekt układu}
             \begin{center}
