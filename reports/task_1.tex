@@ -237,7 +237,7 @@ Sprawozdanie - bramki logiczne}
             Wynik operacji zilustrowano poprzez wykorzystanie wyświetlacza HEX. 
         
         \subsection{Symulacja}
-            W celu przetestowania układu dla wszystkich par liczba trzybitowych generator ustawiony został w tryb generowania wszystkich liczb sześciobitowych od $111111$ do $000000$. Trzy najmniej znaczące bity odpowiadają za jedną z generowanych liczb, trzy najmniej znaczące za drugą.   
+            W celu przetestowania układu dla wszystkich par liczba trzybitowych generator ustawiony został w tryb generowania wszystkich liczb sześciobitowych od $111111$ do $000000$. Trzy najmniej znaczące bity odpowiadają za jedną z generowanych liczb, trzy najbardziej znaczące za drugą.   
             \begin{center}
                 \includegraphics[height=9cm]{reports/img/Z1A_gen.png}\\
             \end{center}
@@ -266,8 +266,15 @@ Sprawozdanie - bramki logiczne}
             \end{center}
             W układzie jako źródło sygnału wykorzystano generator słów. Wyjścia odpowiadające za bity pierwszej z liczb oznaczono kolorem zielonym, a za bity drugiej z nich kolorem różowym. \\
             Do porównania wartości liczb wykorzystano bramki xor, których wyniki zbiera bramka nor. \\
-            Równość liczb sygnalizuje zielona dioda. 
             \FloatBarrier
+            
+        \subsection{Symulacja}
+            W celu przetestowania układu generator ustawiony został w tryb generowania wszystkich liczb ośmiobitowych w cyklu. Cztery najmniej znaczące bity odpowiadają za jedną z generowanych liczb, Cztery najbardziej znaczące za drugą.   
+            \begin{center}
+                \includegraphics[height=9cm]{reports/img/Z1B_2.png}\\
+            \end{center}
+            Z ekranu analizatora logicznego odczytać możemy dwie liczby czterobitowe, oraz jednobitowe wyjście układu. Na tej podstawie możemy stwierdzić poprawność implementacji.
+
             
         \subsection{Wnioski}
             Zauważmy, że w przedstawiony powyżej sposób możemy skonstruować układ sprawdzający równość  dwóch liczb o dowolnej (choć z góry ustalonej) liczbie bitów. Domofon wejściowy w bloku w którym mieszkam można otworzyć wprowadzając specjalny kod mający postać liczby naturalnej. Za porównanie go z przewidzianą w układzie sekwencją bitów odpowiadać może układ podobny do przedstawionego powyżej. 
@@ -275,7 +282,6 @@ Sprawozdanie - bramki logiczne}
     \section{Transkoder czterobitowych cyfr szesnastkowych na wyświetlacz siedmiosegmentowy}
         \subsection{Minimalizacja funkcji boolowskich}
             Wyświetlaczem sterować można poprzez 7 wyjść, ponumerowanych od A do G, każde z nich odpowiada za inny segment wyświetlacza. W poniższej tabeli zebrano opis ustawień wyjść odpowiedzialnych za wyświetlanie każdej z liczb czterobitowych.
-            \newpage
             \begin{center}
                 \begin{table}[ht]
                     \centering
