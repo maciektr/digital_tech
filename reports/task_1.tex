@@ -84,9 +84,17 @@ Sprawozdanie - bramki logiczne}
             Do obliczenia sumy arytmetycznej wykorzystano jeden sumator pół-pełny (dla sumy najmniej ważnych bitów), oraz dwa sumatory pełne. Wyjścia odpowiadające za przepełnienie oznaczono kolorem lazurowym. \\
             Wynik operacji zilustrowano poprzez wykorzystanie wyświetlacza HEX. 
         
+        \subsection{Symulacja}
+            \begin{center}
+                \includegraphics[height=9cm]{reports/img/Z1A_gen.png}\\
+            \end{center}
+            \begin{center}
+                \includegraphics[height=9cm]{reports/img/Z1A_analize.png}\\
+            \end{center}
+
             
         \subsection{Wnioski}
-            Zauważmy, że w przedstawiony powyżej sposób możemy niskim kosztem skonstruować sumator dla dwóch liczb o dowolnej (choć z góry ustalonej) liczby bitów. Z oczywistych względów (powszechność operacji dodawania) taki układ ma wiele zastosowań praktycznych. 
+            Zauważmy, że w przedstawiony powyżej sposób możemy niskim kosztem skonstruować sumator dla dwóch liczb o dowolnej (choć z góry ustalonej) liczby bitów. Taki układ może znaleźć zastosowanie w wielu sytuacjach codziennych. Dla przykładu, w układzie sterowania moją pralką. Na tryb prania składa się wiele etapów, jak moczenie, pranie, czy wirowanie. Długość każdego z tych etapów zależy od wybranych parametrów (jak temperatura wody, czy ocena stopnia zabrudzenia ubrań). Na wyświetlaczu pokazuje ona sumaryczny czas prania, będący w istocie sumą po czasach trwania każdego z tych etapów. Możemy zatem zastosować przygotowany powyżej sumator do obliczenia liczby przekazywanej na wejścia dekodera wyświetlacza. 
             
             
     \section{Układ sprawdzający równość dwóch liczb}
@@ -103,7 +111,7 @@ Sprawozdanie - bramki logiczne}
             \FloatBarrier
             
         \subsection{Wnioski}
-            Zauważmy, że w przedstawiony powyżej sposób możemy skonstruować układ sprawdzający równość  dwóch liczb o dowolnej (choć z góry ustalonej) liczbie bitów. Z oczywistych względów (powszechność operacji porównania) taki układ ma zastosowania praktyczne. Dodatkowo, jest wyjątkowo prosty do skonstruowania, dzięki wysokiej dostępności bramek realizujących operację alternatywy wykluczającej. 
+            Zauważmy, że w przedstawiony powyżej sposób możemy skonstruować układ sprawdzający równość  dwóch liczb o dowolnej (choć z góry ustalonej) liczbie bitów. Domofon wejściowy w bloku w którym mieszkam można otworzyć wprowadzając specjalny kod mający postać liczby naturalnej. Za porównanie go z przewidzianą w układzie sekwencją bitów odpowiadać może układ podobny do przedstawionego powyżej. 
 
     \section{Transkoder czterobitowych cyfr szesnastkowych na wyświetlacz siedmiosegmentowy}
         \subsection{Minimalizacja funkcji boolowskich}
@@ -422,9 +430,19 @@ Sprawozdanie - bramki logiczne}
             W układzie jako źródło sygnału wykorzystano generator słów. Wyjścia odpowiadające za kolejne bity, w kolejności od najmniej do najbardziej znaczącego, oznaczono odpowiednio kolorami: fioletowym, zielonym, pomarańczowym i bordowym. \\
             Sygnał odpowiadający za kolejne wejścia wyświetlacza przetwarzany jest przy pomocy bramek logicznych, zgodnie z powyżej rozpisanymi formułami. Niektóre operacje alternatywy logicznej realizowane są poprzez użycie bramki NAND zgodnie z prawem de Morgana. \\
             Do wejścia układu dołączono wyświetlacz DCD\_Hex ze wbudowanym transkoderem dla zilustrowania poprawności działania układu.
-        \newpage
+        
+        \subsection{Symulacja}
+            \begin{center}
+                \includegraphics[height=9cm]{reports/img/Z1C_gen.png}\\
+            \end{center}
+            \begin{center}
+                \includegraphics[height=9cm]{reports/img/Z1C_analize.png}\\
+            \end{center}
+
         \subsection{Wnioski}
             Minimalizacja funkcji logicznych metodą Karnaugha pozwala  w sposób intuicyjny konstruować układy realizujące funkcje logiczne. Daje ona nam łatwość konstrukcji złożonych wyrażeń w sposób graficzny przy zapewnionej poprawności działania. W efekcie proces projektowania jest prostszy w porównaniu do próby minimalizacji klasycznego zapisu algebry booleowskiej.\\
             Znacząco usprawnia to projektowanie układów których działanie określone jest względem wielu zmiennych logicznych za pomocą wielu funkcji logicznych. Przykładem takiego układu jest transkoder na wyświetlacz siedmiosegmentowy.\\
+            Zgodnie z prawem każdy sklep wyposażony musi być w kasę fiskalną. Taka kasa fiskalna wyświetla sumę cen wprowadzonych produktów za pomocą wyświetlacza zbudowanego z modułów siedmiosegmentowych. Każdy z takich modułów może być wyposażony w dekoder podobny do zaimplementowanego powyżej.
+
 
 \end{document}
